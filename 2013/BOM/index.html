@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="other," />
 
 
 
@@ -39,15 +39,37 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="我爱做梦的描述">
-<meta property="og:type" content="website">
-<meta property="og:title" content="我爱做梦">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="在处理一个 utf-8 格式文件的时候发现，第一行的文件头有 ‘efbb’ 这么些字符，一查才发现原来又是跨平台的问题。百度 BOM
+要去掉其实也很简单，用 Vi 打开文件，然后输入：
+:set nobomb
+要添加或判断是否有BOM：
+#添加BOM
+:set bomb
+#判断是否有BOM
+:set bomb?">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UTF-8 中的 'efbb'">
+<meta property="og:url" content="http://yoursite.com/2013/BOM/index.html">
 <meta property="og:site_name" content="我爱做梦">
-<meta property="og:description" content="我爱做梦的描述">
+<meta property="og:description" content="在处理一个 utf-8 格式文件的时候发现，第一行的文件头有 ‘efbb’ 这么些字符，一查才发现原来又是跨平台的问题。百度 BOM
+要去掉其实也很简单，用 Vi 打开文件，然后输入：
+:set nobomb
+要添加或判断是否有BOM：
+#添加BOM
+:set bomb
+#判断是否有BOM
+:set bomb?">
+<meta property="og:updated_time" content="2015-09-17T10:28:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我爱做梦">
-<meta name="twitter:description" content="我爱做梦的描述">
+<meta name="twitter:title" content="UTF-8 中的 'efbb'">
+<meta name="twitter:description" content="在处理一个 utf-8 格式文件的时候发现，第一行的文件头有 ‘efbb’ 这么些字符，一查才发现原来又是跨平台的问题。百度 BOM
+要去掉其实也很简单，用 Vi 打开文件，然后输入：
+:set nobomb
+要添加或判断是否有BOM：
+#添加BOM
+:set bomb
+#判断是否有BOM
+:set bomb?">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -57,7 +79,7 @@
   };
 </script>
 
-  <title> 我爱做梦 </title>
+  <title> UTF-8 中的 'efbb' | 我爱做梦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -85,9 +107,7 @@
 
 
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -155,9 +175,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div id="content" class="content"> 
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -168,106 +188,7 @@
           
           
             
-              <a class="post-title-link" href="/2014/nodejs-handle-excel/" itemprop="url">
-                Node.js Handle Excel
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2014-11-04T18:23:00+08:00" content="2014-11-04">
-            2014-11-04
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2014/nodejs-handle-excel/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2014/nodejs-handle-excel/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>最近项目中需要用到xls文件的导入和导出，在github上找到几个的包：</p>
-<blockquote>
-<p><a href="https://github.com/SheetJS/js-xls" target="_blank" rel="external">js-xls</a>  解析xls</p>
-<p><a href="https://github.com/SheetJS/js-xlsx" target="_blank" rel="external">js-xlsx</a> 解析xlsx</p>
-<p><a href="https://github.com/gutkyu/xlgen" target="_blank" rel="external">xlgen</a> 生成xls</p>
-<p><a href="https://github.com/elwerene/Node-Excel-Export" target="_blank" rel="external">excel-export-fast</a> 生成xlsx</p>
-</blockquote>
-<p>但其中xlgen这个包在生成xls文件时，如果生成的数据很多时，会很慢。3000行、100列的数据量需要11分钟，内存占用一直在170M左右，生成的文件大概4M，怎么都觉得不应该这么慢。又没找到其他合适的包，只能翻这个包的源码吧。</p>
-<p>第一步想到的可能存在问题的地方可能是出在不停的打开文件写文件，不然不至于这么慢。通过看xlgen的代码，发现一次生成只会打开一次文件，就是第一次创建文件的时候。但写文件很频繁，先写头和一些xls文件结构相关的数据，再写cell，每一个cell拼装成一个buffer就写一次文件，问题就出在这里了。我把代码改成把所有的buffer组合在一起，最后再一次写入。buffer组合通过Buffer自带的.concat方法</p>
-<pre><code>allBuf = []
-allBuf.<span class="function"><span class="title">push</span><span class="params">(buffer)</span></span>
-allBuf = Buffer.<span class="function"><span class="title">concat</span><span class="params">(allBuf)</span></span>
-</code></pre><p>结果，需要17分钟，比之前还要慢。。。</p>
-<p>百思不得其解，最终看Buffer模块的源码发现，Buffer.concat(list, [totalLength]) ，原来可以参入一个参数 总长度，如果不传入的话，则每次调用都要额外计算</p>
-<pre><code>Buffer.concat = function(<span class="type">list</span>, <span class="property">length</span>) {
-    <span class="keyword">if</span> (!util.isArray(<span class="type">list</span>))
-        throw new TypeError('Usage: Buffer.concat(<span class="type">list</span>[, <span class="property">length</span>])');
-
-    <span class="keyword">if</span> (util.isUndefined(<span class="property">length</span>)) {
-        <span class="property">length</span> = <span class="number">0</span>;
-        <span class="keyword">for</span> (var i = <span class="number">0</span>; i &lt; <span class="type">list</span>.<span class="property">length</span>; i++)
-            <span class="property">length</span> += <span class="type">list</span>[i].<span class="property">length</span>;
-    } <span class="keyword">else</span> {
-        <span class="property">length</span> = <span class="property">length</span> &gt;&gt;&gt; <span class="number">0</span>;
-    }
-
-    ...
-</code></pre><p>果断传入总长度，还是3000行100列，7秒就完成了！</p>
-<p>总结：因为write buffer的event太多了，cpu处理不过来（单个CPU使用100%），事件都积压着（占用大量内存）。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/BOM/" itemprop="url">
-                UTF-8 中的 'efbb'
-              </a>
+              UTF-8 中的 'efbb'
             
           
         </h1>
@@ -302,8 +223,7 @@ allBuf = Buffer.<span class="function"><span class="title">concat</span><span cl
       
 
       
-        
-          <span itemprop="articleBody"><p>在处理一个 utf-8 格式文件的时候发现，第一行的文件头有 ‘efbb’ 这么些字符，一查才发现原来又是跨平台的问题。<a href="http://baike.baidu.com/subview/126558/5073180.htm" target="_blank" rel="external">百度 BOM</a></p>
+        <span itemprop="articleBody"><p>在处理一个 utf-8 格式文件的时候发现，第一行的文件头有 ‘efbb’ 这么些字符，一查才发现原来又是跨平台的问题。<a href="http://baike.baidu.com/subview/126558/5073180.htm" target="_blank" rel="external">百度 BOM</a></p>
 <p>要去掉其实也很简单，用 Vi 打开文件，然后输入：</p>
 <pre><code>:<span class="keyword">set</span> nobomb
 </code></pre><p>要添加或判断是否有BOM：</p>
@@ -312,112 +232,58 @@ allBuf = Buffer.<span class="function"><span class="title">concat</span><span cl
 <span class="preprocessor">#判断是否有BOM</span>
 :<span class="keyword">set</span> bomb?
 </code></pre></span>
-        
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/other/" rel="tag">#other</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/nodejs-handle-excel/" rel="prev">Node.js Handle Excel</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/line-break/" rel="next">\r 和 \n 的差异</a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-      
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/line-break/" itemprop="url">
-                \r 和 \n 的差异
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2013-12-09T16:01:44+08:00" content="2013-12-09">
-            2013-12-09
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2013/line-break/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2013/line-break/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>前段时间在写一个处理文件小程序的时候碰到的一个坑，记录下。</p>
-<h4 id="问题">问题</h4><p>表现如下：</p>
-<pre><code>&gt; <span class="built_in">console</span>.log(<span class="string">'hello\n world'</span>);
-hello
- world
-<span class="literal">undefined</span>
-&gt; <span class="built_in">console</span>.log(<span class="string">'hello\r world'</span>);
- world
-<span class="literal">undefined</span>
-</code></pre><h4 id="原因">原因</h4><p>‘ \r’是回车,使光标到行首</p>
-<p>‘\n’是换行,光标下移一格</p>
-<p>在Unix下，每行结尾只有一个 \n<br>而 window 下，则是 \n\r</p>
-<p>P.S. 一般编程语言会提供一些特殊的变量适应不同操作系统，类似目录分割符那样的，换行符在 Node.js 中是：require(‘os’).EOL 。</p>
-</span>
-        
+    <div class="post-spread">
       
     </div>
+  </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
  </div>
 
         
 
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2013/BOM/"
+                   data-title="UTF-8 中的 'efbb'" data-url="http://yoursite.com/2013/BOM/">
+              </div>
+            
+          </div>
         
       </div>
 
@@ -434,6 +300,15 @@ hello
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
       
 
       <section class="site-overview">
@@ -481,6 +356,17 @@ hello
 
       </section>
 
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
       
 
     </div>
@@ -565,6 +451,165 @@ hello
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
 
   <script type="text/javascript">
     $(document).ready(function () {
