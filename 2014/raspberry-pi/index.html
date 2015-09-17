@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="Linux,Raspberry-Pi," />
 
 
 
@@ -39,49 +39,37 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="前段时间在写一个处理文件小程序的时候碰到的一个坑，记录下。
-问题表现如下：
-&amp;gt; console.log(&apos;hello\n world&apos;);
-hello
- world
-undefined
-&amp;gt; console.log(&apos;hello\r world&apos;);
- world
-undefined
-原因‘ \r’是回车,使光标到行首
-‘\n’是换行,光标下移一格
-在Unix下，每行结尾只有一个 \n而">
+<meta name="description" content="最近手上没什么事，正好公司买了几个树莓派有空闲的，于是乎，决定从零开始折腾一下。
+
+从树莓派的官网http://www.raspberrypi.org/downloads上下载系统的镜像。
+
+刻录系统
+ $ diskutil list
+ $ diskutil unmountDisk /dev/disk1
+ $ sudo dd bs=1m if=ArchLinuxARM-2014.06-rpi.im">
 <meta property="og:type" content="article">
-<meta property="og:title" content="\r 和 \n 的差异">
-<meta property="og:url" content="http://woaizuomeng.com/2013/line-break/index.html">
+<meta property="og:title" content="树莓派装系统">
+<meta property="og:url" content="http://woaizuomeng.com/2014/raspberry-pi/index.html">
 <meta property="og:site_name" content="我爱做梦">
-<meta property="og:description" content="前段时间在写一个处理文件小程序的时候碰到的一个坑，记录下。
-问题表现如下：
-&amp;gt; console.log(&apos;hello\n world&apos;);
-hello
- world
-undefined
-&amp;gt; console.log(&apos;hello\r world&apos;);
- world
-undefined
-原因‘ \r’是回车,使光标到行首
-‘\n’是换行,光标下移一格
-在Unix下，每行结尾只有一个 \n而">
-<meta property="og:updated_time" content="2015-09-17T12:35:10.000Z">
+<meta property="og:description" content="最近手上没什么事，正好公司买了几个树莓派有空闲的，于是乎，决定从零开始折腾一下。
+
+从树莓派的官网http://www.raspberrypi.org/downloads上下载系统的镜像。
+
+刻录系统
+ $ diskutil list
+ $ diskutil unmountDisk /dev/disk1
+ $ sudo dd bs=1m if=ArchLinuxARM-2014.06-rpi.im">
+<meta property="og:updated_time" content="2015-09-17T12:36:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="\r 和 \n 的差异">
-<meta name="twitter:description" content="前段时间在写一个处理文件小程序的时候碰到的一个坑，记录下。
-问题表现如下：
-&amp;gt; console.log(&apos;hello\n world&apos;);
-hello
- world
-undefined
-&amp;gt; console.log(&apos;hello\r world&apos;);
- world
-undefined
-原因‘ \r’是回车,使光标到行首
-‘\n’是换行,光标下移一格
-在Unix下，每行结尾只有一个 \n而">
+<meta name="twitter:title" content="树莓派装系统">
+<meta name="twitter:description" content="最近手上没什么事，正好公司买了几个树莓派有空闲的，于是乎，决定从零开始折腾一下。
+
+从树莓派的官网http://www.raspberrypi.org/downloads上下载系统的镜像。
+
+刻录系统
+ $ diskutil list
+ $ diskutil unmountDisk /dev/disk1
+ $ sudo dd bs=1m if=ArchLinuxARM-2014.06-rpi.im">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -91,7 +79,7 @@ undefined
   };
 </script>
 
-  <title> \r 和 \n 的差异 | 我爱做梦 </title>
+  <title> 树莓派装系统 | 我爱做梦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -208,7 +196,7 @@ undefined
           
           
             
-              \r 和 \n 的差异
+              树莓派装系统
             
           
         </h1>
@@ -217,8 +205,8 @@ undefined
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2013-12-09T16:01:44+08:00" content="2013-12-09">
-            2013-12-09
+          <time itemprop="dateCreated" datetime="2014-09-03T16:45:00+08:00" content="2014-09-03">
+            2014-09-03
           </time>
         </span>
 
@@ -227,8 +215,8 @@ undefined
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Other/" itemprop="url" rel="index">
-                  <span itemprop="name">Other</span>
+                <a href="/categories/Linux/" itemprop="url" rel="index">
+                  <span itemprop="name">Linux</span>
                 </a>
               </span>
 
@@ -243,8 +231,8 @@ undefined
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2013/line-break/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2013/line-break/" itemprop="commentsCount"></span>
+              <a href="/2014/raspberry-pi/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2014/raspberry-pi/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -258,35 +246,46 @@ undefined
       
 
       
-        <span itemprop="articleBody"><p>前段时间在写一个处理文件小程序的时候碰到的一个坑，记录下。</p>
-<h4 id="问题">问题</h4><p>表现如下：</p>
-<pre><code>&gt; <span class="built_in">console</span>.log(<span class="string">'hello\n world'</span>);
-hello
- world
-<span class="literal">undefined</span>
-&gt; <span class="built_in">console</span>.log(<span class="string">'hello\r world'</span>);
- world
-<span class="literal">undefined</span>
-</code></pre><h4 id="原因">原因</h4><p>‘ \r’是回车,使光标到行首</p>
-<p>‘\n’是换行,光标下移一格</p>
-<p>在Unix下，每行结尾只有一个 \n<br>而 window 下，则是 \n\r</p>
-<p>P.S. 一般编程语言会提供一些特殊的变量适应不同操作系统，类似目录分割符那样的，换行符在 Node.js 中是：require(‘os’).EOL 。</p>
+        <span itemprop="articleBody"><p>最近手上没什么事，正好公司买了几个树莓派有空闲的，于是乎，决定从零开始折腾一下。</p>
+<ol>
+<li><p>从树莓派的官网<a href="http://www.raspberrypi.org/downloads" target="_blank" rel="external">http://www.raspberrypi.org/downloads</a>上下载系统的镜像。</p>
+</li>
+<li><p>刻录系统</p>
+<p> $ diskutil list</p>
+<p> $ diskutil unmountDisk /dev/disk1</p>
+<p> $ sudo dd bs=1m if=ArchLinuxARM-2014.06-rpi.img of=/dev/disk1</p>
+<p> $ sudo diskutil eject /dev/disk1</p>
+</li>
+<li><p>接上电源，就自动开机运行了，然后再接上网线，就可以ssh连过去了。</p>
+</li>
+</ol>
+<p>好吧，就这样就可以在上面装上各种软件跑了。。。</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
+          
+            <a href="/tags/Raspberry-Pi/" rel="tag">#Raspberry-Pi</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2013/BOM/" rel="prev">UTF-8 中的 'efbb'</a>
+              <a href="/2014/ubuntu-mount/" rel="prev">Ubuntu挂载硬盘</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/BOM/" rel="next">UTF-8 中的 'efbb'</a>
             
           </div>
         </div>
@@ -311,8 +310,8 @@ hello
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2013/line-break/"
-                   data-title="\r 和 \n 的差异" data-url="http://woaizuomeng.com/2013/line-break/">
+              <div class="ds-thread" data-thread-key="2014/raspberry-pi/"
+                   data-title="树莓派装系统" data-url="http://woaizuomeng.com/2014/raspberry-pi/">
               </div>
             
           </div>
@@ -394,7 +393,7 @@ hello
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原因"><span class="nav-number">2.</span> <span class="nav-text">原因</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
