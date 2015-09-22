@@ -68,6 +68,7 @@ theme: next
 # Add config for theme next
 avatar: https://gravatar.com/avatar/124ea13daf1648975e002b3c5e89d7e2
 duoshuo_shortname: woaizm
+disqus_shortname: liucw
 baidu_analytics: 5895d35ae89c567653795cd78e35e990
 google_analytics: UA-49304532-3
 # sidebar: hide
