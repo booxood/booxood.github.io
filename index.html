@@ -185,6 +185,122 @@
           
           
             
+              <a class="post-title-link" href="/2015/elasticsearch-1/" itemprop="url">
+                Elasticsearch 学习笔记 1
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-23T16:24:24+08:00" content="2015-09-23">
+            2015-09-23
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Elasticsearch/" itemprop="url" rel="index">
+                  <span itemprop="name">Elasticsearch</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/elasticsearch-1/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/elasticsearch-1/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>Elasticsearch 是一个开源的搜索引擎，基于 Lucene（被认为是迄今为止最先进、性能最好的、功能最全的搜索引擎库）。</p>
+<h4 id="安装">安装</h4><p>唯一依赖 Java，如果没有则先安装 Java。</p>
+<p>Elasticsearch 安装包可以从<a href="http://www.elasticsearch.org/download/" target="_blank" rel="external">这里</a>下载。</p>
+<h4 id="运行">运行</h4><p>将压缩包解压后并可以直接运行<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./<span class="keyword">bin/elasticsearch </span>-d</span><br></pre></td></tr></table></figure></p>
+<p>加上参数 <code>-d</code> 以守护进程的方式运行。</p>
+<p>测试安装是否成功<br><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl <span class="string">'http</span>:<span class="comment">//localhost:9200/?pretty'</span></span><br></pre></td></tr></table></figure></p>
+<p>如果看到一下回复信息则表明安装成功。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">status</span>" : <span class="value"><span class="number">200</span></span>,</span><br><span class="line">  "<span class="attribute">name</span>" : <span class="value"><span class="string">"Paul Bailey"</span></span>,</span><br><span class="line">  "<span class="attribute">cluster_name</span>" : <span class="value"><span class="string">"elasticsearch"</span></span>,</span><br><span class="line">  "<span class="attribute">version</span>" : <span class="value">&#123;</span><br><span class="line">    "<span class="attribute">number</span>" : <span class="value"><span class="string">"1.7.2"</span></span>,</span><br><span class="line">    "<span class="attribute">build_hash</span>" : <span class="value"><span class="string">"e43676b1385b8125d647f593f7202acbd816e8ec"</span></span>,</span><br><span class="line">    "<span class="attribute">build_timestamp</span>" : <span class="value"><span class="string">"2015-09-14T09:49:53Z"</span></span>,</span><br><span class="line">    "<span class="attribute">build_snapshot</span>" : <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">    "<span class="attribute">lucene_version</span>" : <span class="value"><span class="string">"4.10.4"</span></span><br><span class="line">  </span>&#125;</span>,</span><br><span class="line">  "<span class="attribute">tagline</span>" : <span class="value"><span class="string">"You Know, for Search"</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="RESTful_API">RESTful API</h4><p>Elasticsearch 为 Java 用户提供了两种内置客户端：节点客户端(node client)和传输客户端(Transport client)。而其他语言则可以通过 RESTful API 进行交互。</p>
+<p>默认提供 RESTful API 的端口是 9200，以 JSON 数据进行交互。</p>
+<p>可以直接用<code>curl</code>发送请求，例如：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">curl -XPUT <span class="string">"http://120.25.84.82:9200/megacorp/employee/2"</span> -d'</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"first_name"</span> :  <span class="string">"Jane"</span>,</span><br><span class="line">    <span class="string">"last_name"</span> :   <span class="string">"Smith"</span>,</span><br><span class="line">    <span class="string">"age"</span> :         <span class="number">32</span>,</span><br><span class="line">    <span class="string">"about"</span> :       <span class="string">"I like to collect rock albums"</span>,</span><br><span class="line">    <span class="string">"interests"</span>:  [ <span class="string">"music"</span> ]</span><br><span class="line">&#125;'</span><br></pre></td></tr></table></figure></p>
+<p>或者使用<code>marvel</code>这个插件，下面的示例都使用的这个插件。</p>
+<blockquote>
+<p>安装插件 <code>./bin/plugin -i elasticsearch/marvel/latest</code><br>访问 <code>http://localhost:9200/_plugin/marvel/sense/index.html</code></p>
+</blockquote>
+<h5 id="创建">创建</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PUT /megacorp/employee/<span class="number">2</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"first_name"</span> :  <span class="string">"Jane"</span>,</span><br><span class="line">    <span class="string">"last_name"</span> :   <span class="string">"Smith"</span>,</span><br><span class="line">    <span class="string">"age"</span> :         <span class="number">32</span>,</span><br><span class="line">    <span class="string">"about"</span> :       <span class="string">"I like to collect rock albums"</span>,</span><br><span class="line">    <span class="string">"interests"</span>:  [ <span class="string">"music"</span> ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="查询单个">查询单个</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /megacorp/employee/<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>返回的结果中，原始 JSON 文档在 <code>_source</code> 字段中</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   "<span class="attribute">_index</span>": <span class="value"><span class="string">"megacorp"</span></span>,</span><br><span class="line">   "<span class="attribute">_type</span>": <span class="value"><span class="string">"employee"</span></span>,</span><br><span class="line">   "<span class="attribute">_id</span>": <span class="value"><span class="string">"2"</span></span>,</span><br><span class="line">   "<span class="attribute">_version</span>": <span class="value"><span class="number">1</span></span>,</span><br><span class="line">   "<span class="attribute">found</span>": <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">   "<span class="attribute">_source</span>": <span class="value">&#123;</span><br><span class="line">      "<span class="attribute">first_name</span>": <span class="value"><span class="string">"Jane"</span></span>,</span><br><span class="line">      "<span class="attribute">last_name</span>": <span class="value"><span class="string">"Smith"</span></span>,</span><br><span class="line">      "<span class="attribute">age</span>": <span class="value"><span class="number">32</span></span>,</span><br><span class="line">      "<span class="attribute">about</span>": <span class="value"><span class="string">"I like to collect rock albums"</span></span>,</span><br><span class="line">      "<span class="attribute">interests</span>": <span class="value">[</span><br><span class="line">         <span class="string">"music"</span></span><br><span class="line">      ]</span><br><span class="line">   </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="简单搜索">简单搜索</h5><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET <span class="regexp">/megacorp/</span>employee<span class="regexp">/_search</span></span><br></pre></td></tr></table></figure>
+<p>返回结果，默认返回前10个结果。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   "<span class="attribute">took</span>": <span class="value"><span class="number">2</span></span>,</span><br><span class="line">   "<span class="attribute">timed_out</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">   "<span class="attribute">_shards</span>": <span class="value">&#123;</span><br><span class="line">      "<span class="attribute">total</span>": <span class="value"><span class="number">5</span></span>,</span><br><span class="line">      "<span class="attribute">successful</span>": <span class="value"><span class="number">5</span></span>,</span><br><span class="line">      "<span class="attribute">failed</span>": <span class="value"><span class="number">0</span></span><br><span class="line">   </span>&#125;</span>,</span><br><span class="line">   "<span class="attribute">hits</span>": <span class="value">&#123;</span><br><span class="line">      "<span class="attribute">total</span>": <span class="value"><span class="number">3</span></span>,</span><br><span class="line">      "<span class="attribute">max_score</span>": <span class="value"><span class="number">1</span></span>,</span><br><span class="line">      "<span class="attribute">hits</span>": <span class="value">[</span><br><span class="line">         &#123;</span><br><span class="line">            "<span class="attribute">_index</span>": <span class="value"><span class="string">"megacorp"</span></span>,</span><br><span class="line">            "<span class="attribute">_type</span>": <span class="value"><span class="string">"employee"</span></span>,</span><br><span class="line">            "<span class="attribute">_id</span>": <span class="value"><span class="string">"1"</span></span>,</span><br><span class="line">            "<span class="attribute">_score</span>": <span class="value"><span class="number">1</span></span>,</span><br><span class="line">            "<span class="attribute">_source</span>": <span class="value">&#123;</span><br><span class="line">               "<span class="attribute">first_name</span>": <span class="value"><span class="string">"John"</span></span>,</span><br><span class="line">               "<span class="attribute">last_name</span>": <span class="value"><span class="string">"Smith"</span></span>,</span><br><span class="line">               "<span class="attribute">age</span>": <span class="value"><span class="number">25</span></span>,</span><br><span class="line">               "<span class="attribute">about</span>": <span class="value"><span class="string">"I love to go rock climbing"</span></span>,</span><br><span class="line">               "<span class="attribute">interests</span>": <span class="value">[</span><br><span class="line">                  <span class="string">"sports"</span>,</span><br><span class="line">                  <span class="string">"music"</span></span><br><span class="line">               ]</span><br><span class="line">            </span>&#125;</span><br><span class="line">         </span>&#125;,</span><br><span class="line">         &#123;</span><br><span class="line">            "<span class="attribute">_index</span>": <span class="value"><span class="string">"megacorp"</span></span>,</span><br><span class="line">            "<span class="attribute">_type</span>": <span class="value"><span class="string">"employee"</span></span>,</span><br><span class="line">            "<span class="attribute">_id</span>": <span class="value"><span class="string">"2"</span></span>,</span><br><span class="line">            "<span class="attribute">_score</span>": <span class="value"><span class="number">1</span></span>,</span><br><span class="line">            "<span class="attribute">_source</span>": <span class="value">&#123;</span><br><span class="line">               "<span class="attribute">first_name</span>": <span class="value"><span class="string">"Jane"</span></span>,</span><br><span class="line">               "<span class="attribute">last_name</span>": <span class="value"><span class="string">"Smith"</span></span>,</span><br><span class="line">               "<span class="attribute">age</span>": <span class="value"><span class="number">32</span></span>,</span><br><span class="line">               "<span class="attribute">about</span>": <span class="value"><span class="string">"I like to collect rock albums"</span></span>,</span><br><span class="line">               "<span class="attribute">interests</span>": <span class="value">[</span><br><span class="line">                  <span class="string">"music"</span></span><br><span class="line">               ]</span><br><span class="line">            </span>&#125;</span><br><span class="line">         </span>&#125;,</span><br><span class="line"></span><br><span class="line">         ...</span><br><span class="line"></span><br><span class="line">      ]</span><br><span class="line">   </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="简单搜索带条件">简单搜索带条件</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET <span class="regexp">/megacorp/</span>employee/_search?q=first_name:John</span><br></pre></td></tr></table></figure>
+<p><strong>DSL查询(Query DSL)</strong></p>
+<p>DSL(Domain Specific Language 特定领域语言)以 JSON 请求体的形式出现。</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /megacorp/employee/_search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"query"</span> : &#123;</span><br><span class="line">        <span class="string">"match"</span> : &#123;</span><br><span class="line">            <span class="string">"first_name"</span> : <span class="string">"John"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>还支持很多复杂的查询，以后在具体介绍。</p>
+<h5 id="全文搜索">全文搜索</h5><p>这个功能一般的数据库是没有提供的。例如：搜索所有喜欢“rock climbing”的员工。</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /megacorp/employee/_search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"query"</span> : &#123;</span><br><span class="line">        <span class="string">"match"</span> : &#123;</span><br><span class="line">            <span class="string">"about"</span> : <span class="string">"rock climbing"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>返回的结果，默认是按<code>相似匹配度</code>来排序的，<code>_score</code>是这条记录的<code>相关性评分</code>。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   "<span class="attribute">took</span>": <span class="value"><span class="number">3</span></span>,</span><br><span class="line">   "<span class="attribute">timed_out</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">   "<span class="attribute">_shards</span>": <span class="value">&#123;</span><br><span class="line">      "<span class="attribute">total</span>": <span class="value"><span class="number">5</span></span>,</span><br><span class="line">      "<span class="attribute">successful</span>": <span class="value"><span class="number">5</span></span>,</span><br><span class="line">      "<span class="attribute">failed</span>": <span class="value"><span class="number">0</span></span><br><span class="line">   </span>&#125;</span>,</span><br><span class="line">   "<span class="attribute">hits</span>": <span class="value">&#123;</span><br><span class="line">      "<span class="attribute">total</span>": <span class="value"><span class="number">2</span></span>,</span><br><span class="line">      "<span class="attribute">max_score</span>": <span class="value"><span class="number">0.16273327</span></span>,</span><br><span class="line">      "<span class="attribute">hits</span>": <span class="value">[</span><br><span class="line">         &#123;</span><br><span class="line">            "<span class="attribute">_index</span>": <span class="value"><span class="string">"megacorp"</span></span>,</span><br><span class="line">            "<span class="attribute">_type</span>": <span class="value"><span class="string">"employee"</span></span>,</span><br><span class="line">            "<span class="attribute">_id</span>": <span class="value"><span class="string">"1"</span></span>,</span><br><span class="line">            "<span class="attribute">_score</span>": <span class="value"><span class="number">0.16273327</span></span>,</span><br><span class="line">            "<span class="attribute">_source</span>": <span class="value">&#123;</span><br><span class="line">               "<span class="attribute">first_name</span>": <span class="value"><span class="string">"John"</span></span>,</span><br><span class="line">               "<span class="attribute">last_name</span>": <span class="value"><span class="string">"Smith"</span></span>,</span><br><span class="line">               "<span class="attribute">age</span>": <span class="value"><span class="number">25</span></span>,</span><br><span class="line">               "<span class="attribute">about</span>": <span class="value"><span class="string">"I love to go rock climbing"</span></span>,</span><br><span class="line">               "<span class="attribute">interests</span>": <span class="value">[</span><br><span class="line">                  <span class="string">"sports"</span>,</span><br><span class="line">                  <span class="string">"music"</span></span><br><span class="line">               ]</span><br><span class="line">            </span>&#125;</span><br><span class="line">         </span>&#125;,</span><br><span class="line">         &#123;</span><br><span class="line">            "<span class="attribute">_index</span>": <span class="value"><span class="string">"megacorp"</span></span>,</span><br><span class="line">            "<span class="attribute">_type</span>": <span class="value"><span class="string">"employee"</span></span>,</span><br><span class="line">            "<span class="attribute">_id</span>": <span class="value"><span class="string">"2"</span></span>,</span><br><span class="line">            "<span class="attribute">_score</span>": <span class="value"><span class="number">0.016878016</span></span>,</span><br><span class="line">            "<span class="attribute">_source</span>": <span class="value">&#123;</span><br><span class="line">               "<span class="attribute">first_name</span>": <span class="value"><span class="string">"Jane"</span></span>,</span><br><span class="line">               "<span class="attribute">last_name</span>": <span class="value"><span class="string">"Smith"</span></span>,</span><br><span class="line">               "<span class="attribute">age</span>": <span class="value"><span class="number">32</span></span>,</span><br><span class="line">               "<span class="attribute">about</span>": <span class="value"><span class="string">"I like to collect rock albums"</span></span>,</span><br><span class="line">               "<span class="attribute">interests</span>": <span class="value">[</span><br><span class="line">                  <span class="string">"music"</span></span><br><span class="line">               ]</span><br><span class="line">            </span>&#125;</span><br><span class="line">         </span>&#125;</span><br><span class="line">      ]</span><br><span class="line">   </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="短语搜索">短语搜索</h5><p>匹配若干个关键字，使用<code>match_phrase</code>。</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /megacorp/employee/_search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"query"</span> : &#123;</span><br><span class="line">        <span class="string">"match_phrase"</span> : &#123;</span><br><span class="line">            <span class="string">"about"</span> : <span class="string">"rock climbing"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>RESTful API 提供了很多很强大的接口，可以方便的进行搜索、聚合等操作，这里只是简单介绍了下，具体详细的请看相关文档。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/sublime-text-shortcut-key/" itemprop="url">
                 Sublime Text 快捷键
               </a>
@@ -1164,21 +1280,21 @@ hello
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
