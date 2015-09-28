@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Linux," />
+  <meta name="keywords" content="Node.js," />
 
 
 
@@ -39,28 +39,25 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="平时经常需要让程序在后台运行，一般都是在命令结尾加”&amp;amp;“。如果需要在关闭终端也能运行，就在带上nohup，如：nohup ping xxx.com &amp;gt; /dev/null &amp;amp;。
-其实还有很多命令可以做到，而且更加灵活，像setsid、disown。特别是disown和jobs配合。这里有篇文章说的很详细。
-再补充下 jobs相关的命令：
-
-   jobs        //查">
+<meta name="description" content="在 Node.js 环境中和浏览器环境中，this 绝大多时候的表现是一样的。唯一不同的就是在全局运行上下文中。因为在全局运行上下文中，this 指向全局对象，无论是否在严格模式下。
+浏览器环境中，全局对象是window。而 Node.js 环境中，全局对象是 global。所以，造成了两者之间的不同。
+另外，在 Node.js 环境中，也还有一点不同。
+当在 RELP 中时12345$ node">
 <meta property="og:type" content="article">
-<meta property="og:title" content="程序后台运行">
-<meta property="og:url" content="http://blog.woaizuomeng.com/2014/background-run/index.html">
+<meta property="og:title" content="Node.js 中的 this">
+<meta property="og:url" content="http://blog.woaizuomeng.com/2015/nodejs-this/index.html">
 <meta property="og:site_name" content="我爱做梦">
-<meta property="og:description" content="平时经常需要让程序在后台运行，一般都是在命令结尾加”&amp;amp;“。如果需要在关闭终端也能运行，就在带上nohup，如：nohup ping xxx.com &amp;gt; /dev/null &amp;amp;。
-其实还有很多命令可以做到，而且更加灵活，像setsid、disown。特别是disown和jobs配合。这里有篇文章说的很详细。
-再补充下 jobs相关的命令：
-
-   jobs        //查">
-<meta property="og:updated_time" content="2015-09-17T12:34:19.000Z">
+<meta property="og:description" content="在 Node.js 环境中和浏览器环境中，this 绝大多时候的表现是一样的。唯一不同的就是在全局运行上下文中。因为在全局运行上下文中，this 指向全局对象，无论是否在严格模式下。
+浏览器环境中，全局对象是window。而 Node.js 环境中，全局对象是 global。所以，造成了两者之间的不同。
+另外，在 Node.js 环境中，也还有一点不同。
+当在 RELP 中时12345$ node">
+<meta property="og:updated_time" content="2015-09-28T09:51:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="程序后台运行">
-<meta name="twitter:description" content="平时经常需要让程序在后台运行，一般都是在命令结尾加”&amp;amp;“。如果需要在关闭终端也能运行，就在带上nohup，如：nohup ping xxx.com &amp;gt; /dev/null &amp;amp;。
-其实还有很多命令可以做到，而且更加灵活，像setsid、disown。特别是disown和jobs配合。这里有篇文章说的很详细。
-再补充下 jobs相关的命令：
-
-   jobs        //查">
+<meta name="twitter:title" content="Node.js 中的 this">
+<meta name="twitter:description" content="在 Node.js 环境中和浏览器环境中，this 绝大多时候的表现是一样的。唯一不同的就是在全局运行上下文中。因为在全局运行上下文中，this 指向全局对象，无论是否在严格模式下。
+浏览器环境中，全局对象是window。而 Node.js 环境中，全局对象是 global。所以，造成了两者之间的不同。
+另外，在 Node.js 环境中，也还有一点不同。
+当在 RELP 中时12345$ node">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -70,7 +67,7 @@
   };
 </script>
 
-  <title> 程序后台运行 | 我爱做梦 </title>
+  <title> Node.js 中的 this | 我爱做梦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -196,7 +193,7 @@
           
           
             
-              程序后台运行
+              Node.js 中的 this
             
           
         </h1>
@@ -205,8 +202,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2014-10-11T12:25:00+08:00" content="2014-10-11">
-            2014-10-11
+          <time itemprop="dateCreated" datetime="2015-09-28T11:24:15+08:00" content="2015-09-28">
+            2015-09-28
           </time>
         </span>
 
@@ -215,8 +212,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Linux/" itemprop="url" rel="index">
-                  <span itemprop="name">Linux</span>
+                <a href="/categories/Node-js/" itemprop="url" rel="index">
+                  <span itemprop="name">Node.js</span>
                 </a>
               </span>
 
@@ -231,8 +228,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2014/background-run/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/background-run/" itemprop="commentsCount"></span>
+            <a href="/2015/nodejs-this/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/nodejs-this/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -246,22 +243,21 @@
       
 
       
-        <span itemprop="articleBody"><p>平时经常需要让程序在后台运行，一般都是在命令结尾加”&amp;“。如果需要在关闭终端也能运行，就在带上nohup，如：nohup ping xxx.com &gt; /dev/null &amp;。</p>
-<p>其实还有很多命令可以做到，而且更加灵活，像setsid、disown。特别是disown和jobs配合。这里有篇<a href="http://www.ibm.com/developerworks/cn/linux/l-cn-nohup/" target="_blank" rel="external">文章</a>说的很详细。</p>
-<p>再补充下 jobs相关的命令：</p>
-<blockquote>
-<p>   jobs        //查看任务，返回任务编号n和进程号</p>
-<p>   bg  %n   //将编号为n的任务转后台运行</p>
-<p>   fg  %n   //将编号为n的任务转前台运行</p>
-<p>   ctrl+z    //挂起当前任务</p>
-<p>   ctrl+c    //结束当前任务</p>
-</blockquote>
-<p>最后再介绍一个很强大的工具，tmux。之前我一直都是把它当分屏工具时候，其实它也可以做到。</p>
-<blockquote>
-<p>   tmux ls    //列出挂起的窗口</p>
-<p>   tmux a -t %n    //进入 %n 编号的窗口</p>
-<p>   (tmux)ctrl+b d    //将现在所处的窗口挂起</p>
-</blockquote>
+        <span itemprop="articleBody"><p>在 Node.js 环境中和浏览器环境中，<code>this</code> 绝大多时候的表现是一样的。唯一不同的就是在全局运行上下文中。<br>因为在全局运行上下文中，<code>this</code> 指向<strong>全局对象</strong>，无论是否在严格模式下。</p>
+<p>浏览器环境中，全局对象是<code>window</code>。而 Node.js 环境中，全局对象是 <code>global</code>。<br>所以，造成了两者之间的不同。</p>
+<p>另外，在 Node.js 环境中，也还有一点不同。</p>
+<p>当在 <code>RELP</code> 中时<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ node</span><br><span class="line">&gt; <span class="keyword">this</span> === <span class="built_in">global</span></span><br><span class="line"><span class="literal">true</span></span><br><span class="line">&gt; <span class="keyword">this</span> === <span class="built_in">module</span>.exports</span><br><span class="line"><span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+<p><code>this</code> 是指向 <code>global</code> 的，跟预期的一致。</p>
+<p>但如果是用 <code>node xx.js</code> 的方式运行下面的代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'Func out:'</span>, <span class="keyword">this</span> === <span class="built_in">module</span>.exports); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Func out:'</span>, <span class="keyword">this</span> === global); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Func in:'</span>, <span class="keyword">this</span> === <span class="built_in">module</span>.exports); <span class="comment">// false</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Func in:'</span>, <span class="keyword">this</span> === global); <span class="comment">// true</span></span><br><span class="line">&#125;</span><br><span class="line">func();</span><br></pre></td></tr></table></figure></p>
+<p>在函数外面的 <code>this</code> 不是指向 <code>global</code>，而是指向 <code>module.exports</code>。</p>
+<p>因为通过 <code>node xx.js</code> 方式运行，其实是先将 <code>xx.js</code> 以文件模块的形式加载，然后再编译，执行。</p>
+<p>主要的代码逻辑在<a href="https://github.com/nodejs/node/blob/master/lib/module.js#L434" target="_blank" rel="external">这里</a><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Run the file contents in the correct scope or sandbox. Expose</span></span><br><span class="line"><span class="comment">// the correct helper variables (require, module, exports) to</span></span><br><span class="line"><span class="comment">// the file.</span></span><br><span class="line"><span class="comment">// Returns exception, if any.</span></span><br><span class="line">Module.prototype._compile = <span class="function"><span class="keyword">function</span><span class="params">(content, filename)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> <span class="keyword">self</span> = this;</span><br><span class="line"></span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line">  <span class="comment">// create wrapper function</span></span><br><span class="line">  <span class="keyword">var</span> wrapper = Module.wrap(content);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> compiledWrapper = runInThisContext(wrapper, &#123; filename: filename &#125;);</span><br><span class="line"></span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> args = [<span class="keyword">self</span>.exports, <span class="keyword">require</span>, <span class="keyword">self</span>, filename, dirname];</span><br><span class="line">  <span class="keyword">return</span> compiledWrapper.apply(<span class="keyword">self</span>.exports, args);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p><code>content</code> 是源代码的内容，经过</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> wrapper</span> = Module.wrap(content);</span><br><span class="line"></span><br><span class="line"><span class="variable"><span class="keyword">var</span> compiledWrapper</span> = runInThisContext(wrapper, &#123; filename: filename &#125;);</span><br></pre></td></tr></table></figure>
+<p>处理后，代码会变成</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">exports, require, module, __filename, __dirname</span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'Func out:'</span>, <span class="keyword">this</span> === <span class="built_in">module</span>.exports); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Func out:'</span>, <span class="keyword">this</span> === global); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Func in:'</span>, <span class="keyword">this</span> === <span class="built_in">module</span>.exports); <span class="comment">// false</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Func in:'</span>, <span class="keyword">this</span> === global); <span class="comment">// true</span></span><br><span class="line">&#125;</span><br><span class="line">func();</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>然后调用执行<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">compiledWrapper</span><span class="class">.apply</span>(<span class="tag">self</span><span class="class">.exports</span>, <span class="tag">args</span>);</span><br></pre></td></tr></table></figure></p>
+<p>通过 <code>apply</code> 将上下文设置为 <code>self.exports</code>，而 <code>self</code> 也就是 <code>Module.prototype</code>（<code>Module</code> 的实例对象 <code>module</code>），所以，<code>this === module.exports</code>。</p>
 </span>
       
     </div>
@@ -270,7 +266,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag">#Linux</a>
+            <a href="/tags/Node-js/" rel="tag">#Node.js</a>
           
         </div>
       
@@ -279,13 +275,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/nodejs-handle-excel/" rel="prev">Node.js Handle Excel</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/ubuntu-mount/" rel="next">Ubuntu 挂载硬盘</a>
+              <a href="/2015/elasticsearch-1/" rel="next">Elasticsearch 学习笔记 1</a>
             
           </div>
         </div>
@@ -447,9 +441,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'woaizm';
-      var disqus_identifier = '2014/background-run/';
-      var disqus_title = '程序后台运行';
-      var disqus_url = 'http://blog.woaizuomeng.com/2014/background-run/';
+      var disqus_identifier = '2015/nodejs-this/';
+      var disqus_title = 'Node.js 中的 this';
+      var disqus_url = 'http://blog.woaizuomeng.com/2015/nodejs-this/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

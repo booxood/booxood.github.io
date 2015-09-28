@@ -186,7 +186,7 @@
             目前共计 7 个标签
         </div>
         <div class="tag-cloud-tags">
-          <a href="/tags/Elasticsearch/" style="font-size: 12px; color: #ccc">Elasticsearch</a> <a href="/tags/Javascript/" style="font-size: 12px; color: #ccc">Javascript</a> <a href="/tags/Linux/" style="font-size: 30px; color: #111">Linux</a> <a href="/tags/Mac/" style="font-size: 12px; color: #ccc">Mac</a> <a href="/tags/Node-js/" style="font-size: 12px; color: #ccc">Node.js</a> <a href="/tags/Raspberry-Pi/" style="font-size: 12px; color: #ccc">Raspberry-Pi</a> <a href="/tags/Sublime-Text/" style="font-size: 12px; color: #ccc">Sublime-Text</a>
+          <a href="/tags/Elasticsearch/" style="font-size: 12px; color: #ccc">Elasticsearch</a> <a href="/tags/Javascript/" style="font-size: 12px; color: #ccc">Javascript</a> <a href="/tags/Linux/" style="font-size: 30px; color: #111">Linux</a> <a href="/tags/Mac/" style="font-size: 12px; color: #ccc">Mac</a> <a href="/tags/Node-js/" style="font-size: 21px; color: #6f6f6f">Node.js</a> <a href="/tags/Raspberry-Pi/" style="font-size: 12px; color: #ccc">Raspberry-Pi</a> <a href="/tags/Sublime-Text/" style="font-size: 12px; color: #ccc">Sublime-Text</a>
         </div>
       </div>
     
@@ -223,7 +223,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -302,26 +302,30 @@
   
   
     
+    
 
   
-    
+
+    <script type="text/javascript">
+      var disqus_shortname = 'woaizm';
+      var disqus_identifier = 'tags/index.html';
+      var disqus_title = 'tags';
+      var disqus_url = 'http://blog.woaizuomeng.com/tags/index.html';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+    </script>
   
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"woaizm"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-    
-     
 
-    
   
   
   <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>

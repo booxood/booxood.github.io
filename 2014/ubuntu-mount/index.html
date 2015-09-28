@@ -236,11 +236,11 @@ Units = sectors of 1 * 512 = 512 bytes
         
           
             <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2014/ubuntu-mount/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2014/ubuntu-mount/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+            &nbsp; | &nbsp;
+            <a href="/2014/ubuntu-mount/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/ubuntu-mount/" itemprop="commentsCount"></span>
+            </a>
+          </span>
           
         
       </div>
@@ -345,8 +345,8 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2014/ubuntu-mount/"
-                   data-title="Ubuntu 挂载硬盘" data-url="http://blog.woaizuomeng.com/2014/ubuntu-mount/">
+              <div id="disqus_thread">
+                <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
               </div>
             
           </div>
@@ -386,7 +386,7 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -476,26 +476,32 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
   
   
     
+    
 
   
-    
+
+    <script type="text/javascript">
+      var disqus_shortname = 'woaizm';
+      var disqus_identifier = '2014/ubuntu-mount/';
+      var disqus_title = 'Ubuntu 挂载硬盘';
+      var disqus_url = 'http://blog.woaizuomeng.com/2014/ubuntu-mount/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
   
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"woaizm"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-    
-     
 
-    
   
   
   <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>

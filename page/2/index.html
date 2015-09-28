@@ -42,7 +42,7 @@
 <meta name="description" content="我爱做梦的描述">
 <meta property="og:type" content="website">
 <meta property="og:title" content="我爱做梦">
-<meta property="og:url" content="http://blog.woaizuomeng.com/archives/2015/06/index.html">
+<meta property="og:url" content="http://blog.woaizuomeng.com/page/2/index.html">
 <meta property="og:site_name" content="我爱做梦">
 <meta property="og:description" content="我爱做梦的描述">
 <meta name="twitter:card" content="summary">
@@ -57,7 +57,7 @@
   };
 </script>
 
-  <title> 归档 | 我爱做梦 </title>
+  <title> 我爱做梦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -94,7 +94,9 @@
 
 
 
-  <div class="container one-column  page-archive ">
+  <div class="container one-column 
+   page-home 
+">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -170,91 +172,110 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div id="content" class="content"> 
-
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 11 篇日志。 继续努力。
-    </span>
-
+  <section id="posts" class="posts-expand">
     
-
-      
-      
       
 
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2015">2015</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal"itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/sublime-text-shortcut-key/" itemprop="url">
-              <span itemprop="name">Sublime Text 快捷键</span>
-            </a>
-        
-      </h1>
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/line-break/" itemprop="url">
+                \r 和 \n 的差异
+              </a>
+            
+          
+        </h1>
+      
 
       <div class="post-meta">
-        <time class="post-time" datetime="2015-06-17T04:13:00.000Z" itemprop="dateCreated" content="2015-06-17"> 06-17 </time>
-      </div>
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2013-12-09T16:01:44+08:00" content="2013-12-09">
+            2013-12-09
+          </time>
+        </span>
 
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Other/" itemprop="url" rel="index">
+                  <span itemprop="name">Other</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2013/line-break/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/line-break/" itemprop="commentsCount"></span>
+            </a>
+          </span>
+          
+        
+      </div>
     </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>前段时间在写一个处理文件小程序的时候碰到的一个坑，记录下。</p>
+<h4 id="问题">问题</h4><p>表现如下：</p>
+<pre><code>&gt; <span class="built_in">console</span>.log(<span class="string">'hello\n world'</span>);
+hello
+ world
+<span class="literal">undefined</span>
+&gt; <span class="built_in">console</span>.log(<span class="string">'hello\r world'</span>);
+ world
+<span class="literal">undefined</span>
+</code></pre><h4 id="原因">原因</h4><p>‘ \r’是回车,使光标到行首</p>
+<p>‘\n’是换行,光标下移一格</p>
+<p>在Unix下，每行结尾只有一个 \n<br>而 window 下，则是 \n\r</p>
+<p>P.S. 一般编程语言会提供一些特殊的变量适应不同操作系统，类似目录分割符那样的，换行符在 Node.js 中是：require(‘os’).EOL 。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </article>
 
 
-
     
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal"itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/javascript-float/" itemprop="url">
-              <span itemprop="name">Javascript 的浮点数运算</span>
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" datetime="2015-06-01T07:49:00.000Z" itemprop="dateCreated" content="2015-06-01"> 06-01 </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
   </section>
 
   
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/">&laquo;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
 
  </div>
 
@@ -365,12 +386,6 @@
   
   
   
-    <script type="text/javascript">
-      postMotionOptions = {stagger: 100, drag: true};
-    </script>
-  
-
-  
     
     
 
@@ -378,7 +393,7 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'woaizm';
-      var disqus_identifier = 'archives/2015/06/index.html';
+      var disqus_identifier = 'page/2/index.html';
       var disqus_title = '';
       var disqus_url = '';
 
@@ -417,12 +432,6 @@
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
-
 
   <script type="text/javascript">
     $(document).ready(function () {

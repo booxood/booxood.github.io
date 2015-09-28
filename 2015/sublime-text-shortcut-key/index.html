@@ -239,11 +239,11 @@ Command + Shift + r：在当前项目内，快速搜索函数（对于 javascrip
         
           
             <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/sublime-text-shortcut-key/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/sublime-text-shortcut-key/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+            &nbsp; | &nbsp;
+            <a href="/2015/sublime-text-shortcut-key/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/sublime-text-shortcut-key/" itemprop="commentsCount"></span>
+            </a>
+          </span>
           
         
       </div>
@@ -352,8 +352,8 @@ Command + Shift + r：在当前项目内，快速搜索函数（对于 javascrip
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/sublime-text-shortcut-key/"
-                   data-title="Sublime Text 快捷键" data-url="http://blog.woaizuomeng.com/2015/sublime-text-shortcut-key/">
+              <div id="disqus_thread">
+                <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
               </div>
             
           </div>
@@ -393,7 +393,7 @@ Command + Shift + r：在当前项目内，快速搜索函数（对于 javascrip
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -483,26 +483,32 @@ Command + Shift + r：在当前项目内，快速搜索函数（对于 javascrip
   
   
     
+    
 
   
-    
+
+    <script type="text/javascript">
+      var disqus_shortname = 'woaizm';
+      var disqus_identifier = '2015/sublime-text-shortcut-key/';
+      var disqus_title = 'Sublime Text 快捷键';
+      var disqus_url = 'http://blog.woaizuomeng.com/2015/sublime-text-shortcut-key/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
   
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"woaizm"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-    
-     
 
-    
   
   
   <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
