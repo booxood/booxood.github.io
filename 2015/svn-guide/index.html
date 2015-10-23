@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Linux,Raspberry-Pi," />
+  <meta name="keywords" content="SVN," />
 
 
 
@@ -39,37 +39,34 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="最近手上没什么事，正好公司买了几个树莓派有空闲的，于是乎，决定从零开始折腾一下。
+<meta name="description" content="很久没用 SVN 了，最基本的命令都忘了，重新熟悉下并记录下来。
 
-从树莓派的官网http://www.raspberrypi.org/downloads上下载系统的镜像。
+克隆代码
 
-刻录系统
- $ diskutil list
- $ diskutil unmountDisk /dev/disk1
- $ sudo dd bs=1m if=ArchLinuxARM-2014.06-rpi.im">
+svn checkout http://xxx/svn/git-svn-practice/
+一般会生成类似下面这样的目录结构，trunk 类似 git 里的 master 分支， branches、tags 这些目录下的 feature1、v1.0 目录也是分支，不过 svn 里的分支是整个仓库的完整拷贝。
+git-s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="树莓派装系统">
-<meta property="og:url" content="http://blog.woaizuomeng.com/2014/raspberry-pi/index.html">
+<meta property="og:title" content="Subversion（SVN）上手">
+<meta property="og:url" content="http://blog.woaizuomeng.com/2015/svn-guide/index.html">
 <meta property="og:site_name" content="我爱做梦">
-<meta property="og:description" content="最近手上没什么事，正好公司买了几个树莓派有空闲的，于是乎，决定从零开始折腾一下。
+<meta property="og:description" content="很久没用 SVN 了，最基本的命令都忘了，重新熟悉下并记录下来。
 
-从树莓派的官网http://www.raspberrypi.org/downloads上下载系统的镜像。
+克隆代码
 
-刻录系统
- $ diskutil list
- $ diskutil unmountDisk /dev/disk1
- $ sudo dd bs=1m if=ArchLinuxARM-2014.06-rpi.im">
-<meta property="og:updated_time" content="2015-09-17T12:36:26.000Z">
+svn checkout http://xxx/svn/git-svn-practice/
+一般会生成类似下面这样的目录结构，trunk 类似 git 里的 master 分支， branches、tags 这些目录下的 feature1、v1.0 目录也是分支，不过 svn 里的分支是整个仓库的完整拷贝。
+git-s">
+<meta property="og:updated_time" content="2015-10-23T07:59:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="树莓派装系统">
-<meta name="twitter:description" content="最近手上没什么事，正好公司买了几个树莓派有空闲的，于是乎，决定从零开始折腾一下。
+<meta name="twitter:title" content="Subversion（SVN）上手">
+<meta name="twitter:description" content="很久没用 SVN 了，最基本的命令都忘了，重新熟悉下并记录下来。
 
-从树莓派的官网http://www.raspberrypi.org/downloads上下载系统的镜像。
+克隆代码
 
-刻录系统
- $ diskutil list
- $ diskutil unmountDisk /dev/disk1
- $ sudo dd bs=1m if=ArchLinuxARM-2014.06-rpi.im">
+svn checkout http://xxx/svn/git-svn-practice/
+一般会生成类似下面这样的目录结构，trunk 类似 git 里的 master 分支， branches、tags 这些目录下的 feature1、v1.0 目录也是分支，不过 svn 里的分支是整个仓库的完整拷贝。
+git-s">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -79,7 +76,7 @@
   };
 </script>
 
-  <title> 树莓派装系统 | 我爱做梦 </title>
+  <title> Subversion（SVN）上手 | 我爱做梦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -205,7 +202,7 @@
           
           
             
-              树莓派装系统
+              Subversion（SVN）上手
             
           
         </h1>
@@ -214,8 +211,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2014-09-03T16:45:00+08:00" content="2014-09-03">
-            2014-09-03
+          <time itemprop="dateCreated" datetime="2015-10-15T09:46:05+08:00" content="2015-10-15">
+            2015-10-15
           </time>
         </span>
 
@@ -224,8 +221,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Linux/" itemprop="url" rel="index">
-                  <span itemprop="name">Linux</span>
+                <a href="/categories/Tools/" itemprop="url" rel="index">
+                  <span itemprop="name">Tools</span>
                 </a>
               </span>
 
@@ -240,8 +237,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2014/raspberry-pi/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/raspberry-pi/" itemprop="commentsCount"></span>
+            <a href="/2015/svn-guide/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/svn-guide/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -255,20 +252,66 @@
       
 
       
-        <span itemprop="articleBody"><p>最近手上没什么事，正好公司买了几个树莓派有空闲的，于是乎，决定从零开始折腾一下。</p>
+        <span itemprop="articleBody"><p>很久没用 SVN 了，最基本的命令都忘了，重新熟悉下并记录下来。</p>
+<ul>
+<li>克隆代码</li>
+</ul>
+<p><code>svn checkout http://xxx/svn/git-svn-practice/</code></p>
+<p>一般会生成类似下面这样的目录结构，trunk 类似 git 里的 master 分支， branches、tags 这些目录下的 feature1、v1.0 目录也是分支，不过 svn 里的分支是整个仓库的完整拷贝。</p>
+<pre><code>git-svn-practice
+├── branches
+│   └── feature1
+│       ├── README<span class="class">.md</span>
+│       └── hello<span class="class">.js</span>
+├── tags
+│   └── v1.<span class="number">0</span>
+│       ├── README<span class="class">.md</span>
+│       └── hello<span class="class">.js</span>
+└── trunk
+    ├── README<span class="class">.md</span>
+    └── hello.js
+</code></pre><ul>
+<li>添加</li>
+</ul>
+<p><code>svn add xxx</code></p>
+<p>添加需要提交到仓库里的文件以及文件夹，已经在仓库的不需要添加，否则会报错。</p>
+<ul>
+<li>删除</li>
+</ul>
+<p><code>svn remove xxx</code></p>
+<ul>
+<li>回滚</li>
+</ul>
+<p><code>svn revert xxx</code></p>
+<ul>
+<li>提交</li>
+</ul>
+<p><code>svn commit -m &quot; xxx &quot;</code></p>
+<p>提交就直接提交到 SVN 服务器上了，不像 git 还需要 push。</p>
+<ul>
+<li>复制</li>
+</ul>
+<p><code>svn copy xxx xxx</code></p>
+<p>所谓的分支就是通过 copy 创建的。</p>
+<ul>
+<li>更新</li>
+</ul>
+<p><code>svn update</code></p>
+<p>更新本地代码，会显示更新的结果，结果里第一个字母的含义是</p>
+<pre><code>A  Added
+<span class="keyword">D</span>  Deleted
+<span class="keyword">U</span>  Updated
+C  Conflict
+<span class="keyword">G</span>  Merged
+<span class="keyword">E</span>  Existed
+R  Replaced
+</code></pre><p><strong>一些其他的</strong></p>
 <ol>
-<li><p>从树莓派的官网<a href="http://www.raspberrypi.org/downloads" target="_blank" rel="external">http://www.raspberrypi.org/downloads</a>上下载系统的镜像。</p>
+<li><p>默认 <code>git diff</code> 是没有颜色的，可以通过修改 <code>~/.subversion/config</code> 文件里的配置项 <code>diff-cmd = colordiff</code>，并安装工具 <code>brew install colordiff</code> 来增加颜色。</p>
 </li>
-<li><p>刻录系统</p>
-<p> $ diskutil list</p>
-<p> $ diskutil unmountDisk /dev/disk1</p>
-<p> $ sudo dd bs=1m if=ArchLinuxARM-2014.06-rpi.img of=/dev/disk1</p>
-<p> $ sudo diskutil eject /dev/disk1</p>
-</li>
-<li><p>接上电源，就自动开机运行了，然后再接上网线，就可以ssh连过去了。</p>
+<li><p>如果还是想使用 git ，可以考虑使用 <code>git svn</code>， 具体看<a href="https://git-scm.com/book/zh/v1/Git-%E4%B8%8E%E5%85%B6%E4%BB%96%E7%B3%BB%E7%BB%9F-Git-%E4%B8%8E-Subversion" target="_blank" rel="external">这里</a>。</p>
 </li>
 </ol>
-<p>好吧，就这样就可以在上面装上各种软件跑了。。。</p>
 </span>
       
     </div>
@@ -277,9 +320,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag">#Linux</a>
-          
-            <a href="/tags/Raspberry-Pi/" rel="tag">#Raspberry-Pi</a>
+            <a href="/tags/SVN/" rel="tag">#SVN</a>
           
         </div>
       
@@ -288,13 +329,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/ubuntu-mount/" rel="prev">Ubuntu 挂载硬盘</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2013/BOM/" rel="next">UTF-8 中的 'efbb'</a>
+              <a href="/2015/nodejs-this/" rel="next">Node.js 中的 this</a>
             
           </div>
         </div>
@@ -456,9 +495,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'woaizm';
-      var disqus_identifier = '2014/raspberry-pi/';
-      var disqus_title = '树莓派装系统';
-      var disqus_url = 'http://blog.woaizuomeng.com/2014/raspberry-pi/';
+      var disqus_identifier = '2015/svn-guide/';
+      var disqus_title = 'Subversion（SVN）上手';
+      var disqus_url = 'http://blog.woaizuomeng.com/2015/svn-guide/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
