@@ -185,6 +185,118 @@
           
           
             
+              <a class="post-title-link" href="/2015/nodejs-pm2/" itemprop="url">
+                PM2（Node.js 进程守护工具）
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-26T11:17:08+08:00" content="2015-10-26">
+            2015-10-26
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Node-js/" itemprop="url" rel="index">
+                  <span itemprop="name">Node.js</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/nodejs-pm2/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/nodejs-pm2/" itemprop="commentsCount"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>PM2 是一个 Node.js 进程守护工具，可以让我们很方便的对 Node.js 程序进行管理，类似的工具还有 <a href="https://github.com/foreverjs/forever" target="_blank" rel="external">forever</a>。</p>
+<h3 id="基本的用法">基本的用法</h3><h4 id="启动进程">启动进程</h4><p><code>pm2 start xx.js</code><br>指定启动的 js 文件</p>
+<p><code>pm2 start xxx.json</code><br>指定启动的配置文件，配置文件的格式</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">apps</span>" : <span class="value">[&#123;</span><br><span class="line">    "<span class="attribute">name</span>"        : <span class="value"><span class="string">"worker-app"</span></span>,</span><br><span class="line">    "<span class="attribute">script</span>"      : <span class="value"><span class="string">"worker.js"</span></span>,</span><br><span class="line">    "<span class="attribute">args</span>"        : <span class="value">[<span class="string">"--toto=heya coco"</span>, <span class="string">"-d"</span>, <span class="string">"1"</span>]</span>,</span><br><span class="line">    "<span class="attribute">watch</span>"       : <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">    "<span class="attribute">node_args</span>"   : <span class="value"><span class="string">"--harmony"</span></span>,</span><br><span class="line">    "<span class="attribute">merge_logs</span>"  : <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">    "<span class="attribute">cwd</span>"         : <span class="value"><span class="string">"/this/is/a/path/to/start/script"</span></span>,</span><br><span class="line">    "<span class="attribute">env</span>": <span class="value">&#123;</span><br><span class="line">        "<span class="attribute">NODE_ENV</span>": <span class="value"><span class="string">"production"</span></span>,</span><br><span class="line">        "<span class="attribute">AWESOME_SERVICE_API_TOKEN</span>": <span class="value"><span class="string">"xxx"</span></span><br><span class="line">    </span>&#125;</span><br><span class="line">  </span>&#125;,&#123;</span><br><span class="line">    "<span class="attribute">name</span>"       : <span class="value"><span class="string">"api-app"</span></span>,</span><br><span class="line">    "<span class="attribute">script</span>"     : <span class="value"><span class="string">"api.js"</span></span>,</span><br><span class="line">    "<span class="attribute">instances</span>"  : <span class="value"><span class="number">4</span></span>,</span><br><span class="line">    "<span class="attribute">exec_mode</span>"  : <span class="value"><span class="string">"cluster_mode"</span></span>,</span><br><span class="line">    "<span class="attribute">error_file</span>" : <span class="value"><span class="string">"./examples/child-err.log"</span></span>,</span><br><span class="line">    "<span class="attribute">out_file</span>"   : <span class="value"><span class="string">"./examples/child-out.log"</span></span>,</span><br><span class="line">    "<span class="attribute">pid_file</span>"   : <span class="value"><span class="string">"./examples/child.pid"</span></span><br><span class="line">  </span>&#125;]</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<p>详细的配置项看<a href="http://pm2.keymetrics.io/docs/usage/application-declaration/" target="_blank" rel="external">这里</a>。</p>
+<h4 id="重新加载">重新加载</h4><p><code>pm2 reload [name|id]</code></p>
+<p><code>pm2 restart [name|id]</code></p>
+<h4 id="停止">停止</h4><p><code>pm2 stop [name|id]</code><br>停止程序运行</p>
+<p><code>pm2 delete [name|id]</code><br>停止程序并删除相关信息</p>
+<h4 id="查看运行状态及相关信息">查看运行状态及相关信息</h4><p><code>pm2 list</code><br><code>pm2 info [name|id]</code><br><code>pm2 desc [name|id]</code><br><code>pm2 monit [name|id]</code></p>
+<p>上面的命令都会显示程序的运行状态或展示相关信息。</p>
+<h4 id="设置开机启动项">设置开机启动项</h4><ol>
+<li><code>pm2 dump [name|id]</code><br>保存程序运行的相关信息</li>
+<li><p><code>pm2 startup [platform]</code><br>生成设置开机启动项命令，类型这样</p>
+<pre><code>$ pm2 startup
+[PM2] You have <span class="keyword">to</span> <span class="command">run</span> this command <span class="keyword">as</span> root. Execute <span class="keyword">the</span> following command:
+sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v2.5.0/bin pm2 startup darwin -u xxx"</span>
+</code></pre></li>
+</ol>
+<h3 id="扩展插件">扩展插件</h3><h4 id="pm2-logrotate">pm2-logrotate</h4><p>自动管理日志文件（<a href="https://github.com/pm2-hive/pm2-logrotate" target="_blank" rel="external">项目地址</a>）</p>
+<h5 id="安装">安装</h5><p><code>pm2 install pm2-logrotate</code></p>
+<p><strong>注意</strong> 如果 <code>npm</code> 的版本是 <code>v2.7.4</code> ，会安装失败（Github 上的 <a href="https://github.com/npm/npm/issues/7984" target="_blank" rel="external">issue</a>），需更新 <code>npm</code>。</p>
+<h5 id="配置">配置</h5><ul>
+<li>max_size（默认 10MB）：当日志文件超过该值指定的大小时，就会切割日志文件。还可以设置为其他的单位，例如：1G、1M、1K。</li>
+<li>interval（默认 1）</li>
+<li>interval_unit（默认 ‘DD’）：interval 和 interval_unit 是一起配合使用的，例如 interval=3、interval_unit=’DD’，表示日志文件每三天切割一次。</li>
+<li>retain（默认 ‘all’）：保留的日志文件数</li>
+</ul>
+<h5 id="设置">设置</h5><p><code>pm2 set pm2-logrotate:&lt;param&gt; &lt;value&gt;</code><br>配置项的值都是通过这样的形式设置，例如：<br><code>pm2 set pm2-logrotate:max_size 1K</code><br>设置 max_size 为 1K</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/svn-guide/" itemprop="url">
                 Subversion（SVN）上手
               </a>
@@ -1205,103 +1317,6 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2014/raspberry-pi/" itemprop="url">
-                树莓派装系统
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2014-09-03T16:45:00+08:00" content="2014-09-03">
-            2014-09-03
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Linux/" itemprop="url" rel="index">
-                  <span itemprop="name">Linux</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2014/raspberry-pi/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/raspberry-pi/" itemprop="commentsCount"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>最近手上没什么事，正好公司买了几个树莓派有空闲的，于是乎，决定从零开始折腾一下。</p>
-<ol>
-<li><p>从树莓派的官网<a href="http://www.raspberrypi.org/downloads" target="_blank" rel="external">http://www.raspberrypi.org/downloads</a>上下载系统的镜像。</p>
-</li>
-<li><p>刻录系统</p>
-<p> $ diskutil list</p>
-<p> $ diskutil unmountDisk /dev/disk1</p>
-<p> $ sudo dd bs=1m if=ArchLinuxARM-2014.06-rpi.img of=/dev/disk1</p>
-<p> $ sudo diskutil eject /dev/disk1</p>
-</li>
-<li><p>接上电源，就自动开机运行了，然后再接上网线，就可以ssh连过去了。</p>
-</li>
-</ol>
-<p>好吧，就这样就可以在上面装上各种软件跑了。。。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1340,7 +1355,7 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1354,7 +1369,7 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

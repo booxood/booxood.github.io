@@ -185,6 +185,103 @@
           
           
             
+              <a class="post-title-link" href="/2014/raspberry-pi/" itemprop="url">
+                树莓派装系统
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2014-09-03T16:45:00+08:00" content="2014-09-03">
+            2014-09-03
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Linux/" itemprop="url" rel="index">
+                  <span itemprop="name">Linux</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2014/raspberry-pi/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/raspberry-pi/" itemprop="commentsCount"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>最近手上没什么事，正好公司买了几个树莓派有空闲的，于是乎，决定从零开始折腾一下。</p>
+<ol>
+<li><p>从树莓派的官网<a href="http://www.raspberrypi.org/downloads" target="_blank" rel="external">http://www.raspberrypi.org/downloads</a>上下载系统的镜像。</p>
+</li>
+<li><p>刻录系统</p>
+<p> $ diskutil list</p>
+<p> $ diskutil unmountDisk /dev/disk1</p>
+<p> $ sudo dd bs=1m if=ArchLinuxARM-2014.06-rpi.img of=/dev/disk1</p>
+<p> $ sudo diskutil eject /dev/disk1</p>
+</li>
+<li><p>接上电源，就自动开机运行了，然后再接上网线，就可以ssh连过去了。</p>
+</li>
+</ol>
+<p>好吧，就这样就可以在上面装上各种软件跑了。。。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2013/BOM/" itemprop="url">
                 UTF-8 中的 'efbb'
               </a>
@@ -399,7 +496,7 @@ hello
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -413,7 +510,7 @@ hello
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Linux," />
+  <meta name="keywords" content="Node.js," />
 
 
 
@@ -39,34 +39,25 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="在 Ubuntu 上挂载新的硬盘
-
-找到新添加的硬盘
- $ sudo fdisk -l
- Disk /dev/sda: 31.5 GB, 31457280000 bytes 4 heads, 32 sectors/track, 480000 cylinders, total 61440000 sectors
-Units = sectors of 1 * 512 = 512 bytes
- Secto">
+<meta name="description" content="PM2 是一个 Node.js 进程守护工具，可以让我们很方便的对 Node.js 程序进行管理，类似的工具还有 forever。
+基本的用法启动进程pm2 start xx.js指定启动的 js 文件
+pm2 start xxx.json指定启动的配置文件，配置文件的格式
+1234567891011121314151617181920212223&amp;#123;  &quot;apps&quot; : [&amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu 挂载硬盘">
-<meta property="og:url" content="http://blog.woaizuomeng.com/2014/ubuntu-mount/index.html">
+<meta property="og:title" content="PM2（Node.js 进程守护工具）">
+<meta property="og:url" content="http://blog.woaizuomeng.com/2015/nodejs-pm2/index.html">
 <meta property="og:site_name" content="我爱做梦">
-<meta property="og:description" content="在 Ubuntu 上挂载新的硬盘
-
-找到新添加的硬盘
- $ sudo fdisk -l
- Disk /dev/sda: 31.5 GB, 31457280000 bytes 4 heads, 32 sectors/track, 480000 cylinders, total 61440000 sectors
-Units = sectors of 1 * 512 = 512 bytes
- Secto">
-<meta property="og:updated_time" content="2015-09-17T13:12:37.000Z">
+<meta property="og:description" content="PM2 是一个 Node.js 进程守护工具，可以让我们很方便的对 Node.js 程序进行管理，类似的工具还有 forever。
+基本的用法启动进程pm2 start xx.js指定启动的 js 文件
+pm2 start xxx.json指定启动的配置文件，配置文件的格式
+1234567891011121314151617181920212223&amp;#123;  &quot;apps&quot; : [&amp;#123;">
+<meta property="og:updated_time" content="2015-10-27T02:12:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu 挂载硬盘">
-<meta name="twitter:description" content="在 Ubuntu 上挂载新的硬盘
-
-找到新添加的硬盘
- $ sudo fdisk -l
- Disk /dev/sda: 31.5 GB, 31457280000 bytes 4 heads, 32 sectors/track, 480000 cylinders, total 61440000 sectors
-Units = sectors of 1 * 512 = 512 bytes
- Secto">
+<meta name="twitter:title" content="PM2（Node.js 进程守护工具）">
+<meta name="twitter:description" content="PM2 是一个 Node.js 进程守护工具，可以让我们很方便的对 Node.js 程序进行管理，类似的工具还有 forever。
+基本的用法启动进程pm2 start xx.js指定启动的 js 文件
+pm2 start xxx.json指定启动的配置文件，配置文件的格式
+1234567891011121314151617181920212223&amp;#123;  &quot;apps&quot; : [&amp;#123;">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -76,7 +67,7 @@ Units = sectors of 1 * 512 = 512 bytes
   };
 </script>
 
-  <title> Ubuntu 挂载硬盘 | 我爱做梦 </title>
+  <title> PM2（Node.js 进程守护工具） | 我爱做梦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -202,7 +193,7 @@ Units = sectors of 1 * 512 = 512 bytes
           
           
             
-              Ubuntu 挂载硬盘
+              PM2（Node.js 进程守护工具）
             
           
         </h1>
@@ -211,8 +202,8 @@ Units = sectors of 1 * 512 = 512 bytes
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2014-09-23T14:21:00+08:00" content="2014-09-23">
-            2014-09-23
+          <time itemprop="dateCreated" datetime="2015-10-26T11:17:08+08:00" content="2015-10-26">
+            2015-10-26
           </time>
         </span>
 
@@ -221,8 +212,8 @@ Units = sectors of 1 * 512 = 512 bytes
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Linux/" itemprop="url" rel="index">
-                  <span itemprop="name">Linux</span>
+                <a href="/categories/Node-js/" itemprop="url" rel="index">
+                  <span itemprop="name">Node.js</span>
                 </a>
               </span>
 
@@ -237,8 +228,8 @@ Units = sectors of 1 * 512 = 512 bytes
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2014/ubuntu-mount/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/ubuntu-mount/" itemprop="commentsCount"></span>
+            <a href="/2015/nodejs-pm2/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/nodejs-pm2/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -252,52 +243,36 @@ Units = sectors of 1 * 512 = 512 bytes
       
 
       
-        <span itemprop="articleBody"><p>在 Ubuntu 上挂载新的硬盘</p>
-<ol>
-<li><p>找到新添加的硬盘</p>
-<p> $ sudo fdisk -l</p>
-<p> Disk /dev/sda: 31.5 GB, 31457280000 bytes<br> 4 heads, 32 sectors/track, 480000 cylinders, total 61440000 sectors</p>
-<pre><code>Units = sectors of <span class="number">1</span> * <span class="number">512</span> = <span class="number">512</span> bytes
-</code></pre><p> Sector size (logical/physical): 512 bytes / 512 bytes<br> I/O size (minimum/optimal): 512 bytes / 512 bytes<br> Disk identifier: 0x0004fdcb</p>
-<pre><code>Device Boot      <span class="operator"><span class="keyword">Start</span>         <span class="keyword">End</span>      Blocks   <span class="keyword">Id</span>  <span class="keyword">System</span></span>
-</code></pre><p> /dev/sda1   *        2048    61439999    30718976   83  Linux</p>
-<p> Disk /dev/sdb: 107.4 GB, 107374182400 bytes<br> 255 heads, 63 sectors/track, 13054 cylinders, total 209715200 sectors<br> Units = sectors of 1 * 512 = 512 bytes<br> Sector size (logical/physical): 512 bytes / 512 bytes<br> I/O size (minimum/optimal): 512 bytes / 512 bytes<br> Disk identifier: 0x00000000</p>
-<p> <strong>Disk /dev/sdb doesn’t contain a valid partition table</strong></p>
-</li>
-<li><p>分区</p>
-<p> $ sudo fdisk /dev/sdb</p>
-<p> 选择：n 添加新分区</p>
-<p> 选择：p 选择添加主分区</p>
-<p> 选择：1  选择主分区编号</p>
-<p> 选择：w 保存退出</p>
-</li>
-<li><p>格式化</p>
-<p> $ sudo mkfs -t ext3 /dev/sdb1  </p>
-<p> 用ext3格式对/dev/sdb1 进行格式化</p>
-</li>
-<li><p>挂载</p>
-<p> $ sudo mount /dev/sdb1 /dir</p>
-<p> 将分区挂载在/dir下</p>
-<p> 再设置开机自动挂载</p>
-<p> 编辑/etc/fstab添加一行</p>
-<p> /dev/sdc1    /dir     ext3    defaults,    0    1</p>
-</li>
-<li><p>确认</p>
-<p> 最后查看一下是否挂载正确</p>
-<p> $ df -h</p>
-</li>
+        <span itemprop="articleBody"><p>PM2 是一个 Node.js 进程守护工具，可以让我们很方便的对 Node.js 程序进行管理，类似的工具还有 <a href="https://github.com/foreverjs/forever" target="_blank" rel="external">forever</a>。</p>
+<h3 id="基本的用法">基本的用法</h3><h4 id="启动进程">启动进程</h4><p><code>pm2 start xx.js</code><br>指定启动的 js 文件</p>
+<p><code>pm2 start xxx.json</code><br>指定启动的配置文件，配置文件的格式</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">apps</span>" : <span class="value">[&#123;</span><br><span class="line">    "<span class="attribute">name</span>"        : <span class="value"><span class="string">"worker-app"</span></span>,</span><br><span class="line">    "<span class="attribute">script</span>"      : <span class="value"><span class="string">"worker.js"</span></span>,</span><br><span class="line">    "<span class="attribute">args</span>"        : <span class="value">[<span class="string">"--toto=heya coco"</span>, <span class="string">"-d"</span>, <span class="string">"1"</span>]</span>,</span><br><span class="line">    "<span class="attribute">watch</span>"       : <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">    "<span class="attribute">node_args</span>"   : <span class="value"><span class="string">"--harmony"</span></span>,</span><br><span class="line">    "<span class="attribute">merge_logs</span>"  : <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">    "<span class="attribute">cwd</span>"         : <span class="value"><span class="string">"/this/is/a/path/to/start/script"</span></span>,</span><br><span class="line">    "<span class="attribute">env</span>": <span class="value">&#123;</span><br><span class="line">        "<span class="attribute">NODE_ENV</span>": <span class="value"><span class="string">"production"</span></span>,</span><br><span class="line">        "<span class="attribute">AWESOME_SERVICE_API_TOKEN</span>": <span class="value"><span class="string">"xxx"</span></span><br><span class="line">    </span>&#125;</span><br><span class="line">  </span>&#125;,&#123;</span><br><span class="line">    "<span class="attribute">name</span>"       : <span class="value"><span class="string">"api-app"</span></span>,</span><br><span class="line">    "<span class="attribute">script</span>"     : <span class="value"><span class="string">"api.js"</span></span>,</span><br><span class="line">    "<span class="attribute">instances</span>"  : <span class="value"><span class="number">4</span></span>,</span><br><span class="line">    "<span class="attribute">exec_mode</span>"  : <span class="value"><span class="string">"cluster_mode"</span></span>,</span><br><span class="line">    "<span class="attribute">error_file</span>" : <span class="value"><span class="string">"./examples/child-err.log"</span></span>,</span><br><span class="line">    "<span class="attribute">out_file</span>"   : <span class="value"><span class="string">"./examples/child-out.log"</span></span>,</span><br><span class="line">    "<span class="attribute">pid_file</span>"   : <span class="value"><span class="string">"./examples/child.pid"</span></span><br><span class="line">  </span>&#125;]</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<p>详细的配置项看<a href="http://pm2.keymetrics.io/docs/usage/application-declaration/" target="_blank" rel="external">这里</a>。</p>
+<h4 id="重新加载">重新加载</h4><p><code>pm2 reload [name|id]</code></p>
+<p><code>pm2 restart [name|id]</code></p>
+<h4 id="停止">停止</h4><p><code>pm2 stop [name|id]</code><br>停止程序运行</p>
+<p><code>pm2 delete [name|id]</code><br>停止程序并删除相关信息</p>
+<h4 id="查看运行状态及相关信息">查看运行状态及相关信息</h4><p><code>pm2 list</code><br><code>pm2 info [name|id]</code><br><code>pm2 desc [name|id]</code><br><code>pm2 monit [name|id]</code></p>
+<p>上面的命令都会显示程序的运行状态或展示相关信息。</p>
+<h4 id="设置开机启动项">设置开机启动项</h4><ol>
+<li><code>pm2 dump [name|id]</code><br>保存程序运行的相关信息</li>
+<li><p><code>pm2 startup [platform]</code><br>生成设置开机启动项命令，类型这样</p>
+<pre><code>$ pm2 startup
+[PM2] You have <span class="keyword">to</span> <span class="command">run</span> this command <span class="keyword">as</span> root. Execute <span class="keyword">the</span> following command:
+sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v2.5.0/bin pm2 startup darwin -u xxx"</span>
+</code></pre></li>
 </ol>
-<pre><code>Filesystem      Size  Used Avail Use% Mounted on
-/dev/sda1        <span class="number">29</span>G  <span class="number">5.9</span>G   <span class="number">22</span>G  <span class="number">22</span>% /
-
-udev            <span class="number">827</span>M  <span class="number">8.0</span>K  <span class="number">827</span>M   <span class="number">1</span>% /dev
-
-tmpfs           <span class="number">168</span>M  <span class="number">392</span>K  <span class="number">168</span>M   <span class="number">1</span>% /run
-
-/dev/sdb1        <span class="number">69</span>G   <span class="number">52</span>M   <span class="number">66</span>G   <span class="number">1</span>% /mnt
-
-**/dev/sdc1        <span class="number">99</span>G   <span class="number">60</span>M   <span class="number">94</span>G   <span class="number">1</span>% /dir**
-</code></pre></span>
+<h3 id="扩展插件">扩展插件</h3><h4 id="pm2-logrotate">pm2-logrotate</h4><p>自动管理日志文件（<a href="https://github.com/pm2-hive/pm2-logrotate" target="_blank" rel="external">项目地址</a>）</p>
+<h5 id="安装">安装</h5><p><code>pm2 install pm2-logrotate</code></p>
+<p><strong>注意</strong> 如果 <code>npm</code> 的版本是 <code>v2.7.4</code> ，会安装失败（Github 上的 <a href="https://github.com/npm/npm/issues/7984" target="_blank" rel="external">issue</a>），需更新 <code>npm</code>。</p>
+<h5 id="配置">配置</h5><ul>
+<li>max_size（默认 10MB）：当日志文件超过该值指定的大小时，就会切割日志文件。还可以设置为其他的单位，例如：1G、1M、1K。</li>
+<li>interval（默认 1）</li>
+<li>interval_unit（默认 ‘DD’）：interval 和 interval_unit 是一起配合使用的，例如 interval=3、interval_unit=’DD’，表示日志文件每三天切割一次。</li>
+<li>retain（默认 ‘all’）：保留的日志文件数</li>
+</ul>
+<h5 id="设置">设置</h5><p><code>pm2 set pm2-logrotate:&lt;param&gt; &lt;value&gt;</code><br>配置项的值都是通过这样的形式设置，例如：<br><code>pm2 set pm2-logrotate:max_size 1K</code><br>设置 max_size 为 1K</p>
+</span>
       
     </div>
 
@@ -305,7 +280,7 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag">#Linux</a>
+            <a href="/tags/Node-js/" rel="tag">#Node.js</a>
           
         </div>
       
@@ -314,13 +289,11 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/background-run/" rel="prev">程序后台运行</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/raspberry-pi/" rel="next">树莓派装系统</a>
+              <a href="/2015/svn-guide/" rel="next">Subversion（SVN）上手</a>
             
           </div>
         </div>
@@ -428,7 +401,7 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本的用法"><span class="nav-number">1.</span> <span class="nav-text">基本的用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#启动进程"><span class="nav-number">1.1.</span> <span class="nav-text">启动进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重新加载"><span class="nav-number">1.2.</span> <span class="nav-text">重新加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#停止"><span class="nav-number">1.3.</span> <span class="nav-text">停止</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看运行状态及相关信息"><span class="nav-number">1.4.</span> <span class="nav-text">查看运行状态及相关信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置开机启动项"><span class="nav-number">1.5.</span> <span class="nav-text">设置开机启动项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展插件"><span class="nav-number">2.</span> <span class="nav-text">扩展插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pm2-logrotate"><span class="nav-number">2.1.</span> <span class="nav-text">pm2-logrotate</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装"><span class="nav-number">2.1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置"><span class="nav-number">2.1.2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置"><span class="nav-number">2.1.3.</span> <span class="nav-text">设置</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -482,9 +455,9 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
 
     <script type="text/javascript">
       var disqus_shortname = 'woaizm';
-      var disqus_identifier = '2014/ubuntu-mount/';
-      var disqus_title = 'Ubuntu 挂载硬盘';
-      var disqus_url = 'http://blog.woaizuomeng.com/2014/ubuntu-mount/';
+      var disqus_identifier = '2015/nodejs-pm2/';
+      var disqus_title = 'PM2（Node.js 进程守护工具）';
+      var disqus_url = 'http://blog.woaizuomeng.com/2015/nodejs-pm2/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
