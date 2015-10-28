@@ -43,9 +43,8 @@
 
 克隆代码
 
-svn checkout http://xxx/svn/git-svn-practice/
-一般会生成类似下面这样的目录结构，trunk 类似 git 里的 master 分支， branches、tags 这些目录下的 feature1、v1.0 目录也是分支，不过 svn 里的分支是整个仓库的完整拷贝。
-git-s">
+svn checkout http://xxx/svn/git-svn-practice/一般会生成类似下面这样的目录结构，trunk 类似 git 里的 master 分支， branches、tags 这些目录下的 feature1、v1.0 目录也是分支，不过 svn 里的分支是整个仓库的完整拷贝。
+git-sv">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Subversion（SVN）上手">
 <meta property="og:url" content="http://blog.woaizuomeng.com/2015/svn-guide/index.html">
@@ -54,19 +53,17 @@ git-s">
 
 克隆代码
 
-svn checkout http://xxx/svn/git-svn-practice/
-一般会生成类似下面这样的目录结构，trunk 类似 git 里的 master 分支， branches、tags 这些目录下的 feature1、v1.0 目录也是分支，不过 svn 里的分支是整个仓库的完整拷贝。
-git-s">
-<meta property="og:updated_time" content="2015-10-26T03:25:39.000Z">
+svn checkout http://xxx/svn/git-svn-practice/一般会生成类似下面这样的目录结构，trunk 类似 git 里的 master 分支， branches、tags 这些目录下的 feature1、v1.0 目录也是分支，不过 svn 里的分支是整个仓库的完整拷贝。
+git-sv">
+<meta property="og:updated_time" content="2015-10-27T07:06:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Subversion（SVN）上手">
 <meta name="twitter:description" content="很久没用 SVN 了，最基本的命令都忘了，重新熟悉下并记录下来。
 
 克隆代码
 
-svn checkout http://xxx/svn/git-svn-practice/
-一般会生成类似下面这样的目录结构，trunk 类似 git 里的 master 分支， branches、tags 这些目录下的 feature1、v1.0 目录也是分支，不过 svn 里的分支是整个仓库的完整拷贝。
-git-s">
+svn checkout http://xxx/svn/git-svn-practice/一般会生成类似下面这样的目录结构，trunk 类似 git 里的 master 分支， branches、tags 这些目录下的 feature1、v1.0 目录也是分支，不过 svn 里的分支是整个仓库的完整拷贝。
+git-sv">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -256,8 +253,7 @@ git-s">
 <ul>
 <li>克隆代码</li>
 </ul>
-<p><code>svn checkout http://xxx/svn/git-svn-practice/</code></p>
-<p>一般会生成类似下面这样的目录结构，trunk 类似 git 里的 master 分支， branches、tags 这些目录下的 feature1、v1.0 目录也是分支，不过 svn 里的分支是整个仓库的完整拷贝。</p>
+<p><code>svn checkout http://xxx/svn/git-svn-practice/</code><br>一般会生成类似下面这样的目录结构，trunk 类似 git 里的 master 分支， branches、tags 这些目录下的 feature1、v1.0 目录也是分支，不过 svn 里的分支是整个仓库的完整拷贝。</p>
 <pre><code>git-svn-practice
 ├── branches
 │   └── feature1
@@ -273,8 +269,7 @@ git-s">
 </code></pre><ul>
 <li>添加</li>
 </ul>
-<p><code>svn add xxx</code></p>
-<p>添加需要提交到仓库里的文件以及文件夹，已经在仓库的不需要添加，否则会报错。</p>
+<p><code>svn add xxx</code><br>添加需要提交到仓库里的文件以及文件夹，已经在仓库的不需要添加，否则会报错。</p>
 <ul>
 <li>删除</li>
 </ul>
@@ -286,18 +281,15 @@ git-s">
 <ul>
 <li>提交</li>
 </ul>
-<p><code>svn commit -m &quot; xxx &quot;</code></p>
-<p>提交就直接提交到 SVN 服务器上了，不像 git 还需要 push。</p>
+<p><code>svn commit -m &quot; xxx &quot;</code><br>提交就直接提交到 SVN 服务器上了，不像 git 还需要 push。</p>
 <ul>
 <li>复制</li>
 </ul>
-<p><code>svn copy xxx xxx</code></p>
-<p>所谓的分支就是通过 copy 创建的。</p>
+<p><code>svn copy xxx xxx</code><br>所谓的分支就是通过 copy 创建的。</p>
 <ul>
 <li>更新</li>
 </ul>
-<p><code>svn update</code></p>
-<p>更新本地代码，会显示更新的结果，结果里第一个字母的含义是</p>
+<p><code>svn update</code><br>更新本地代码，会显示更新的结果，结果里第一个字母的含义是</p>
 <pre><code>A  Added
 <span class="keyword">D</span>  Deleted
 <span class="keyword">U</span>  Updated
@@ -305,7 +297,13 @@ C  Conflict
 <span class="keyword">G</span>  Merged
 <span class="keyword">E</span>  Existed
 R  Replaced
-</code></pre><p><strong>一些其他的</strong></p>
+</code></pre><ul>
+<li>比对</li>
+</ul>
+<p><code>svn diff</code><br>比对当前本地代码和 SVN 记录上最新版本的差异</p>
+<p><code>svn diff -rXXX</code><br>比对当前本地代码和 SVN 记录上 XXX 版本的差异</p>
+<p><code>svn diff -rXXX:YYY</code><br>比对 SVN 上 XXX 版本和 YYY 版本的差异</p>
+<p><strong>一些其他的</strong></p>
 <ol>
 <li><p>默认 <code>git diff</code> 是没有颜色的，可以通过修改 <code>~/.subversion/config</code> 文件里的配置项 <code>diff-cmd = colordiff</code>，并安装工具 <code>brew install colordiff</code> 来增加颜色。</p>
 </li>
@@ -401,7 +399,7 @@ R  Replaced
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -415,7 +413,7 @@ R  Replaced
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Javascript," />
+  <meta name="keywords" content="Git,SVN," />
 
 
 
@@ -39,31 +39,31 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Javascript 采用的是 IEEE-754 浮点数表示法，这是一种二进制浮点数表示法，可以精确的（注意是精确，不是准确）表示分数，例如：1/2、1/4、1/8 、1/1024 等。但如果想表示 1/10、1/100 这样的十进制分数，就会有精度问题了。
-在 Node.js 的 REPL 中运行：
-&amp;gt; 0.3-0.2
-0.09999999999999998
-&amp;gt; 0.4-0.3
-0.">
+<meta name="description" content="Git 提供了一个 git svn 命令，可以使用 Git 来操作 SVN 仓库，具体介绍可以看这里。
+下面列举一些基本用法。
+
+克隆仓库  git svn clone http://xxx -T trunk -b branches -t tags
+-T trunk -b branches -t tags 告诉 Git 该 Subversion 仓库遵循了基本的分支和标签命名法则。
+如果你的主干(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript 的浮点数运算">
-<meta property="og:url" content="http://blog.woaizuomeng.com/2015/javascript-float/index.html">
+<meta property="og:title" content="Git 与 Subversion（SVN）">
+<meta property="og:url" content="http://blog.woaizuomeng.com/2015/git-svn/index.html">
 <meta property="og:site_name" content="我爱做梦">
-<meta property="og:description" content="Javascript 采用的是 IEEE-754 浮点数表示法，这是一种二进制浮点数表示法，可以精确的（注意是精确，不是准确）表示分数，例如：1/2、1/4、1/8 、1/1024 等。但如果想表示 1/10、1/100 这样的十进制分数，就会有精度问题了。
-在 Node.js 的 REPL 中运行：
-&amp;gt; 0.3-0.2
-0.09999999999999998
-&amp;gt; 0.4-0.3
-0.">
-<meta property="og:updated_time" content="2015-09-17T12:34:37.000Z">
+<meta property="og:description" content="Git 提供了一个 git svn 命令，可以使用 Git 来操作 SVN 仓库，具体介绍可以看这里。
+下面列举一些基本用法。
+
+克隆仓库  git svn clone http://xxx -T trunk -b branches -t tags
+-T trunk -b branches -t tags 告诉 Git 该 Subversion 仓库遵循了基本的分支和标签命名法则。
+如果你的主干(">
+<meta property="og:updated_time" content="2015-10-28T09:52:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript 的浮点数运算">
-<meta name="twitter:description" content="Javascript 采用的是 IEEE-754 浮点数表示法，这是一种二进制浮点数表示法，可以精确的（注意是精确，不是准确）表示分数，例如：1/2、1/4、1/8 、1/1024 等。但如果想表示 1/10、1/100 这样的十进制分数，就会有精度问题了。
-在 Node.js 的 REPL 中运行：
-&amp;gt; 0.3-0.2
-0.09999999999999998
-&amp;gt; 0.4-0.3
-0.">
+<meta name="twitter:title" content="Git 与 Subversion（SVN）">
+<meta name="twitter:description" content="Git 提供了一个 git svn 命令，可以使用 Git 来操作 SVN 仓库，具体介绍可以看这里。
+下面列举一些基本用法。
+
+克隆仓库  git svn clone http://xxx -T trunk -b branches -t tags
+-T trunk -b branches -t tags 告诉 Git 该 Subversion 仓库遵循了基本的分支和标签命名法则。
+如果你的主干(">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -73,7 +73,7 @@
   };
 </script>
 
-  <title> Javascript 的浮点数运算 | 我爱做梦 </title>
+  <title> Git 与 Subversion（SVN） | 我爱做梦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -199,7 +199,7 @@
           
           
             
-              Javascript 的浮点数运算
+              Git 与 Subversion（SVN）
             
           
         </h1>
@@ -208,8 +208,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-06-01T15:49:00+08:00" content="2015-06-01">
-            2015-06-01
+          <time itemprop="dateCreated" datetime="2015-10-28T15:57:00+08:00" content="2015-10-28">
+            2015-10-28
           </time>
         </span>
 
@@ -218,8 +218,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Javascript/" itemprop="url" rel="index">
-                  <span itemprop="name">Javascript</span>
+                <a href="/categories/Tools/" itemprop="url" rel="index">
+                  <span itemprop="name">Tools</span>
                 </a>
               </span>
 
@@ -234,8 +234,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/javascript-float/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/javascript-float/" itemprop="commentsCount"></span>
+            <a href="/2015/git-svn/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/git-svn/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -249,18 +249,53 @@
       
 
       
-        <span itemprop="articleBody"><p>Javascript 采用的是 IEEE-754 浮点数表示法，这是一种二进制浮点数表示法，可以<strong>精确的</strong>（注意是精确，不是准确）表示分数，例如：1/2、1/4、1/8 、1/1024 等。但如果想表示 1/10、1/100 这样的十进制分数，就会有精度问题了。</p>
-<p>在 Node.js 的 REPL 中运行：</p>
-<pre><code>&gt; <span class="number">0.3</span>-<span class="number">0.2</span>
-<span class="number">0.09999999999999998</span>
-&gt; <span class="number">0.4</span>-<span class="number">0.3</span>
-<span class="number">0.10000000000000003</span>
-&gt; <span class="number">0.2</span>-<span class="number">0.1</span>
-<span class="number">0.1</span>
-&gt; <span class="number">0.3</span>-<span class="number">0.2</span> == <span class="number">0.2</span>-<span class="number">0.1</span>
-<span class="literal">false</span>
-&gt;
-</code></pre><p>所以，当我们需要很精确的结果的时候，最好是把浮点数运算转成大整数运算，例如：<code>0.3 - 0.2 转成 (3-2)/10</code>。</p>
+        <span itemprop="articleBody"><p>Git 提供了一个 <code>git svn</code> 命令，可以使用 Git 来操作 SVN 仓库，具体介绍可以<a href="https://git-scm.com/book/zh/v1/Git-%E4%B8%8E%E5%85%B6%E4%BB%96%E7%B3%BB%E7%BB%9F-Git-%E4%B8%8E-Subversion" target="_blank" rel="external">看这里</a>。</p>
+<p>下面列举一些基本用法。</p>
+<ul>
+<li><p>克隆仓库<br>  <code>git svn clone http://xxx -T trunk -b branches -t tags</code></p>
+<pre><code>-T trunk -<span class="keyword">b </span><span class="keyword">branches </span>-t tags 告诉 Git 该 <span class="keyword">Subversion </span>仓库遵循了基本的分支和标签命名法则。
+如果你的主干(译注：trunk，相当于非分布式版本控制里的master分支，代表开发的主线），分支或者标签
+以不同的方式命名，则应做出相应改变。由于该法则的常见性，可以使用 -s 来代替整条命令，它意味着标准
+布局（s 是 Standard layout 的首字母），也就是前面选项的内容。
+</code></pre></li>
+<li><p>提交代码</p>
+<ol>
+<li><code>git commit</code><br>直接使用 Git 命令将代码提交到 Git 本地仓库。</li>
+<li><p><code>git svn dcommit</code><br>将 Git 本地仓库的新增记录提交到 SVN 服务器上。提交之后，之前 Git 上的提交记录</p>
+<pre><code>commit <span class="number">8907f</span>fe03a2879091a35a869d9bc1ef480af967c
+Author: xxx &lt;xxx@gmail.com&gt;
+Date:   Wed Oct <span class="number">28</span> <span class="number">16</span>:<span class="number">26</span>:<span class="number">08</span> <span class="number">2015</span> +<span class="number">0800</span>
+
+Add xxx from git
+</code></pre><p>会被改成</p>
+<pre><code>commit <span class="number">3</span>b707ba0daf0eee9791fc6694e6b4079960c5f3a
+Author: xxx &lt;xxx@<span class="number">9f</span>b60aa9-af34-<span class="number">4021</span>-<span class="number">9</span>c2d-<span class="number">4e8</span>c7c99b066&gt;
+Date:   Wed Oct <span class="number">28</span> <span class="number">08</span>:<span class="number">20</span>:<span class="number">37</span> <span class="number">2015</span> +<span class="number">0000</span>
+
+    Add xxx from git
+
+    git-svn-id: http:<span class="comment">//<span class="label">xxx/trunk@12 9fb60aa9-af34-4021-9c2d-4e8c7c99b066</span></span>
+</code></pre><p>至于为什么会这样，引用官方的说明</p>
+<pre><code>所有在原 Subversion 数据基础上提交的 <span class="operator"><span class="keyword">commit</span> 会一一提交到 Subversion，然后你本地 Git
+的 <span class="keyword">commit</span> 将被重写，加入一个特别标识。这一步很重要，因为它意味着所有 <span class="keyword">commit</span> 的 <span class="keyword">SHA</span>-<span class="number">1</span>
+指都会发生变化。这也是同时使用 Git 和 Subversion 两种服务作为远程服务不是个好主意的原因
+之一。检视以下最后一个 <span class="keyword">commit</span>，你会找到新添加的 git-svn-<span class="keyword">id</span></span>
+</code></pre><p>当你本地的代码比服务器上旧的话，如果可以 <code>Merge</code>，则直接 <code>Merge</code> 然后再提交，如果不能 <code>Merge</code>，有冲突，需要 <code>git rebase</code> 解决冲突后再 <code>git rebase --continue</code> 提交。</p>
+</li>
+</ol>
+</li>
+<li><p>更新代码<br>  <code>git svn rebase</code><br>  需要本地 Git 整洁才可以更新。如果本地有代码没有提交，会报错，可以先 <code>git stash</code> 保存当前的改动，然后再更新 <code>git svn rebase</code>，最后再还原之前的改动 <code>git stash pop</code>。</p>
+</li>
+<li><p>创建分支<br>  <code>git svn branch [xxx]</code><br>  <strong>在我本地尝试时，报错 <code>Authorization failed: Unable to connect to a repository at URL ...</code></strong><br>  我都可以提交，为什么不能创建分支呢。。。如果有人知道，求告知！！！</p>
+</li>
+<li><p>使用 SVN 命令<br>  虽然已经完全是一个 Git 项目了，但仍可以使用一些 SVN 的命令。<br>  这些命令都是可以离线运行的，所以，看到的就是最后一次通讯所得到的信息。</p>
+<ul>
+<li><code>git svn log</code> 查看日志</li>
+<li><code>git svn blame</code> 查看文件的改动记录</li>
+<li><code>git svn info</code> 查看 SVN 仓库信息</li>
+</ul>
+</li>
+</ul>
 </span>
       
     </div>
@@ -269,7 +304,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Javascript/" rel="tag">#Javascript</a>
+            <a href="/tags/Git/" rel="tag">#Git</a>
+          
+            <a href="/tags/SVN/" rel="tag">#SVN</a>
           
         </div>
       
@@ -278,13 +315,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/sublime-text-shortcut-key/" rel="prev">Sublime Text 快捷键</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/mac-windows-control/" rel="next">Mac程序窗口大小调整</a>
+              <a href="/2015/nodejs-pm2/" rel="next">PM2（Node.js 进程守护工具）</a>
             
           </div>
         </div>
@@ -446,9 +481,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'woaizm';
-      var disqus_identifier = '2015/javascript-float/';
-      var disqus_title = 'Javascript 的浮点数运算';
-      var disqus_url = 'http://blog.woaizuomeng.com/2015/javascript-float/';
+      var disqus_identifier = '2015/git-svn/';
+      var disqus_title = 'Git 与 Subversion（SVN）';
+      var disqus_url = 'http://blog.woaizuomeng.com/2015/git-svn/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

@@ -185,6 +185,136 @@
           
           
             
+              <a class="post-title-link" href="/2015/git-svn/" itemprop="url">
+                Git 与 Subversion（SVN）
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-28T15:57:00+08:00" content="2015-10-28">
+            2015-10-28
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Tools/" itemprop="url" rel="index">
+                  <span itemprop="name">Tools</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/git-svn/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/git-svn/" itemprop="commentsCount"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>Git 提供了一个 <code>git svn</code> 命令，可以使用 Git 来操作 SVN 仓库，具体介绍可以<a href="https://git-scm.com/book/zh/v1/Git-%E4%B8%8E%E5%85%B6%E4%BB%96%E7%B3%BB%E7%BB%9F-Git-%E4%B8%8E-Subversion" target="_blank" rel="external">看这里</a>。</p>
+<p>下面列举一些基本用法。</p>
+<ul>
+<li><p>克隆仓库<br>  <code>git svn clone http://xxx -T trunk -b branches -t tags</code></p>
+<pre><code>-T trunk -<span class="keyword">b </span><span class="keyword">branches </span>-t tags 告诉 Git 该 <span class="keyword">Subversion </span>仓库遵循了基本的分支和标签命名法则。
+如果你的主干(译注：trunk，相当于非分布式版本控制里的master分支，代表开发的主线），分支或者标签
+以不同的方式命名，则应做出相应改变。由于该法则的常见性，可以使用 -s 来代替整条命令，它意味着标准
+布局（s 是 Standard layout 的首字母），也就是前面选项的内容。
+</code></pre></li>
+<li><p>提交代码</p>
+<ol>
+<li><code>git commit</code><br>直接使用 Git 命令将代码提交到 Git 本地仓库。</li>
+<li><p><code>git svn dcommit</code><br>将 Git 本地仓库的新增记录提交到 SVN 服务器上。提交之后，之前 Git 上的提交记录</p>
+<pre><code>commit <span class="number">8907f</span>fe03a2879091a35a869d9bc1ef480af967c
+Author: xxx &lt;xxx@gmail.com&gt;
+Date:   Wed Oct <span class="number">28</span> <span class="number">16</span>:<span class="number">26</span>:<span class="number">08</span> <span class="number">2015</span> +<span class="number">0800</span>
+
+Add xxx from git
+</code></pre><p>会被改成</p>
+<pre><code>commit <span class="number">3</span>b707ba0daf0eee9791fc6694e6b4079960c5f3a
+Author: xxx &lt;xxx@<span class="number">9f</span>b60aa9-af34-<span class="number">4021</span>-<span class="number">9</span>c2d-<span class="number">4e8</span>c7c99b066&gt;
+Date:   Wed Oct <span class="number">28</span> <span class="number">08</span>:<span class="number">20</span>:<span class="number">37</span> <span class="number">2015</span> +<span class="number">0000</span>
+
+    Add xxx from git
+
+    git-svn-id: http:<span class="comment">//<span class="label">xxx/trunk@12 9fb60aa9-af34-4021-9c2d-4e8c7c99b066</span></span>
+</code></pre><p>至于为什么会这样，引用官方的说明</p>
+<pre><code>所有在原 Subversion 数据基础上提交的 <span class="operator"><span class="keyword">commit</span> 会一一提交到 Subversion，然后你本地 Git
+的 <span class="keyword">commit</span> 将被重写，加入一个特别标识。这一步很重要，因为它意味着所有 <span class="keyword">commit</span> 的 <span class="keyword">SHA</span>-<span class="number">1</span>
+指都会发生变化。这也是同时使用 Git 和 Subversion 两种服务作为远程服务不是个好主意的原因
+之一。检视以下最后一个 <span class="keyword">commit</span>，你会找到新添加的 git-svn-<span class="keyword">id</span></span>
+</code></pre><p>当你本地的代码比服务器上旧的话，如果可以 <code>Merge</code>，则直接 <code>Merge</code> 然后再提交，如果不能 <code>Merge</code>，有冲突，需要 <code>git rebase</code> 解决冲突后再 <code>git rebase --continue</code> 提交。</p>
+</li>
+</ol>
+</li>
+<li><p>更新代码<br>  <code>git svn rebase</code><br>  需要本地 Git 整洁才可以更新。如果本地有代码没有提交，会报错，可以先 <code>git stash</code> 保存当前的改动，然后再更新 <code>git svn rebase</code>，最后再还原之前的改动 <code>git stash pop</code>。</p>
+</li>
+<li><p>创建分支<br>  <code>git svn branch [xxx]</code><br>  <strong>在我本地尝试时，报错 <code>Authorization failed: Unable to connect to a repository at URL ...</code></strong><br>  我都可以提交，为什么不能创建分支呢。。。如果有人知道，求告知！！！</p>
+</li>
+<li><p>使用 SVN 命令<br>  虽然已经完全是一个 Git 项目了，但仍可以使用一些 SVN 的命令。<br>  这些命令都是可以离线运行的，所以，看到的就是最后一次通讯所得到的信息。</p>
+<ul>
+<li><code>git svn log</code> 查看日志</li>
+<li><code>git svn blame</code> 查看文件的改动记录</li>
+<li><code>git svn info</code> 查看 SVN 仓库信息</li>
+</ul>
+</li>
+</ul>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/nodejs-pm2/" itemprop="url">
                 PM2（Node.js 进程守护工具）
               </a>
@@ -354,8 +484,7 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
 <ul>
 <li>克隆代码</li>
 </ul>
-<p><code>svn checkout http://xxx/svn/git-svn-practice/</code></p>
-<p>一般会生成类似下面这样的目录结构，trunk 类似 git 里的 master 分支， branches、tags 这些目录下的 feature1、v1.0 目录也是分支，不过 svn 里的分支是整个仓库的完整拷贝。</p>
+<p><code>svn checkout http://xxx/svn/git-svn-practice/</code><br>一般会生成类似下面这样的目录结构，trunk 类似 git 里的 master 分支， branches、tags 这些目录下的 feature1、v1.0 目录也是分支，不过 svn 里的分支是整个仓库的完整拷贝。</p>
 <pre><code>git-svn-practice
 ├── branches
 │   └── feature1
@@ -371,8 +500,7 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
 </code></pre><ul>
 <li>添加</li>
 </ul>
-<p><code>svn add xxx</code></p>
-<p>添加需要提交到仓库里的文件以及文件夹，已经在仓库的不需要添加，否则会报错。</p>
+<p><code>svn add xxx</code><br>添加需要提交到仓库里的文件以及文件夹，已经在仓库的不需要添加，否则会报错。</p>
 <ul>
 <li>删除</li>
 </ul>
@@ -384,18 +512,15 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
 <ul>
 <li>提交</li>
 </ul>
-<p><code>svn commit -m &quot; xxx &quot;</code></p>
-<p>提交就直接提交到 SVN 服务器上了，不像 git 还需要 push。</p>
+<p><code>svn commit -m &quot; xxx &quot;</code><br>提交就直接提交到 SVN 服务器上了，不像 git 还需要 push。</p>
 <ul>
 <li>复制</li>
 </ul>
-<p><code>svn copy xxx xxx</code></p>
-<p>所谓的分支就是通过 copy 创建的。</p>
+<p><code>svn copy xxx xxx</code><br>所谓的分支就是通过 copy 创建的。</p>
 <ul>
 <li>更新</li>
 </ul>
-<p><code>svn update</code></p>
-<p>更新本地代码，会显示更新的结果，结果里第一个字母的含义是</p>
+<p><code>svn update</code><br>更新本地代码，会显示更新的结果，结果里第一个字母的含义是</p>
 <pre><code>A  Added
 <span class="keyword">D</span>  Deleted
 <span class="keyword">U</span>  Updated
@@ -403,7 +528,13 @@ C  Conflict
 <span class="keyword">G</span>  Merged
 <span class="keyword">E</span>  Existed
 R  Replaced
-</code></pre><p><strong>一些其他的</strong></p>
+</code></pre><ul>
+<li>比对</li>
+</ul>
+<p><code>svn diff</code><br>比对当前本地代码和 SVN 记录上最新版本的差异</p>
+<p><code>svn diff -rXXX</code><br>比对当前本地代码和 SVN 记录上 XXX 版本的差异</p>
+<p><code>svn diff -rXXX:YYY</code><br>比对 SVN 上 XXX 版本和 YYY 版本的差异</p>
+<p><strong>一些其他的</strong></p>
 <ol>
 <li><p>默认 <code>git diff</code> 是没有颜色的，可以通过修改 <code>~/.subversion/config</code> 文件里的配置项 <code>diff-cmd = colordiff</code>，并安装工具 <code>brew install colordiff</code> 来增加颜色。</p>
 </li>
@@ -1189,134 +1320,6 @@ allBuf = Buffer.<span class="function"><span class="title">concat</span><span cl
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2014/ubuntu-mount/" itemprop="url">
-                Ubuntu 挂载硬盘
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2014-09-23T14:21:00+08:00" content="2014-09-23">
-            2014-09-23
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Linux/" itemprop="url" rel="index">
-                  <span itemprop="name">Linux</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2014/ubuntu-mount/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/ubuntu-mount/" itemprop="commentsCount"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>在 Ubuntu 上挂载新的硬盘</p>
-<ol>
-<li><p>找到新添加的硬盘</p>
-<p> $ sudo fdisk -l</p>
-<p> Disk /dev/sda: 31.5 GB, 31457280000 bytes<br> 4 heads, 32 sectors/track, 480000 cylinders, total 61440000 sectors</p>
-<pre><code>Units = sectors of <span class="number">1</span> * <span class="number">512</span> = <span class="number">512</span> bytes
-</code></pre><p> Sector size (logical/physical): 512 bytes / 512 bytes<br> I/O size (minimum/optimal): 512 bytes / 512 bytes<br> Disk identifier: 0x0004fdcb</p>
-<pre><code>Device Boot      <span class="operator"><span class="keyword">Start</span>         <span class="keyword">End</span>      Blocks   <span class="keyword">Id</span>  <span class="keyword">System</span></span>
-</code></pre><p> /dev/sda1   *        2048    61439999    30718976   83  Linux</p>
-<p> Disk /dev/sdb: 107.4 GB, 107374182400 bytes<br> 255 heads, 63 sectors/track, 13054 cylinders, total 209715200 sectors<br> Units = sectors of 1 * 512 = 512 bytes<br> Sector size (logical/physical): 512 bytes / 512 bytes<br> I/O size (minimum/optimal): 512 bytes / 512 bytes<br> Disk identifier: 0x00000000</p>
-<p> <strong>Disk /dev/sdb doesn’t contain a valid partition table</strong></p>
-</li>
-<li><p>分区</p>
-<p> $ sudo fdisk /dev/sdb</p>
-<p> 选择：n 添加新分区</p>
-<p> 选择：p 选择添加主分区</p>
-<p> 选择：1  选择主分区编号</p>
-<p> 选择：w 保存退出</p>
-</li>
-<li><p>格式化</p>
-<p> $ sudo mkfs -t ext3 /dev/sdb1  </p>
-<p> 用ext3格式对/dev/sdb1 进行格式化</p>
-</li>
-<li><p>挂载</p>
-<p> $ sudo mount /dev/sdb1 /dir</p>
-<p> 将分区挂载在/dir下</p>
-<p> 再设置开机自动挂载</p>
-<p> 编辑/etc/fstab添加一行</p>
-<p> /dev/sdc1    /dir     ext3    defaults,    0    1</p>
-</li>
-<li><p>确认</p>
-<p> 最后查看一下是否挂载正确</p>
-<p> $ df -h</p>
-</li>
-</ol>
-<pre><code>Filesystem      Size  Used Avail Use% Mounted on
-/dev/sda1        <span class="number">29</span>G  <span class="number">5.9</span>G   <span class="number">22</span>G  <span class="number">22</span>% /
-
-udev            <span class="number">827</span>M  <span class="number">8.0</span>K  <span class="number">827</span>M   <span class="number">1</span>% /dev
-
-tmpfs           <span class="number">168</span>M  <span class="number">392</span>K  <span class="number">168</span>M   <span class="number">1</span>% /run
-
-/dev/sdb1        <span class="number">69</span>G   <span class="number">52</span>M   <span class="number">66</span>G   <span class="number">1</span>% /mnt
-
-**/dev/sdc1        <span class="number">99</span>G   <span class="number">60</span>M   <span class="number">94</span>G   <span class="number">1</span>% /dir**
-</code></pre></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1355,7 +1358,7 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1369,7 +1372,7 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
