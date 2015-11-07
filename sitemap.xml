@@ -2,8 +2,23 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <sitemap>
+        <loc>http://blog.woaizuomeng.com/post-sitemap.xml</loc>
+        <lastmod>2015-11-07T04:46:35.948Z</lastmod>
+    </sitemap>
+
+    <sitemap>
         <loc>http://blog.woaizuomeng.com/page-sitemap.xml</loc>
-        <lastmod>2015-11-07T04:40:10.807Z</lastmod>
+        <lastmod>2015-11-07T04:46:35.948Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://blog.woaizuomeng.com/category-sitemap.xml</loc>
+        <lastmod>2015-11-07T04:46:35.944Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://blog.woaizuomeng.com/tag-sitemap.xml</loc>
+        <lastmod>2015-11-07T04:46:35.944Z</lastmod>
     </sitemap>
 
 </sitemapindex>

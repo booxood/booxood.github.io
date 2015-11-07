@@ -55,13 +55,12 @@
 
 <meta name="description" content="我爱做梦的描述">
 <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://blog.woaizuomeng.com/tags/index.html">
+<meta property="og:title" content="我爱做梦">
+<meta property="og:url" content="http://blog.woaizuomeng.com/page/2/index.html">
 <meta property="og:site_name" content="我爱做梦">
 <meta property="og:description" content="我爱做梦的描述">
-<meta property="og:updated_time" content="2015-11-07T04:46:35.948Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="我爱做梦">
 <meta name="twitter:description" content="我爱做梦的描述">
 
 
@@ -74,13 +73,7 @@
   };
 </script>
 
-  <title>
-  
-
-  
-    标签 | 我爱做梦
-  
-</title>
+  <title> 我爱做梦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -120,7 +113,9 @@
 
 
 
-  <div class="container one-column ">
+  <div class="container one-column 
+   page-home 
+">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -197,20 +192,174 @@
       <div class="main-inner">
         <div id="content" class="content">
           
+  <section id="posts" class="posts-expand">
 
-  <div id="posts" class="posts-expand">
+    
+
     
     
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            目前共计 10 个标签
+      
+      
+
+      
+    
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2014/ubuntu-mount/" itemprop="url">
+                  Ubuntu 挂载硬盘
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2014-09-23T14:21:00+08:00" content="2014-09-23">
+              2014-09-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2014/ubuntu-mount/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/ubuntu-mount/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
         </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/Elasticsearch/" style="font-size: 12px; color: #ccc">Elasticsearch</a> <a href="/tags/Git/" style="font-size: 12px; color: #ccc">Git</a> <a href="/tags/Javascript/" style="font-size: 12px; color: #ccc">Javascript</a> <a href="/tags/Linux/" style="font-size: 30px; color: #111">Linux</a> <a href="/tags/Mac/" style="font-size: 12px; color: #ccc">Mac</a> <a href="/tags/Node-js/" style="font-size: 30px; color: #111">Node.js</a> <a href="/tags/Raspberry-Pi/" style="font-size: 12px; color: #ccc">Raspberry-Pi</a> <a href="/tags/SVN/" style="font-size: 21px; color: #6f6f6f">SVN</a> <a href="/tags/Sublime-Text/" style="font-size: 12px; color: #ccc">Sublime-Text</a> <a href="/tags/Vim/" style="font-size: 12px; color: #ccc">Vim</a>
-        </div>
-      </div>
+      </header>
     
-  </div>
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>在 Ubuntu 上挂载新的硬盘</p>
+<ol>
+<li><p>找到新添加的硬盘</p>
+<p> $ sudo fdisk -l</p>
+<p> Disk /dev/sda: 31.5 GB, 31457280000 bytes<br> 4 heads, 32 sectors/track, 480000 cylinders, total 61440000 sectors</p>
+<pre><code>Units = sectors of <span class="number">1</span> * <span class="number">512</span> = <span class="number">512</span> bytes
+</code></pre><p> Sector size (logical/physical): 512 bytes / 512 bytes<br> I/O size (minimum/optimal): 512 bytes / 512 bytes<br> Disk identifier: 0x0004fdcb</p>
+<pre><code>Device Boot      <span class="operator"><span class="keyword">Start</span>         <span class="keyword">End</span>      Blocks   <span class="keyword">Id</span>  <span class="keyword">System</span></span>
+</code></pre><p> /dev/sda1   *        2048    61439999    30718976   83  Linux</p>
+<p> Disk /dev/sdb: 107.4 GB, 107374182400 bytes<br> 255 heads, 63 sectors/track, 13054 cylinders, total 209715200 sectors<br> Units = sectors of 1 * 512 = 512 bytes<br> Sector size (logical/physical): 512 bytes / 512 bytes<br> I/O size (minimum/optimal): 512 bytes / 512 bytes<br> Disk identifier: 0x00000000</p>
+<p> <strong>Disk /dev/sdb doesn’t contain a valid partition table</strong></p>
+</li>
+<li><p>分区</p>
+<p> $ sudo fdisk /dev/sdb</p>
+<p> 选择：n 添加新分区</p>
+<p> 选择：p 选择添加主分区</p>
+<p> 选择：1  选择主分区编号</p>
+<p> 选择：w 保存退出</p>
+</li>
+<li><p>格式化</p>
+<p> $ sudo mkfs -t ext3 /dev/sdb1  </p>
+<p> 用ext3格式对/dev/sdb1 进行格式化</p>
+</li>
+<li><p>挂载</p>
+<p> $ sudo mount /dev/sdb1 /dir</p>
+<p> 将分区挂载在/dir下</p>
+<p> 再设置开机自动挂载</p>
+<p> 编辑/etc/fstab添加一行</p>
+<p> /dev/sdc1    /dir     ext3    defaults,    0    1</p>
+</li>
+<li><p>确认</p>
+<p> 最后查看一下是否挂载正确</p>
+<p> $ df -h</p>
+</li>
+</ol>
+<pre><code>Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        <span class="number">29</span>G  <span class="number">5.9</span>G   <span class="number">22</span>G  <span class="number">22</span>% /
+
+udev            <span class="number">827</span>M  <span class="number">8.0</span>K  <span class="number">827</span>M   <span class="number">1</span>% /dev
+
+tmpfs           <span class="number">168</span>M  <span class="number">392</span>K  <span class="number">168</span>M   <span class="number">1</span>% /run
+
+/dev/sdb1        <span class="number">69</span>G   <span class="number">52</span>M   <span class="number">66</span>G   <span class="number">1</span>% /mnt
+
+**/dev/sdc1        <span class="number">99</span>G   <span class="number">60</span>M   <span class="number">94</span>G   <span class="number">1</span>% /dir**
+</code></pre>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
         </div>
@@ -338,9 +487,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'woaizm';
-      var disqus_identifier = 'tags/index.html';
-      var disqus_title = 'tags';
-      var disqus_url = 'http://blog.woaizuomeng.com/tags/index.html';
+      var disqus_identifier = 'page/2/index.html';
+      var disqus_title = '';
+      var disqus_url = '';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
