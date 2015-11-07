@@ -1,0 +1,29 @@
+language: node_js
+
+node_js:
+  - 0.12
+
+branches:
+  only:
+    - source
+
+addons:
+  ssh_known_hosts:
+    - github.com
+
+before_install:
+  - git config --global user.name "Liucw"
+  - git config --global user.email "liucw.mail@gmail.com"
+
+install:
+  - npm install -g hexo
+  - npm install
+
+script:
+  - hexo clean
+  - git clone --depth=10 --branch=master https://github.com/booxood/booxood.github.io.git public
+  - hexo g
+  - cd public
+  - git add -A
+  - git commit -m "Deploy to GitHub Pages"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
