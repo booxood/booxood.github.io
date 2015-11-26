@@ -2,71 +2,85 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
+        <loc>http://blog.woaizuomeng.com/tags/Linux/</loc>
+        <lastmod>2015-11-26T03:23:50.726Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://blog.woaizuomeng.com/tags/SVN/</loc>
-        <lastmod>2015-11-08T05:09:30.405Z</lastmod>
+        <lastmod>2015-11-26T03:23:50.726Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://blog.woaizuomeng.com/tags/Sublime-Text/</loc>
-        <lastmod>2015-11-08T05:09:30.405Z</lastmod>
+        <lastmod>2015-11-26T03:23:50.726Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://blog.woaizuomeng.com/tags/Redux/</loc>
+        <lastmod>2015-11-26T03:23:50.726Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://blog.woaizuomeng.com/tags/React/</loc>
+        <lastmod>2015-11-26T03:23:50.726Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://blog.woaizuomeng.com/tags/Raspberry-Pi/</loc>
-        <lastmod>2015-11-08T05:09:30.405Z</lastmod>
+        <lastmod>2015-11-26T03:23:50.726Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://blog.woaizuomeng.com/tags/Node-js/</loc>
-        <lastmod>2015-11-08T05:09:30.405Z</lastmod>
+        <lastmod>2015-11-26T03:23:50.726Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://blog.woaizuomeng.com/tags/Mac/</loc>
-        <lastmod>2015-11-08T05:09:30.405Z</lastmod>
+        <lastmod>2015-11-26T03:23:50.726Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://blog.woaizuomeng.com/tags/Javascript/</loc>
-        <lastmod>2015-11-08T05:09:30.405Z</lastmod>
+        <lastmod>2015-11-26T03:23:50.726Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://blog.woaizuomeng.com/tags/Git/</loc>
-        <lastmod>2015-11-08T05:09:30.405Z</lastmod>
+        <lastmod>2015-11-26T03:23:50.726Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://blog.woaizuomeng.com/tags/Elasticsearch/</loc>
-        <lastmod>2015-11-08T05:09:30.405Z</lastmod>
+        <lastmod>2015-11-26T03:23:50.726Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://blog.woaizuomeng.com/tags/Vim/</loc>
-        <lastmod>2015-11-08T05:09:30.405Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://blog.woaizuomeng.com/tags/Linux/</loc>
-        <lastmod>2015-11-08T05:09:30.409Z</lastmod>
+        <lastmod>2015-11-26T03:23:50.726Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

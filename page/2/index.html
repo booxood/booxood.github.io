@@ -26,9 +26,7 @@
 
 
 
-  
-    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
 
 
@@ -53,15 +51,15 @@
 
 
 
-<meta name="description" content="我爱做梦">
+<meta name="description" content="Coder, Dota2, ONE PIECE ...">
 <meta property="og:type" content="website">
 <meta property="og:title" content="我爱做梦">
 <meta property="og:url" content="http://blog.woaizuomeng.com/page/2/index.html">
 <meta property="og:site_name" content="我爱做梦">
-<meta property="og:description" content="我爱做梦">
+<meta property="og:description" content="Coder, Dota2, ONE PIECE ...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我爱做梦">
-<meta name="twitter:description" content="我爱做梦">
+<meta name="twitter:description" content="Coder, Dota2, ONE PIECE ...">
 
 
 
@@ -129,7 +127,7 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle"></p>
+  <p class="site-subtitle">Happy coding & Happy life</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -208,11 +206,124 @@
 
     
     
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2014/background-run/" itemprop="url">
+                  程序后台运行
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2014-10-11T12:25:00+08:00" content="2014-10-11">
+              2014-10-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2014/background-run/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/background-run/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
       
       
 
       
-    
+        
+          <span itemprop="articleBody">
+            
+              <p>平时经常需要让程序在后台运行，一般都是在命令结尾加”&amp;“。如果需要在关闭终端也能运行，就在带上nohup，如：nohup ping xxx.com &gt; /dev/null &amp;。</p>
+<p>其实还有很多命令可以做到，而且更加灵活，像setsid、disown。特别是disown和jobs配合。这里有篇<a href="http://www.ibm.com/developerworks/cn/linux/l-cn-nohup/" target="_blank" rel="external">文章</a>说的很详细。</p>
+<p>再补充下 jobs相关的命令：</p>
+<blockquote>
+<p>   jobs        //查看任务，返回任务编号n和进程号</p>
+<p>   bg  %n   //将编号为n的任务转后台运行</p>
+<p>   fg  %n   //将编号为n的任务转前台运行</p>
+<p>   ctrl+z    //挂起当前任务</p>
+<p>   ctrl+c    //结束当前任务</p>
+</blockquote>
+<p>最后再介绍一个很强大的工具，tmux。之前我一直都是把它当分屏工具时候，其实它也可以做到。</p>
+<blockquote>
+<p>   tmux ls    //列出挂起的窗口</p>
+<p>   tmux a -t %n    //进入 %n 编号的窗口</p>
+<p>   (tmux)ctrl+b d    //将现在所处的窗口挂起</p>
+</blockquote>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -362,6 +473,347 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2014/raspberry-pi/" itemprop="url">
+                  树莓派装系统
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2014-09-03T16:45:00+08:00" content="2014-09-03">
+              2014-09-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2014/raspberry-pi/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/raspberry-pi/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>最近手上没什么事，正好公司买了几个树莓派有空闲的，于是乎，决定从零开始折腾一下。</p>
+<ol>
+<li><p>从树莓派的官网<a href="http://www.raspberrypi.org/downloads" target="_blank" rel="external">http://www.raspberrypi.org/downloads</a>上下载系统的镜像。</p>
+</li>
+<li><p>刻录系统</p>
+<p> $ diskutil list</p>
+<p> $ diskutil unmountDisk /dev/disk1</p>
+<p> $ sudo dd bs=1m if=ArchLinuxARM-2014.06-rpi.img of=/dev/disk1</p>
+<p> $ sudo diskutil eject /dev/disk1</p>
+</li>
+<li><p>接上电源，就自动开机运行了，然后再接上网线，就可以ssh连过去了。</p>
+</li>
+</ol>
+<p>好吧，就这样就可以在上面装上各种软件跑了。。。</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2013/BOM/" itemprop="url">
+                  UTF-8 中的 'efbb'
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2013-12-18T17:53:00+08:00" content="2013-12-18">
+              2013-12-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Other/" itemprop="url" rel="index">
+                    <span itemprop="name">Other</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2013/BOM/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/BOM/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>在处理一个 utf-8 格式文件的时候发现，第一行的文件头有 ‘efbb’ 这么些字符，一查才发现原来又是跨平台的问题。<a href="http://baike.baidu.com/subview/126558/5073180.htm" target="_blank" rel="external">百度 BOM</a></p>
+<p>要去掉其实也很简单，用 Vi 打开文件，然后输入：</p>
+<pre><code>:<span class="keyword">set</span> nobomb
+</code></pre><p>要添加或判断是否有BOM：</p>
+<pre><code><span class="preprocessor">#添加BOM</span>
+:<span class="keyword">set</span> bomb
+<span class="preprocessor">#判断是否有BOM</span>
+:<span class="keyword">set</span> bomb?
+</code></pre>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2013/line-break/" itemprop="url">
+                  \r 和 \n 的差异
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2013-12-09T16:01:44+08:00" content="2013-12-09">
+              2013-12-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Other/" itemprop="url" rel="index">
+                    <span itemprop="name">Other</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2013/line-break/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/line-break/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>前段时间在写一个处理文件小程序的时候碰到的一个坑，记录下。</p>
+<h4 id="问题">问题</h4><p>表现如下：</p>
+<pre><code>&gt; <span class="built_in">console</span>.log(<span class="string">'hello\n world'</span>);
+hello
+ world
+<span class="literal">undefined</span>
+&gt; <span class="built_in">console</span>.log(<span class="string">'hello\r world'</span>);
+ world
+<span class="literal">undefined</span>
+</code></pre><h4 id="原因">原因</h4><p>‘ \r’是回车,使光标到行首</p>
+<p>‘\n’是换行,光标下移一格</p>
+<p>在Unix下，每行结尾只有一个 \n<br>而 window 下，则是 \n\r</p>
+<p>P.S. 一般编程语言会提供一些特殊的变量适应不同操作系统，类似目录分割符那样的，换行符在 Node.js 中是：require(‘os’).EOL 。</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
 
   </section>
 
@@ -404,25 +856,25 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
           <img class="site-author-image" src="https://gravatar.com/avatar/124ea13daf1648975e002b3c5e89d7e2" alt="Liucw" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Liucw</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">我爱做梦</p>
+        <p class="site-description motion-element" itemprop="description">Coder, Dota2, ONE PIECE ...</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

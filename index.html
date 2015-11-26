@@ -26,9 +26,7 @@
 
 
 
-  
-    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
 
 
@@ -53,15 +51,15 @@
 
 
 
-<meta name="description" content="我爱做梦">
+<meta name="description" content="Coder, Dota2, ONE PIECE ...">
 <meta property="og:type" content="website">
 <meta property="og:title" content="我爱做梦">
 <meta property="og:url" content="http://blog.woaizuomeng.com/index.html">
 <meta property="og:site_name" content="我爱做梦">
-<meta property="og:description" content="我爱做梦">
+<meta property="og:description" content="Coder, Dota2, ONE PIECE ...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我爱做梦">
-<meta name="twitter:description" content="我爱做梦">
+<meta name="twitter:description" content="Coder, Dota2, ONE PIECE ...">
 
 
 
@@ -129,7 +127,7 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle"></p>
+  <p class="site-subtitle">Happy coding & Happy life</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -208,6 +206,171 @@
 
     
     
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/redux-intro/" itemprop="url">
+                  Redux
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-11-25T18:29:41+08:00" content="2015-11-25">
+              2015-11-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/redux-intro/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/redux-intro/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>之前接触了一下 React，配合 Flux，单向数据流，让程序的结构看起来很清晰。但是 Flux 需要写很多”重复”的代码，看起来很麻烦很复杂。不过 Flux 的替换方案有很多，例如：<a href="https://github.com/goatslacker/alt" target="_blank" rel="external">alt</a>、<a href="https://github.com/reflux/refluxjs" target="_blank" rel="external">reflux</a>等，最热门应该是 <a href="https://github.com/rackt/redux/" target="_blank" rel="external">Redux</a> 了。</p>
+<blockquote>
+<p>Redux is a predictable state container for JavaScript apps.</p>
+</blockquote>
+<p>官方介绍 Redux 是 JavaScript 状态容器，提供可预测化的状态管理。可以跟大部分的 View 层框架配合使用，不限于 React。</p>
+<p>Redux 只关心如何管理 state，它的顶层暴露的 API 只有 5 个，非常简单。</p>
+<h3 id="API">API</h3><p>为了更具体的说明，写了一个 <a href="https://github.com/booxood/redux-demo" target="_blank" rel="external">redux-demo</a>，</p>
+<pre><code>commit <span class="number">5</span>cf4f88adf1c57ca54ef7cd73a6278056db52ebe
+Author: Liucw
+Date:   Wed Nov <span class="number">25</span> <span class="number">18</span>:<span class="number">05</span>:<span class="number">26</span> <span class="number">2015</span> +<span class="number">0800</span>
+
+    applyMiddleware
+
+commit <span class="number">3</span>ecad1d75a4fca5a79a300641db972202c1a47e7
+Author: Liucw
+Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<span class="number">16</span>:<span class="number">49</span> <span class="number">2015</span> +<span class="number">0800</span>
+
+    combineReducers
+
+commit df0de5b1a9730d286ebf880adc379d7a03638d87
+Author: Liucw
+Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<span class="number">00</span>:<span class="number">09</span> <span class="number">2015</span> +<span class="number">0800</span>
+
+    store
+</code></pre><p>一次提交试验一个 API，可以 checkout 到对应的 commit 上运行程序。</p>
+<h4 id="createStore">createStore</h4><p><code>createStore(reducer, [initialState])</code></p>
+<p>创建一个 Store，里面存放着 state。一般来说一个应用只有一个 Store。</p>
+<p>参数</p>
+<ul>
+<li>reducer：一个函数，接受两个参数（当前的 state 和 action），按 action 处理完后返回一个新的 state</li>
+<li>[initialState]：初始化 state。</li>
+</ul>
+<p>返回值</p>
+<ul>
+<li>Store：保存了应用所有 state 的对象。改变 state 的惟一方法是 dispatch action。也可以 subscribe 监听 state 的变化，然后更新 UI。</li>
+</ul>
+<p>Store 对象有几个方法</p>
+<ul>
+<li>getState()：返回当前的 state</li>
+<li>dispatch(action)：转发一个 action，会触发相应的 reducer</li>
+<li>subscribe(listener)：添加一个监听器，每当 dispatch action 的时候就会触发 listener</li>
+<li>replaceReducer(nextReducer)：替换 store 当前用来计算 state 的 reducer（感觉用不到…）</li>
+</ul>
+<p>可以切到 <code>df0de5b1a9730d286ebf880adc379d7a03638d87</code> 运行一下，看下结果</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout df0de5b1a9730d286ebf880adc379d7a03638d87</span><br><span class="line">$ node index.js</span><br><span class="line"><span class="string">s0:</span> []</span><br><span class="line">store.<span class="string">subscribe:</span> [ <span class="string">'add 1'</span> ]</span><br><span class="line"><span class="string">s1:</span> [ <span class="string">'add 1'</span> ]</span><br><span class="line">unsubscribe</span><br><span class="line"><span class="string">s2:</span> [ <span class="string">'add 1'</span>, <span class="string">'add 2'</span> ]</span><br></pre></td></tr></table></figure>
+<h4 id="combineReducers">combineReducers</h4><p><code>combineReducers(reducers)</code><br>combineReducers 可以把一个由多个 reducer 函数作为 value 的 object，合并成一个最终的 reducer 函数，然后对这个 reducer 调用 createStore 产生唯一的 Store。</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; todos, counter, add &#125; from <span class="string">'./reducer'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> counters = combineReducers(&#123;</span><br><span class="line">  counter,</span><br><span class="line">  add</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> reducers = combineReducers(&#123;</span><br><span class="line">  todos,</span><br><span class="line">  counters</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> store = createStore(reducers)</span><br></pre></td></tr></table></figure>
+<p>定义了三个 Reducer，先将 counter 和 add 进行 combine 产生 counters，再将 counters 和 todos 进行 combine 得到最终的 reducers。执行一下，看下返回的结果</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout <span class="number">3</span>ecad1d75a4fca5a79a300641db972202c1a47e7</span><br><span class="line">$ node index.js</span><br><span class="line"><span class="string">s0:</span> &#123; <span class="string">todos:</span> [], <span class="string">counters:</span> &#123; <span class="string">counter:</span> <span class="number">0</span>, <span class="string">add:</span> <span class="number">0</span> &#125; &#125;</span><br><span class="line">store.<span class="string">subscribe:</span> &#123; <span class="string">todos:</span> [ <span class="string">'add 1'</span> ], <span class="string">counters:</span> &#123; <span class="string">counter:</span> <span class="number">0</span>, <span class="string">add:</span> <span class="number">0</span> &#125; &#125;</span><br><span class="line">store.<span class="string">subscribe:</span> &#123; <span class="string">todos:</span> [ <span class="string">'add 1'</span> ], <span class="string">counters:</span> &#123; <span class="string">counter:</span> <span class="number">1</span>, <span class="string">add:</span> <span class="number">0</span> &#125; &#125;</span><br><span class="line">store.<span class="string">subscribe:</span> &#123; <span class="string">todos:</span> [ <span class="string">'add 1'</span> ], <span class="string">counters:</span> &#123; <span class="string">counter:</span> <span class="number">1</span>, <span class="string">add:</span> <span class="number">1</span> &#125; &#125;</span><br><span class="line"><span class="string">s1:</span> &#123; <span class="string">todos:</span> [ <span class="string">'add 1'</span> ], <span class="string">counters:</span> &#123; <span class="string">counter:</span> <span class="number">1</span>, <span class="string">add:</span> <span class="number">1</span> &#125; &#125;</span><br><span class="line">unsubscribe</span><br><span class="line"><span class="string">s2:</span> &#123; <span class="string">todos:</span> [ <span class="string">'add 1'</span>, <span class="string">'add 2'</span> ],</span><br><span class="line"><span class="label">  counters:</span> &#123; <span class="string">counter:</span> <span class="number">1</span>, <span class="string">add:</span> <span class="number">1</span> &#125; &#125;</span><br></pre></td></tr></table></figure>
+<p>最后得到的 state 的结构与 combine 时的结构相同。</p>
+<h4 id="applyMiddleware">applyMiddleware</h4><p>applyMiddleware 可以为 store 的 dispatch 包装一些 middleware。多个 middleware 可以被组合到一起使用，形成 middleware 链。其中，每个 middleware 都不需要关心链中它前后的 middleware 的任何信息。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ./action.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">thunkAction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">dispatch</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>((resolve, reject) =&gt; resolve(dispatch(&#123;type: <span class="string">'ADD'</span>&#125;)))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ./store.js</span></span><br><span class="line"><span class="keyword">import</span> thunk <span class="keyword">from</span> <span class="string">'redux-thunk'</span></span><br><span class="line"><span class="keyword">import</span> &#123; thunkAction &#125; <span class="keyword">from</span> <span class="string">'./action'</span></span><br><span class="line"></span><br><span class="line">let createStoreWithMiddleware = applyMiddleware(...[thunk, logger])(createStore);</span><br><span class="line"><span class="keyword">let</span> store = createStoreWithMiddleware(add)</span><br><span class="line"></span><br><span class="line">store.dispatch(thunkAction()).then(() =&gt; <span class="built_in">console</span>.log(<span class="string">'done:'</span>, store.getState()))</span><br></pre></td></tr></table></figure>
+<p>应用了 <code>redux-thunk</code> middleware 后，可以 dispatch thunkAction。<br>最后的运行结果<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">LOG</span>]s0: 0</span><br><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">INFO</span>]will dispatch: &#123; type: 'ADD' &#125;</span><br><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">LOG</span>]store.subscribe: 1</span><br><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">INFO</span>]state after dispatch: 1</span><br><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">LOG</span>]s1: 1</span><br><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">LOG</span>]done: 1</span><br></pre></td></tr></table></figure></p>
+<h4 id="bindActionCreators">bindActionCreators</h4><p>将 action 与 Store.dispatch 绑定起来。</p>
+<blockquote>
+<p>惟一使用 bindActionCreators 的场景是当你需要把 action creator 往下传到一个组件上，却不想让这个组件觉察到 Redux 的存在，而且不希望把 Redux store 或 dispatch 传给它。</p>
+</blockquote>
+<h4 id="compose">compose</h4><p>将多个函数从右到左组合在一起。</p>
+<blockquote>
+<p>compse 做的只是让你不使用深度右括号的情况下来写深度嵌套的函数。不要觉得它很复杂。</p>
+</blockquote>
+<h3 id="总结">总结</h3><p>其实 Redux 提供的功能很简单，就是创造一颗 state 树，定义修改这颗树的规则。</p>
+<h3 id="参考">参考</h3><p><a href="http://rackt.org/redux/" target="_blank" rel="external">http://rackt.org/redux/</a><br><a href="http://camsong.github.io/redux-in-chinese/index.html" target="_blank" rel="external">http://camsong.github.io/redux-in-chinese/index.html</a></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -1434,124 +1597,6 @@ allBuf = Buffer.<span class="function"><span class="title">concat</span><span cl
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2014/background-run/" itemprop="url">
-                  程序后台运行
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2014-10-11T12:25:00+08:00" content="2014-10-11">
-              2014-10-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2014/background-run/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/background-run/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>平时经常需要让程序在后台运行，一般都是在命令结尾加”&amp;“。如果需要在关闭终端也能运行，就在带上nohup，如：nohup ping xxx.com &gt; /dev/null &amp;。</p>
-<p>其实还有很多命令可以做到，而且更加灵活，像setsid、disown。特别是disown和jobs配合。这里有篇<a href="http://www.ibm.com/developerworks/cn/linux/l-cn-nohup/" target="_blank" rel="external">文章</a>说的很详细。</p>
-<p>再补充下 jobs相关的命令：</p>
-<blockquote>
-<p>   jobs        //查看任务，返回任务编号n和进程号</p>
-<p>   bg  %n   //将编号为n的任务转后台运行</p>
-<p>   fg  %n   //将编号为n的任务转前台运行</p>
-<p>   ctrl+z    //挂起当前任务</p>
-<p>   ctrl+c    //结束当前任务</p>
-</blockquote>
-<p>最后再介绍一个很强大的工具，tmux。之前我一直都是把它当分屏工具时候，其实它也可以做到。</p>
-<blockquote>
-<p>   tmux ls    //列出挂起的窗口</p>
-<p>   tmux a -t %n    //进入 %n 编号的窗口</p>
-<p>   (tmux)ctrl+b d    //将现在所处的窗口挂起</p>
-</blockquote>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1594,25 +1639,25 @@ allBuf = Buffer.<span class="function"><span class="title">concat</span><span cl
           <img class="site-author-image" src="https://gravatar.com/avatar/124ea13daf1648975e002b3c5e89d7e2" alt="Liucw" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Liucw</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">我爱做梦</p>
+        <p class="site-description motion-element" itemprop="description">Coder, Dota2, ONE PIECE ...</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
