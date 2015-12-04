@@ -53,7 +53,18 @@ Git 提供了一个 `git svn` 命令，可以使用 Git 来操作 SVN 仓库，�
 - 创建分支
     `git svn branch [xxx]`
     **在我本地尝试时，报错 `Authorization failed: Unable to connect to a repository at URL ...`**
-    我都可以提交，为什么不能创建分支呢。。。如果有人知道，求告知！！！
+    （我都可以提交，为什么不能创建分支呢。。。如果有人知道，求告知！！！）
+
+    假设已经创建好了一个分支 `f1`，现在需要在 `f1` 上进行提交
+    `git svn rebase --fetch-all`
+    更新所有远程的版本记录
+    `git branch -a`
+    `git branch local_f1 origin/f1`
+    在本地新建一个分支 `local_f1` 与远程 SVN 上的 `f1` 分支对应，在 `local_f1` 开发并提交。
+    
+    要判断提交到 svn 那个分支上，查看 `git log` 上最近的一个 git-svn-id。例如：
+    `git-svn-id: http://xxx/branches/g1@33 9fb60aa9-af34-4021-9c2d-4e8c7c99b066` 对应 `branches/g1`
+    `git-svn-id: http://xxx/trunk@27 9fb60aa9-af34-4021-9c2d-4e8c7c99b066` 对应 `trunk`
 
 - 使用 SVN 命令
     虽然已经完全是一个 Git 项目了，但仍可以使用一些 SVN 的命令。
