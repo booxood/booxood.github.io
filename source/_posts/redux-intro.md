@@ -1,4 +1,4 @@
-title: Redux
+title: Redux 介绍
 date: 2015-11-25 18:29:41
 tags: [Redux, React]
 categories: React

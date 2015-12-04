@@ -43,12 +43,29 @@ categories: Tools
 `svn commit -m " xxx "`
 提交就直接提交到 SVN 服务器上了，不像 git 还需要 push。
 
-- 复制
+- 复制（创建分支）
 
 `svn copy xxx xxx`
 所谓的分支就是通过 copy 创建的。
 
-- 更新
+```
+$ svn copy trunk branches/feature-xxx
+$ cd branches/feature-xxx
+$ ...
+$ svn commit
+```
+
+- 合并
+
+`svn merge xxx xxx`
+合并分支，合并后可以将更新提交。
+
+```
+$ svn merge ../branches/feature-xxx
+$ svn commit
+```
+
+- 更新（同步）
 
 `svn update`
 更新本地代码，会显示更新的结果，结果里第一个字母的含义是
@@ -76,6 +93,6 @@ categories: Tools
 
 **一些其他的**
 
-1. 默认 `git diff` 是没有颜色的，可以通过修改 `~/.subversion/config` 文件里的配置项 `diff-cmd = colordiff `，并安装工具 `brew install colordiff` 来增加颜色。
+1. 默认 `svn diff` 是没有颜色的，可以通过修改 `~/.subversion/config` 文件里的配置项 `diff-cmd = colordiff `，并安装工具 `brew install colordiff` 来增加颜色。
 
 2. 如果还是想使用 git ，可以考虑使用 `git svn`， 具体看[这里](https://git-scm.com/book/zh/v1/Git-%E4%B8%8E%E5%85%B6%E4%BB%96%E7%B3%BB%E7%BB%9F-Git-%E4%B8%8E-Subversion)。
