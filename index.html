@@ -230,7 +230,7 @@
               
                 
                 <a class="post-title-link" href="/2015/redux-intro/" itemprop="url">
-                  Redux
+                  Redux 介绍
                 </a>
               
             
@@ -490,7 +490,9 @@ Date:   Wed Oct <span class="number">28</span> <span class="number">08</span>:<s
 </li>
 <li><p>更新代码<br>  <code>git svn rebase</code><br>  需要本地 Git 整洁才可以更新。如果本地有代码没有提交，会报错，可以先 <code>git stash</code> 保存当前的改动，然后再更新 <code>git svn rebase</code>，最后再还原之前的改动 <code>git stash pop</code>。</p>
 </li>
-<li><p>创建分支<br>  <code>git svn branch [xxx]</code><br>  <strong>在我本地尝试时，报错 <code>Authorization failed: Unable to connect to a repository at URL ...</code></strong><br>  我都可以提交，为什么不能创建分支呢。。。如果有人知道，求告知！！！</p>
+<li><p>创建分支<br>  <code>git svn branch [xxx]</code><br>  <strong>在我本地尝试时，报错 <code>Authorization failed: Unable to connect to a repository at URL ...</code></strong><br>  （我都可以提交，为什么不能创建分支呢。。。如果有人知道，求告知！！！）</p>
+<p>  假设已经创建好了一个分支 <code>f1</code>，现在需要在 <code>f1</code> 上进行提交<br>  <code>git svn rebase --fetch-all</code><br>  更新所有远程的版本记录<br>  <code>git branch -a</code><br>  <code>git branch local_f1 origin/f1</code><br>  在本地新建一个分支 <code>local_f1</code> 与远程 SVN 上的 <code>f1</code> 分支对应，在 <code>local_f1</code> 开发并提交。</p>
+<p>  要判断提交到 svn 那个分支上，查看 <code>git log</code> 上最近的一个 git-svn-id。例如：<br>  <code>git-svn-id: http://xxx/branches/g1@33 9fb60aa9-af34-4021-9c2d-4e8c7c99b066</code> 对应 <code>branches/g1</code><br>  <code>git-svn-id: http://xxx/trunk@27 9fb60aa9-af34-4021-9c2d-4e8c7c99b066</code> 对应 <code>trunk</code></p>
 </li>
 <li><p>使用 SVN 命令<br>  虽然已经完全是一个 Git 项目了，但仍可以使用一些 SVN 的命令。<br>  这些命令都是可以离线运行的，所以，看到的就是最后一次通讯所得到的信息。</p>
 <ul>
@@ -774,11 +776,17 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
 </ul>
 <p><code>svn commit -m &quot; xxx &quot;</code><br>提交就直接提交到 SVN 服务器上了，不像 git 还需要 push。</p>
 <ul>
-<li>复制</li>
+<li>复制（创建分支）</li>
 </ul>
 <p><code>svn copy xxx xxx</code><br>所谓的分支就是通过 copy 创建的。</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>svn copy trunk branches/feature-xxx</span><br><span class="line"><span class="variable">$ </span>cd branches/feature-xxx</span><br><span class="line"><span class="variable">$ </span>...</span><br><span class="line"><span class="variable">$ </span>svn commit</span><br></pre></td></tr></table></figure>
 <ul>
-<li>更新</li>
+<li>合并</li>
+</ul>
+<p><code>svn merge xxx xxx</code><br>合并分支，合并后可以将更新提交。</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>svn merge ../branches/feature-xxx</span><br><span class="line"><span class="variable">$ </span>svn commit</span><br></pre></td></tr></table></figure>
+<ul>
+<li>更新（同步）</li>
 </ul>
 <p><code>svn update</code><br>更新本地代码，会显示更新的结果，结果里第一个字母的含义是</p>
 <pre><code>A  Added
@@ -796,7 +804,7 @@ R  Replaced
 <p><code>svn diff -rXXX:YYY</code><br>比对 SVN 上 XXX 版本和 YYY 版本的差异</p>
 <p><strong>一些其他的</strong></p>
 <ol>
-<li><p>默认 <code>git diff</code> 是没有颜色的，可以通过修改 <code>~/.subversion/config</code> 文件里的配置项 <code>diff-cmd = colordiff</code>，并安装工具 <code>brew install colordiff</code> 来增加颜色。</p>
+<li><p>默认 <code>svn diff</code> 是没有颜色的，可以通过修改 <code>~/.subversion/config</code> 文件里的配置项 <code>diff-cmd = colordiff</code>，并安装工具 <code>brew install colordiff</code> 来增加颜色。</p>
 </li>
 <li><p>如果还是想使用 git ，可以考虑使用 <code>git svn</code>， 具体看<a href="https://git-scm.com/book/zh/v1/Git-%E4%B8%8E%E5%85%B6%E4%BB%96%E7%B3%BB%E7%BB%9F-Git-%E4%B8%8E-Subversion" target="_blank" rel="external">这里</a>。</p>
 </li>

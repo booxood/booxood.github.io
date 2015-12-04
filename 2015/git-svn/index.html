@@ -65,7 +65,7 @@
 克隆仓库  git svn clone http://xxx -T trunk -b branches -t tags
 -T trunk -b branches -t tags 告诉 Git 该 Subversion 仓库遵循了基本的分支和标签命名法则。
 如果你的主干(译注：trunk">
-<meta property="og:updated_time" content="2015-11-26T03:23:50.726Z">
+<meta property="og:updated_time" content="2015-12-04T06:44:40.119Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 与 Subversion（SVN）">
 <meta name="twitter:description" content="Git 提供了一个 git svn 命令，可以使用 Git 来操作 SVN 仓库，具体介绍可以看这里。
@@ -324,7 +324,9 @@ Date:   Wed Oct <span class="number">28</span> <span class="number">08</span>:<s
 </li>
 <li><p>更新代码<br>  <code>git svn rebase</code><br>  需要本地 Git 整洁才可以更新。如果本地有代码没有提交，会报错，可以先 <code>git stash</code> 保存当前的改动，然后再更新 <code>git svn rebase</code>，最后再还原之前的改动 <code>git stash pop</code>。</p>
 </li>
-<li><p>创建分支<br>  <code>git svn branch [xxx]</code><br>  <strong>在我本地尝试时，报错 <code>Authorization failed: Unable to connect to a repository at URL ...</code></strong><br>  我都可以提交，为什么不能创建分支呢。。。如果有人知道，求告知！！！</p>
+<li><p>创建分支<br>  <code>git svn branch [xxx]</code><br>  <strong>在我本地尝试时，报错 <code>Authorization failed: Unable to connect to a repository at URL ...</code></strong><br>  （我都可以提交，为什么不能创建分支呢。。。如果有人知道，求告知！！！）</p>
+<p>  假设已经创建好了一个分支 <code>f1</code>，现在需要在 <code>f1</code> 上进行提交<br>  <code>git svn rebase --fetch-all</code><br>  更新所有远程的版本记录<br>  <code>git branch -a</code><br>  <code>git branch local_f1 origin/f1</code><br>  在本地新建一个分支 <code>local_f1</code> 与远程 SVN 上的 <code>f1</code> 分支对应，在 <code>local_f1</code> 开发并提交。</p>
+<p>  要判断提交到 svn 那个分支上，查看 <code>git log</code> 上最近的一个 git-svn-id。例如：<br>  <code>git-svn-id: http://xxx/branches/g1@33 9fb60aa9-af34-4021-9c2d-4e8c7c99b066</code> 对应 <code>branches/g1</code><br>  <code>git-svn-id: http://xxx/trunk@27 9fb60aa9-af34-4021-9c2d-4e8c7c99b066</code> 对应 <code>trunk</code></p>
 </li>
 <li><p>使用 SVN 命令<br>  虽然已经完全是一个 Git 项目了，但仍可以使用一些 SVN 的命令。<br>  这些命令都是可以离线运行的，所以，看到的就是最后一次通讯所得到的信息。</p>
 <ul>
@@ -367,8 +369,8 @@ Date:   Wed Oct <span class="number">28</span> <span class="number">08</span>:<s
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/redux-intro/" rel="prev" title="Redux">
-                Redux <i class="fa fa-chevron-right"></i>
+              <a href="/2015/redux-intro/" rel="prev" title="Redux 介绍">
+                Redux 介绍 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
