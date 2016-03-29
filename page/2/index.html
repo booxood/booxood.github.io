@@ -1,5 +1,11 @@
 <!doctype html>
-<html class="theme-next   use-motion ">
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -32,19 +38,19 @@
 
 <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Coder, Node.js" />
-
-
-
+  <meta name="keywords" content="Coder, JavaScript, Node.js, Linux" />
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
 
 
 
@@ -64,10 +70,16 @@
 
 
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: '',
-    sidebar: 'post',
-    motion: true
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
   };
 </script>
 
@@ -76,15 +88,6 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
@@ -111,9 +114,18 @@
 
 
 
-  <div class="container one-column 
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
    page-home 
-">
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -142,7 +154,7 @@
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
@@ -186,7 +198,6 @@
       
 
       
-      
     </ul>
   
 
@@ -198,14 +209,289 @@
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content">
-          
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/mac-windows-control/" itemprop="url">
+                  Mac程序窗口大小调整
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-05-12T12:05:00+08:00" content="2015-05-12">
+              2015-05-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Tools/" itemprop="url" rel="index">
+                    <span itemprop="name">Tools</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/mac-windows-control/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/mac-windows-control/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在使用电脑的时候，不管是用Windows还是Mac OS系统，我们经常会需要调整程序窗口的大小。这里介绍两款Mac OS下的小工具来帮助你。具体怎么安装就不介绍，简单介绍下用法。</p>
+<h2 id="1-Spectacle"><a href="#1-Spectacle" class="headerlink" title="  1. Spectacle"></a>  1. Spectacle</h2><p>所有的窗口缩放都是通过快捷键来操作，可以很方便快捷的把窗口进行缩放并调整位子。例如：</p>
+<ul>
+<li>Control+Command+Left：窗口位于左上，窗口占全屏的四分之一</li>
+<li>Control+Command+Right：窗口位于右上，窗口占全屏的四分之一</li>
+<li>Option+Command+Left：窗口位于左边，窗口占全屏的二分之一</li>
+<li>Option+Command+Right：窗口位于右边，窗口占全屏的二分之一</li>
+<li>Option+Command+z：回退</li>
+</ul>
+<p>更多的快捷键和介绍看<a href="https://github.com/eczarny/spectacle#keyboard-shortcuts" target="_blank" rel="external">这里</a></p>
+<h2 id="2-Moom-收费"><a href="#2-Moom-收费" class="headerlink" title="  2. Moom (收费)"></a>  2. Moom (收费)</h2><p>安装了这个应用之后，当你把鼠标移动到窗口左上角最大化按钮（绿色按钮）之上时，会在下面出现一个弹出框，你在上面直接选择你要缩放大小和位子后就直接改变了窗口。操作很直观。如果你还想像上面那款应用那么快捷，你也可以设置快捷键。</p>
+<ul>
+<li>选择 Keyboard</li>
+<li>Trigger keyboard control with hot key 这里设置触发的快捷键，我的设置：Option+Command+z。还可以把下面的Show cheat sheet 勾上，这样触发出快捷操作的时候会显示缩放快捷键。</li>
+<li>Auto-dismiss keyboard control after 这里设置自动隐藏的条件，我的设置：只勾选了 Move &amp; Zoom</li>
+</ul>
+<p>按上面这样设置好之后，有可以通过快捷键来操作了。先按下 Option+Command+z 触发快捷操作，然后进行窗口缩放。例如：</p>
+<ul>
+<li>Space：全屏</li>
+<li>Command+Left：窗口位于左边，窗口占全屏的二分之一</li>
+<li>Command+Right：窗口位于右边，窗口占全屏的二分之一</li>
+<li>Esc：取消</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2014/nodejs-handle-excel/" itemprop="url">
+                  Node.js Handle Excel
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-11-04T18:23:00+08:00" content="2014-11-04">
+              2014-11-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Node.js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014/nodejs-handle-excel/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/nodejs-handle-excel/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近项目中需要用到xls文件的导入和导出，在github上找到几个的包：</p>
+<blockquote>
+<p><a href="https://github.com/SheetJS/js-xls" target="_blank" rel="external">js-xls</a>  解析xls</p>
+<p><a href="https://github.com/SheetJS/js-xlsx" target="_blank" rel="external">js-xlsx</a> 解析xlsx</p>
+<p><a href="https://github.com/gutkyu/xlgen" target="_blank" rel="external">xlgen</a> 生成xls</p>
+<p><a href="https://github.com/elwerene/Node-Excel-Export" target="_blank" rel="external">excel-export-fast</a> 生成xlsx</p>
+</blockquote>
+<p>但其中xlgen这个包在生成xls文件时，如果生成的数据很多时，会很慢。3000行、100列的数据量需要11分钟，内存占用一直在170M左右，生成的文件大概4M，怎么都觉得不应该这么慢。又没找到其他合适的包，只能翻这个包的源码吧。</p>
+<p>第一步想到的可能存在问题的地方可能是出在不停的打开文件写文件，不然不至于这么慢。通过看xlgen的代码，发现一次生成只会打开一次文件，就是第一次创建文件的时候。但写文件很频繁，先写头和一些xls文件结构相关的数据，再写cell，每一个cell拼装成一个buffer就写一次文件，问题就出在这里了。我把代码改成把所有的buffer组合在一起，最后再一次写入。buffer组合通过Buffer自带的.concat方法</p>
+<pre><code>allBuf = []
+allBuf.push(buffer)
+allBuf = Buffer.concat(allBuf)
+</code></pre><p>结果，需要17分钟，比之前还要慢。。。</p>
+<p>百思不得其解，最终看Buffer模块的源码发现，Buffer.concat(list, [totalLength]) ，原来可以参入一个参数 总长度，如果不传入的话，则每次调用都要额外计算</p>
+<pre><code>Buffer.concat = function(list, length) {
+    if (!util.isArray(list))
+        throw new TypeError(&apos;Usage: Buffer.concat(list[, length])&apos;);
+
+    if (util.isUndefined(length)) {
+        length = 0;
+        for (var i = 0; i &lt; list.length; i++)
+            length += list[i].length;
+    } else {
+        length = length &gt;&gt;&gt; 0;
+    }
+
+    ...
+</code></pre><p>果断传入总长度，还是3000行100列，7秒就完成了！</p>
+<p>总结：因为write buffer的event太多了，cpu处理不过来（单个CPU使用100%），事件都积压着（占用大量内存）。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -239,7 +525,10 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2014-10-11T12:25:00+08:00" content="2014-10-11">
               2014-10-11
             </time>
@@ -247,7 +536,11 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Linux/" itemprop="url" rel="index">
@@ -265,14 +558,17 @@
           
             
               <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2014/background-run/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/background-run/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+                &nbsp; | &nbsp;
+                <a href="/2014/background-run/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/background-run/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
+          
+
+          
           
 
         </div>
@@ -280,16 +576,15 @@
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>平时经常需要让程序在后台运行，一般都是在命令结尾加”&amp;“。如果需要在关闭终端也能运行，就在带上nohup，如：nohup ping xxx.com &gt; /dev/null &amp;。</p>
+          
+            <p>平时经常需要让程序在后台运行，一般都是在命令结尾加”&amp;“。如果需要在关闭终端也能运行，就在带上nohup，如：nohup ping xxx.com &gt; /dev/null &amp;。</p>
 <p>其实还有很多命令可以做到，而且更加灵活，像setsid、disown。特别是disown和jobs配合。这里有篇<a href="http://www.ibm.com/developerworks/cn/linux/l-cn-nohup/" target="_blank" rel="external">文章</a>说的很详细。</p>
 <p>再补充下 jobs相关的命令：</p>
 <blockquote>
@@ -306,9 +601,12 @@
 <p>   (tmux)ctrl+b d    //将现在所处的窗口挂起</p>
 </blockquote>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -357,7 +655,10 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2014-09-23T14:21:00+08:00" content="2014-09-23">
               2014-09-23
             </time>
@@ -365,7 +666,11 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Linux/" itemprop="url" rel="index">
@@ -383,14 +688,17 @@
           
             
               <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2014/ubuntu-mount/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/ubuntu-mount/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+                &nbsp; | &nbsp;
+                <a href="/2014/ubuntu-mount/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/ubuntu-mount/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
+          
+
+          
           
 
         </div>
@@ -398,23 +706,22 @@
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>在 Ubuntu 上挂载新的硬盘</p>
+          
+            <p>在 Ubuntu 上挂载新的硬盘</p>
 <ol>
 <li><p>找到新添加的硬盘</p>
 <p> $ sudo fdisk -l</p>
 <p> Disk /dev/sda: 31.5 GB, 31457280000 bytes<br> 4 heads, 32 sectors/track, 480000 cylinders, total 61440000 sectors</p>
-<pre><code>Units = sectors of <span class="number">1</span> * <span class="number">512</span> = <span class="number">512</span> bytes
+<pre><code>Units = sectors of 1 * 512 = 512 bytes
 </code></pre><p> Sector size (logical/physical): 512 bytes / 512 bytes<br> I/O size (minimum/optimal): 512 bytes / 512 bytes<br> Disk identifier: 0x0004fdcb</p>
-<pre><code>Device Boot      <span class="operator"><span class="keyword">Start</span>         <span class="keyword">End</span>      Blocks   <span class="keyword">Id</span>  <span class="keyword">System</span></span>
+<pre><code>Device Boot      Start         End      Blocks   Id  System
 </code></pre><p> /dev/sda1   *        2048    61439999    30718976   83  Linux</p>
 <p> Disk /dev/sdb: 107.4 GB, 107374182400 bytes<br> 255 heads, 63 sectors/track, 13054 cylinders, total 209715200 sectors<br> Units = sectors of 1 * 512 = 512 bytes<br> Sector size (logical/physical): 512 bytes / 512 bytes<br> I/O size (minimum/optimal): 512 bytes / 512 bytes<br> Disk identifier: 0x00000000</p>
 <p> <strong>Disk /dev/sdb doesn’t contain a valid partition table</strong></p>
@@ -443,19 +750,22 @@
 </li>
 </ol>
 <pre><code>Filesystem      Size  Used Avail Use% Mounted on
-/dev/sda1        <span class="number">29</span>G  <span class="number">5.9</span>G   <span class="number">22</span>G  <span class="number">22</span>% /
+/dev/sda1        29G  5.9G   22G  22% /
 
-udev            <span class="number">827</span>M  <span class="number">8.0</span>K  <span class="number">827</span>M   <span class="number">1</span>% /dev
+udev            827M  8.0K  827M   1% /dev
 
-tmpfs           <span class="number">168</span>M  <span class="number">392</span>K  <span class="number">168</span>M   <span class="number">1</span>% /run
+tmpfs           168M  392K  168M   1% /run
 
-/dev/sdb1        <span class="number">69</span>G   <span class="number">52</span>M   <span class="number">66</span>G   <span class="number">1</span>% /mnt
+/dev/sdb1        69G   52M   66G   1% /mnt
 
-**/dev/sdc1        <span class="number">99</span>G   <span class="number">60</span>M   <span class="number">94</span>G   <span class="number">1</span>% /dir**
+**/dev/sdc1        99G   60M   94G   1% /dir**
 </code></pre>
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -504,7 +814,10 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2014-09-03T16:45:00+08:00" content="2014-09-03">
               2014-09-03
             </time>
@@ -512,7 +825,11 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Linux/" itemprop="url" rel="index">
@@ -530,14 +847,17 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
           
             
               <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2014/raspberry-pi/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/raspberry-pi/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+                &nbsp; | &nbsp;
+                <a href="/2014/raspberry-pi/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/raspberry-pi/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
+          
+
+          
           
 
         </div>
@@ -545,16 +865,15 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>最近手上没什么事，正好公司买了几个树莓派有空闲的，于是乎，决定从零开始折腾一下。</p>
+          
+            <p>最近手上没什么事，正好公司买了几个树莓派有空闲的，于是乎，决定从零开始折腾一下。</p>
 <ol>
 <li><p>从树莓派的官网<a href="http://www.raspberrypi.org/downloads" target="_blank" rel="external">http://www.raspberrypi.org/downloads</a>上下载系统的镜像。</p>
 </li>
@@ -569,9 +888,12 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
 </ol>
 <p>好吧，就这样就可以在上面装上各种软件跑了。。。</p>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -620,7 +942,10 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2013-12-18T17:53:00+08:00" content="2013-12-18">
               2013-12-18
             </time>
@@ -628,7 +953,11 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Other/" itemprop="url" rel="index">
@@ -646,14 +975,17 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
           
             
               <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2013/BOM/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/BOM/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+                &nbsp; | &nbsp;
+                <a href="/2013/BOM/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/BOM/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
+          
+
+          
           
 
         </div>
@@ -661,27 +993,29 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>在处理一个 utf-8 格式文件的时候发现，第一行的文件头有 ‘efbb’ 这么些字符，一查才发现原来又是跨平台的问题。<a href="http://baike.baidu.com/subview/126558/5073180.htm" target="_blank" rel="external">百度 BOM</a></p>
+          
+            <p>在处理一个 utf-8 格式文件的时候发现，第一行的文件头有 ‘efbb’ 这么些字符，一查才发现原来又是跨平台的问题。<a href="http://baike.baidu.com/subview/126558/5073180.htm" target="_blank" rel="external">百度 BOM</a></p>
 <p>要去掉其实也很简单，用 Vi 打开文件，然后输入：</p>
-<pre><code>:<span class="keyword">set</span> nobomb
+<pre><code>:set nobomb
 </code></pre><p>要添加或判断是否有BOM：</p>
-<pre><code><span class="preprocessor">#添加BOM</span>
-:<span class="keyword">set</span> bomb
-<span class="preprocessor">#判断是否有BOM</span>
-:<span class="keyword">set</span> bomb?
+<pre><code>#添加BOM
+:set bomb
+#判断是否有BOM
+:set bomb?
 </code></pre>
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -730,7 +1064,10 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2013-12-09T16:01:44+08:00" content="2013-12-09">
               2013-12-09
             </time>
@@ -738,7 +1075,11 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Other/" itemprop="url" rel="index">
@@ -756,14 +1097,17 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
           
             
               <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2013/line-break/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/line-break/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+                &nbsp; | &nbsp;
+                <a href="/2013/line-break/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/line-break/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
+          
+
+          
           
 
         </div>
@@ -771,32 +1115,34 @@ tmpfs           <span class="number">168</span>M  <span class="number">392</span
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>前段时间在写一个处理文件小程序的时候碰到的一个坑，记录下。</p>
-<h4 id="问题">问题</h4><p>表现如下：</p>
-<pre><code>&gt; <span class="built_in">console</span>.log(<span class="string">'hello\n world'</span>);
+          
+            <p>前段时间在写一个处理文件小程序的时候碰到的一个坑，记录下。</p>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>表现如下：</p>
+<pre><code>&gt; console.log(&apos;hello\n world&apos;);
 hello
  world
-<span class="literal">undefined</span>
-&gt; <span class="built_in">console</span>.log(<span class="string">'hello\r world'</span>);
+undefined
+&gt; console.log(&apos;hello\r world&apos;);
  world
-<span class="literal">undefined</span>
-</code></pre><h4 id="原因">原因</h4><p>‘ \r’是回车,使光标到行首</p>
+undefined
+</code></pre><h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><p>‘ \r’是回车,使光标到行首</p>
 <p>‘\n’是换行,光标下移一格</p>
 <p>在Unix下，每行结尾只有一个 \n<br>而 window 下，则是 \n\r</p>
 <p>P.S. 一般编程语言会提供一些特殊的变量适应不同操作系统，类似目录分割符那样的，换行符在 Node.js 中是：require(‘os’).EOL 。</p>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -814,7 +1160,137 @@ hello
 
 
     
+      
 
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2011/2011-11-replace-command/" itemprop="url">
+                  文本替换命令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2011-11-01T17:54:47+08:00" content="2011-11-01">
+              2011-11-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2011/2011-11-replace-command/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2011/2011-11-replace-command/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在 Unix/Linux 系统中经常需要在命令中替换某一类文件中的内容，例如：把 *.xml 文件里的 aaaa 替换成 bbbb 这样的操作。</p>
+<p>下面介绍几种方法。</p>
+<ul>
+<li>bash</li>
+</ul>
+<p>封装一个 bash 脚本来完成这个操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/bash</span><br><span class="line"></span></span><br><span class="line">old_str=<span class="variable">$1</span></span><br><span class="line">new_str=<span class="variable">$2</span></span><br><span class="line">file_name=<span class="variable">$3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"old_str:[<span class="variable">$old_str</span>]"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"new_str:[<span class="variable">$new_str</span>]"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"file_name:[<span class="variable">$file_name</span>]"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">change_fun</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">  old_str1=<span class="variable">$1</span></span><br><span class="line">  new_str1=<span class="variable">$2</span></span><br><span class="line">  file_name1=<span class="variable">$3</span></span><br><span class="line">  (<span class="built_in">echo</span> <span class="string">"vi <span class="variable">$&#123;file_name1&#125;</span> &lt;&lt;-!"</span>;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">":%s:<span class="variable">$old_str1</span>:<span class="variable">$new_str1</span>:g"</span>;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">":wq"</span>;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"!"</span>;</span><br><span class="line">  )|sh</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> `ls ./*<span class="variable">$&#123;file_name&#125;</span>*`</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  change_fun <span class="string">"<span class="variable">$old_str</span>"</span> <span class="string">"<span class="variable">$new_str</span>"</span>  <span class="string">"<span class="variable">$filename</span>"</span></span><br><span class="line">  <span class="comment">#echo "change_fun \"$old_str\" \"$new_str\"  \"$filename\""</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>脚本的步骤是： vi 打开文件 -&gt; 使用 <code>%s</code> 正则匹配替换 -&gt; 保存并关闭</p>
+<ul>
+<li>sed</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -<span class="selector-tag">i</span> <span class="string">'s/old_str/new_str/g'</span> *filename*</span><br></pre></td></tr></table></figure>
+<p>如果是sed的老版本不支持 -i 参数，那就不能修改源文件，只能是先把替换的结果用重定向符输出到一个临时文件，然后再覆盖源文件了。</p>
+<ul>
+<li>perl</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">perl -pi <span class="_">-e</span> <span class="string">'s/old_str/new_str/g'</span> *filename*</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -824,17 +1300,15 @@ hello
 
 
 
+          </div>
+          
+
+
+          
+
         </div>
-
         
-
-
-        
-
-      </div>
-
-      
-        
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -853,31 +1327,37 @@ hello
 
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="https://gravatar.com/avatar/124ea13daf1648975e002b3c5e89d7e2" alt="Liucw" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="https://gravatar.com/avatar/124ea13daf1648975e002b3c5e89d7e2"
+               alt="Liucw" />
           <p class="site-author-name" itemprop="name">Liucw</p>
+          <p class="site-description motion-element" itemprop="description">Coder, Dota2, ONE PIECE ...</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">Coder, Dota2, ONE PIECE ...</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">7</span>
-              <span class="site-state-item-name">分类</span>
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
               </a>
-          </div>
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">12</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
@@ -890,7 +1370,8 @@ hello
         
         
 
-        <div class="links-of-author motion-element">
+        
+        <div class="links-of-blogroll motion-element">
           
         </div>
 
@@ -902,7 +1383,8 @@ hello
   </aside>
 
 
-      
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
@@ -910,9 +1392,9 @@ hello
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2015</span>
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Liucw</span>
 </div>
@@ -924,7 +1406,7 @@ hello
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT
+    NexT.Muse
   </a>
 </div>
 
@@ -933,17 +1415,63 @@ hello
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
 
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
   
   
 
   
-    
-    
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
 
   
 
@@ -967,31 +1495,13 @@ hello
   
 
 
-  
 
   
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
-
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-
-  <script type="text/javascript" src="/js/bootstrap.js"></script>
-
   
   
 
   
+
   
 
 </body>

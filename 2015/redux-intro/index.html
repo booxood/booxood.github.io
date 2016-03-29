@@ -1,5 +1,11 @@
 <!doctype html>
-<html class="theme-next   use-motion ">
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -32,7 +38,7 @@
 
 <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="React,Redux," />
@@ -44,7 +50,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
 
 
 
@@ -65,7 +71,7 @@ Redux is a predictable state container for JavaScript apps.
 Redux is a predictable state container for JavaScript apps.
 
 官方介绍 Redux 是 JavaS">
-<meta property="og:updated_time" content="2015-12-04T06:44:40.119Z">
+<meta property="og:updated_time" content="2016-03-29T10:17:42.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redux 介绍">
 <meta name="twitter:description" content="之前接触了一下 React，配合 Flux，单向数据流，让程序的结构看起来很清晰。但是 Flux 需要写很多”重复”的代码，看起来很麻烦很复杂。不过 Flux 的替换方案有很多，例如：alt、reflux等，最热门应该是 Redux 了。
@@ -77,10 +83,16 @@ Redux is a predictable state container for JavaScript apps.
 
 
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: '',
-    sidebar: 'post',
-    motion: true
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
   };
 </script>
 
@@ -89,15 +101,6 @@ Redux is a predictable state container for JavaScript apps.
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
@@ -124,7 +127,16 @@ Redux is a predictable state container for JavaScript apps.
 
 
 
-  <div class="container one-column page-post-detail">
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -153,7 +165,7 @@ Redux is a predictable state container for JavaScript apps.
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
@@ -197,7 +209,6 @@ Redux is a predictable state container for JavaScript apps.
       
 
       
-      
     </ul>
   
 
@@ -209,8 +220,9 @@ Redux is a predictable state container for JavaScript apps.
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content">
-          
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
     
@@ -241,7 +253,10 @@ Redux is a predictable state container for JavaScript apps.
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2015-11-25T10:29:41+00:00" content="2015-11-25">
               2015-11-25
             </time>
@@ -249,7 +264,11 @@ Redux is a predictable state container for JavaScript apps.
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/React/" itemprop="url" rel="index">
@@ -267,14 +286,17 @@ Redux is a predictable state container for JavaScript apps.
           
             
               <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/redux-intro/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/redux-intro/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+                &nbsp; | &nbsp;
+                <a href="/2015/redux-intro/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/redux-intro/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
+          
+
+          
           
 
         </div>
@@ -282,38 +304,38 @@ Redux is a predictable state container for JavaScript apps.
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <span itemprop="articleBody"><p>之前接触了一下 React，配合 Flux，单向数据流，让程序的结构看起来很清晰。但是 Flux 需要写很多”重复”的代码，看起来很麻烦很复杂。不过 Flux 的替换方案有很多，例如：<a href="https://github.com/goatslacker/alt" target="_blank" rel="external">alt</a>、<a href="https://github.com/reflux/refluxjs" target="_blank" rel="external">reflux</a>等，最热门应该是 <a href="https://github.com/rackt/redux/" target="_blank" rel="external">Redux</a> 了。</p>
+        <p>之前接触了一下 React，配合 Flux，单向数据流，让程序的结构看起来很清晰。但是 Flux 需要写很多”重复”的代码，看起来很麻烦很复杂。不过 Flux 的替换方案有很多，例如：<a href="https://github.com/goatslacker/alt" target="_blank" rel="external">alt</a>、<a href="https://github.com/reflux/refluxjs" target="_blank" rel="external">reflux</a>等，最热门应该是 <a href="https://github.com/rackt/redux/" target="_blank" rel="external">Redux</a> 了。</p>
 <blockquote>
 <p>Redux is a predictable state container for JavaScript apps.</p>
 </blockquote>
 <p>官方介绍 Redux 是 JavaScript 状态容器，提供可预测化的状态管理。可以跟大部分的 View 层框架配合使用，不限于 React。</p>
 <p>Redux 只关心如何管理 state，它的顶层暴露的 API 只有 5 个，非常简单。</p>
-<h3 id="API">API</h3><p>为了更具体的说明，写了一个 <a href="https://github.com/booxood/redux-demo" target="_blank" rel="external">redux-demo</a>，</p>
-<pre><code>commit <span class="number">5</span>cf4f88adf1c57ca54ef7cd73a6278056db52ebe
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><p>为了更具体的说明，写了一个 <a href="https://github.com/booxood/redux-demo" target="_blank" rel="external">redux-demo</a>，</p>
+<pre><code>commit 5cf4f88adf1c57ca54ef7cd73a6278056db52ebe
 Author: Liucw
-Date:   Wed Nov <span class="number">25</span> <span class="number">18</span>:<span class="number">05</span>:<span class="number">26</span> <span class="number">2015</span> +<span class="number">0800</span>
+Date:   Wed Nov 25 18:05:26 2015 +0800
 
     applyMiddleware
 
-commit <span class="number">3</span>ecad1d75a4fca5a79a300641db972202c1a47e7
+commit 3ecad1d75a4fca5a79a300641db972202c1a47e7
 Author: Liucw
-Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<span class="number">16</span>:<span class="number">49</span> <span class="number">2015</span> +<span class="number">0800</span>
+Date:   Wed Nov 25 16:16:49 2015 +0800
 
     combineReducers
 
 commit df0de5b1a9730d286ebf880adc379d7a03638d87
 Author: Liucw
-Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<span class="number">00</span>:<span class="number">09</span> <span class="number">2015</span> +<span class="number">0800</span>
+Date:   Wed Nov 25 16:00:09 2015 +0800
 
     store
 </code></pre><p>一次提交试验一个 API，可以 checkout 到对应的 commit 上运行程序。</p>
-<h4 id="createStore">createStore</h4><p><code>createStore(reducer, [initialState])</code></p>
+<h4 id="createStore"><a href="#createStore" class="headerlink" title="createStore"></a>createStore</h4><p><code>createStore(reducer, [initialState])</code></p>
 <p>创建一个 Store，里面存放着 state。一般来说一个应用只有一个 Store。</p>
 <p>参数</p>
 <ul>
@@ -333,25 +355,31 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
 </ul>
 <p>可以切到 <code>df0de5b1a9730d286ebf880adc379d7a03638d87</code> 运行一下，看下结果</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout df0de5b1a9730d286ebf880adc379d7a03638d87</span><br><span class="line">$ node index.js</span><br><span class="line"><span class="string">s0:</span> []</span><br><span class="line">store.<span class="string">subscribe:</span> [ <span class="string">'add 1'</span> ]</span><br><span class="line"><span class="string">s1:</span> [ <span class="string">'add 1'</span> ]</span><br><span class="line">unsubscribe</span><br><span class="line"><span class="string">s2:</span> [ <span class="string">'add 1'</span>, <span class="string">'add 2'</span> ]</span><br></pre></td></tr></table></figure>
-<h4 id="combineReducers">combineReducers</h4><p><code>combineReducers(reducers)</code><br>combineReducers 可以把一个由多个 reducer 函数作为 value 的 object，合并成一个最终的 reducer 函数，然后对这个 reducer 调用 createStore 产生唯一的 Store。</p>
+<h4 id="combineReducers"><a href="#combineReducers" class="headerlink" title="combineReducers"></a>combineReducers</h4><p><code>combineReducers(reducers)</code><br>combineReducers 可以把一个由多个 reducer 函数作为 value 的 object，合并成一个最终的 reducer 函数，然后对这个 reducer 调用 createStore 产生唯一的 Store。</p>
 <figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; todos, counter, add &#125; from <span class="string">'./reducer'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> counters = combineReducers(&#123;</span><br><span class="line">  counter,</span><br><span class="line">  add</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> reducers = combineReducers(&#123;</span><br><span class="line">  todos,</span><br><span class="line">  counters</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> store = createStore(reducers)</span><br></pre></td></tr></table></figure>
 <p>定义了三个 Reducer，先将 counter 和 add 进行 combine 产生 counters，再将 counters 和 todos 进行 combine 得到最终的 reducers。执行一下，看下返回的结果</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout <span class="number">3</span>ecad1d75a4fca5a79a300641db972202c1a47e7</span><br><span class="line">$ node index.js</span><br><span class="line"><span class="string">s0:</span> &#123; <span class="string">todos:</span> [], <span class="string">counters:</span> &#123; <span class="string">counter:</span> <span class="number">0</span>, <span class="string">add:</span> <span class="number">0</span> &#125; &#125;</span><br><span class="line">store.<span class="string">subscribe:</span> &#123; <span class="string">todos:</span> [ <span class="string">'add 1'</span> ], <span class="string">counters:</span> &#123; <span class="string">counter:</span> <span class="number">0</span>, <span class="string">add:</span> <span class="number">0</span> &#125; &#125;</span><br><span class="line">store.<span class="string">subscribe:</span> &#123; <span class="string">todos:</span> [ <span class="string">'add 1'</span> ], <span class="string">counters:</span> &#123; <span class="string">counter:</span> <span class="number">1</span>, <span class="string">add:</span> <span class="number">0</span> &#125; &#125;</span><br><span class="line">store.<span class="string">subscribe:</span> &#123; <span class="string">todos:</span> [ <span class="string">'add 1'</span> ], <span class="string">counters:</span> &#123; <span class="string">counter:</span> <span class="number">1</span>, <span class="string">add:</span> <span class="number">1</span> &#125; &#125;</span><br><span class="line"><span class="string">s1:</span> &#123; <span class="string">todos:</span> [ <span class="string">'add 1'</span> ], <span class="string">counters:</span> &#123; <span class="string">counter:</span> <span class="number">1</span>, <span class="string">add:</span> <span class="number">1</span> &#125; &#125;</span><br><span class="line">unsubscribe</span><br><span class="line"><span class="string">s2:</span> &#123; <span class="string">todos:</span> [ <span class="string">'add 1'</span>, <span class="string">'add 2'</span> ],</span><br><span class="line"><span class="label">  counters:</span> &#123; <span class="string">counter:</span> <span class="number">1</span>, <span class="string">add:</span> <span class="number">1</span> &#125; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout <span class="number">3</span>ecad1d75a4fca5a79a300641db972202c1a47e7</span><br><span class="line">$ node index.js</span><br><span class="line"><span class="attribute">s0</span>: &#123; <span class="attribute">todos</span>: [], <span class="attribute">counters</span>: &#123; <span class="attribute">counter</span>: <span class="number">0</span>, <span class="attribute">add</span>: <span class="number">0</span> &#125; &#125;</span><br><span class="line"><span class="attribute">store.subscribe</span>: &#123; <span class="attribute">todos</span>: [ <span class="string">'add 1'</span> ], <span class="attribute">counters</span>: &#123; <span class="attribute">counter</span>: <span class="number">0</span>, <span class="attribute">add</span>: <span class="number">0</span> &#125; &#125;</span><br><span class="line"><span class="attribute">store.subscribe</span>: &#123; <span class="attribute">todos</span>: [ <span class="string">'add 1'</span> ], <span class="attribute">counters</span>: &#123; <span class="attribute">counter</span>: <span class="number">1</span>, <span class="attribute">add</span>: <span class="number">0</span> &#125; &#125;</span><br><span class="line"><span class="attribute">store.subscribe</span>: &#123; <span class="attribute">todos</span>: [ <span class="string">'add 1'</span> ], <span class="attribute">counters</span>: &#123; <span class="attribute">counter</span>: <span class="number">1</span>, <span class="attribute">add</span>: <span class="number">1</span> &#125; &#125;</span><br><span class="line"><span class="attribute">s1</span>: &#123; <span class="attribute">todos</span>: [ <span class="string">'add 1'</span> ], <span class="attribute">counters</span>: &#123; <span class="attribute">counter</span>: <span class="number">1</span>, <span class="attribute">add</span>: <span class="number">1</span> &#125; &#125;</span><br><span class="line">unsubscribe</span><br><span class="line"><span class="attribute">s2</span>: &#123; <span class="attribute">todos</span>: [ <span class="string">'add 1'</span>, <span class="string">'add 2'</span> ],</span><br><span class="line">  <span class="attribute">counters</span>: &#123; <span class="attribute">counter</span>: <span class="number">1</span>, <span class="attribute">add</span>: <span class="number">1</span> &#125; &#125;</span><br></pre></td></tr></table></figure>
 <p>最后得到的 state 的结构与 combine 时的结构相同。</p>
-<h4 id="applyMiddleware">applyMiddleware</h4><p>applyMiddleware 可以为 store 的 dispatch 包装一些 middleware。多个 middleware 可以被组合到一起使用，形成 middleware 链。其中，每个 middleware 都不需要关心链中它前后的 middleware 的任何信息。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ./action.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">thunkAction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">dispatch</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>((resolve, reject) =&gt; resolve(dispatch(&#123;type: <span class="string">'ADD'</span>&#125;)))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ./store.js</span></span><br><span class="line"><span class="keyword">import</span> thunk <span class="keyword">from</span> <span class="string">'redux-thunk'</span></span><br><span class="line"><span class="keyword">import</span> &#123; thunkAction &#125; <span class="keyword">from</span> <span class="string">'./action'</span></span><br><span class="line"></span><br><span class="line">let createStoreWithMiddleware = applyMiddleware(...[thunk, logger])(createStore);</span><br><span class="line"><span class="keyword">let</span> store = createStoreWithMiddleware(add)</span><br><span class="line"></span><br><span class="line">store.dispatch(thunkAction()).then(() =&gt; <span class="built_in">console</span>.log(<span class="string">'done:'</span>, store.getState()))</span><br></pre></td></tr></table></figure>
-<p>应用了 <code>redux-thunk</code> middleware 后，可以 dispatch thunkAction。<br>最后的运行结果<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">LOG</span>]s0: 0</span><br><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">INFO</span>]will dispatch: &#123; type: 'ADD' &#125;</span><br><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">LOG</span>]store.subscribe: 1</span><br><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">INFO</span>]state after dispatch: 1</span><br><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">LOG</span>]s1: 1</span><br><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">LOG</span>]done: 1</span><br></pre></td></tr></table></figure></p>
-<h4 id="bindActionCreators">bindActionCreators</h4><p>将 action 与 Store.dispatch 绑定起来。</p>
+<h4 id="applyMiddleware"><a href="#applyMiddleware" class="headerlink" title="applyMiddleware"></a>applyMiddleware</h4><p>applyMiddleware 可以为 store 的 dispatch 包装一些 middleware。多个 middleware 可以被组合到一起使用，形成 middleware 链。其中，每个 middleware 都不需要关心链中它前后的 middleware 的任何信息。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ./action.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">thunkAction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">dispatch</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>((resolve, reject) =&gt; resolve(dispatch(&#123;type: <span class="string">'ADD'</span>&#125;)))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ./store.js</span></span><br><span class="line"><span class="keyword">import</span> thunk <span class="keyword">from</span> <span class="string">'redux-thunk'</span></span><br><span class="line"><span class="keyword">import</span> &#123; thunkAction &#125; <span class="keyword">from</span> <span class="string">'./action'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> createStoreWithMiddleware = applyMiddleware(...[thunk, logger])(createStore);</span><br><span class="line"><span class="keyword">let</span> store = createStoreWithMiddleware(add)</span><br><span class="line"></span><br><span class="line">store.dispatch(thunkAction()).then(() =&gt; <span class="built_in">console</span>.log(<span class="string">'done:'</span>, store.getState()))</span><br></pre></td></tr></table></figure>
+<p>应用了 <code>redux-thunk</code> middleware 后，可以 dispatch thunkAction。<br>最后的运行结果<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">2015-11-26 11:02:33</span>][<span class="symbol">LOG</span>]s0: 0</span><br><span class="line">[<span class="string">2015-11-26 11:02:33</span>][<span class="symbol">INFO</span>]will dispatch: &#123; type: 'ADD' &#125;</span><br><span class="line">[<span class="string">2015-11-26 11:02:33</span>][<span class="symbol">LOG</span>]store.subscribe: 1</span><br><span class="line">[<span class="string">2015-11-26 11:02:33</span>][<span class="symbol">INFO</span>]state after dispatch: 1</span><br><span class="line">[<span class="string">2015-11-26 11:02:33</span>][<span class="symbol">LOG</span>]s1: 1</span><br><span class="line">[<span class="string">2015-11-26 11:02:33</span>][<span class="symbol">LOG</span>]done: 1</span><br></pre></td></tr></table></figure></p>
+<h4 id="bindActionCreators"><a href="#bindActionCreators" class="headerlink" title="bindActionCreators"></a>bindActionCreators</h4><p>将 action 与 Store.dispatch 绑定起来。</p>
 <blockquote>
 <p>惟一使用 bindActionCreators 的场景是当你需要把 action creator 往下传到一个组件上，却不想让这个组件觉察到 Redux 的存在，而且不希望把 Redux store 或 dispatch 传给它。</p>
 </blockquote>
-<h4 id="compose">compose</h4><p>将多个函数从右到左组合在一起。</p>
+<h4 id="compose"><a href="#compose" class="headerlink" title="compose"></a>compose</h4><p>将多个函数从右到左组合在一起。</p>
 <blockquote>
 <p>compse 做的只是让你不使用深度右括号的情况下来写深度嵌套的函数。不要觉得它很复杂。</p>
 </blockquote>
-<h3 id="总结">总结</h3><p>其实 Redux 提供的功能很简单，就是创造一颗 state 树，定义修改这颗树的规则。</p>
-<h3 id="参考">参考</h3><p><a href="http://rackt.org/redux/" target="_blank" rel="external">http://rackt.org/redux/</a><br><a href="http://camsong.github.io/redux-in-chinese/index.html" target="_blank" rel="external">http://camsong.github.io/redux-in-chinese/index.html</a></p>
-</span>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>其实 Redux 提供的功能很简单，就是创造一颗 state 树，定义修改这颗树的规则。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://rackt.org/redux/" target="_blank" rel="external">http://rackt.org/redux/</a><br><a href="http://camsong.github.io/redux-in-chinese/index.html" target="_blank" rel="external">http://camsong.github.io/redux-in-chinese/index.html</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -378,6 +406,10 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/2016-03-yeoman-react-new-component/" rel="prev" title="Yeoman 创建一个 React Component 生成器">
+                Yeoman 创建一个 React Component 生成器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -395,25 +427,26 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
   </div>
 
 
-        </div>
+          </div>
+          
 
-        
 
-
-        
+          
   <div class="comments" id="comments">
     
       <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
 
 
-      </div>
-
-      
+        </div>
         
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -441,31 +474,37 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="https://gravatar.com/avatar/124ea13daf1648975e002b3c5e89d7e2" alt="Liucw" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="https://gravatar.com/avatar/124ea13daf1648975e002b3c5e89d7e2"
+               alt="Liucw" />
           <p class="site-author-name" itemprop="name">Liucw</p>
+          <p class="site-description motion-element" itemprop="description">Coder, Dota2, ONE PIECE ...</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">Coder, Dota2, ONE PIECE ...</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">7</span>
-              <span class="site-state-item-name">分类</span>
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
               </a>
-          </div>
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">12</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
@@ -478,7 +517,8 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
         
         
 
-        <div class="links-of-author motion-element">
+        
+        <div class="links-of-blogroll motion-element">
           
         </div>
 
@@ -507,7 +547,8 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
   </aside>
 
 
-      
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
@@ -515,9 +556,9 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2015</span>
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Liucw</span>
 </div>
@@ -529,7 +570,7 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT
+    NexT.Muse
   </a>
 </div>
 
@@ -538,63 +579,54 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
 
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
-  
-  
-
-  
-    
-    
-
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'woaizm';
-      var disqus_identifier = '2015/redux-intro/';
-      var disqus_title = 'Redux 介绍';
-      var disqus_url = 'http://blog.woaizuomeng.com/2015/redux-intro/';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-      
-        run_disqus_script('embed.js');
-      
-    </script>
-  
-
-
-  
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
-
-
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
   <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
-  
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
 
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
 
 <script type="text/javascript" id="sidebar.toc.highlight">
   $(document).ready(function () {
@@ -728,7 +760,7 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
 
     $('.post-toc a').on('click', function (e) {
       e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
       var offset = $(targetSelector).offset().top;
       hasVelocity ?
         html.velocity('stop').velocity('scroll', {
@@ -741,11 +773,12 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
     });
 
     // Expand sidebar on post detail page by default, when post has a toc.
-    motionMiddleWares.sidebar = function () {
+    NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
-      if (CONFIG.sidebar === 'post') {
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          displaySidebar();
+          NexT.utils.displaySidebar();
         }
       }
     };
@@ -754,12 +787,48 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
 
 
 
-  <script type="text/javascript" src="/js/bootstrap.js"></script>
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'woaizm';
+      var disqus_identifier = '2015/redux-intro/';
+      var disqus_title = 'Redux 介绍';
+      var disqus_url = 'http://blog.woaizuomeng.com/2015/redux-intro/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
 
   
   
+  
 
   
+
   
 
 </body>

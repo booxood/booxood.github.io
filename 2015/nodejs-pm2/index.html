@@ -1,5 +1,11 @@
 <!doctype html>
-<html class="theme-next   use-motion ">
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -32,7 +38,7 @@
 
 <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Node.js," />
@@ -44,7 +50,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
 
 
 
@@ -63,7 +69,7 @@ pm2 start xxx.json指定启动的配置文件，配置文件的格式
 基本的用法启动进程pm2 start xx.js指定启动的 js 文件
 pm2 start xxx.json指定启动的配置文件，配置文件的格式
 1234567891011121314151617181920212223&amp;#123;  &quot;apps&quot; : [&amp;#123;">
-<meta property="og:updated_time" content="2015-12-04T06:44:40.119Z">
+<meta property="og:updated_time" content="2016-03-29T10:17:42.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PM2（Node.js 进程守护工具）">
 <meta name="twitter:description" content="PM2 是一个 Node.js 进程守护工具，可以让我们很方便的对 Node.js 程序进行管理，类似的工具还有 forever。
@@ -74,10 +80,16 @@ pm2 start xxx.json指定启动的配置文件，配置文件的格式
 
 
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: '',
-    sidebar: 'post',
-    motion: true
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
   };
 </script>
 
@@ -86,15 +98,6 @@ pm2 start xxx.json指定启动的配置文件，配置文件的格式
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
@@ -121,7 +124,16 @@ pm2 start xxx.json指定启动的配置文件，配置文件的格式
 
 
 
-  <div class="container one-column page-post-detail">
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -150,7 +162,7 @@ pm2 start xxx.json指定启动的配置文件，配置文件的格式
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
@@ -194,7 +206,6 @@ pm2 start xxx.json指定启动的配置文件，配置文件的格式
       
 
       
-      
     </ul>
   
 
@@ -206,8 +217,9 @@ pm2 start xxx.json指定启动的配置文件，配置文件的格式
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content">
-          
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
     
@@ -238,7 +250,10 @@ pm2 start xxx.json指定启动的配置文件，配置文件的格式
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2015-10-26T03:17:08+00:00" content="2015-10-26">
               2015-10-26
             </time>
@@ -246,7 +261,11 @@ pm2 start xxx.json指定启动的配置文件，配置文件的格式
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Node-js/" itemprop="url" rel="index">
@@ -264,14 +283,17 @@ pm2 start xxx.json指定启动的配置文件，配置文件的格式
           
             
               <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/nodejs-pm2/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/nodejs-pm2/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+                &nbsp; | &nbsp;
+                <a href="/2015/nodejs-pm2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/nodejs-pm2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
+          
+
+          
           
 
         </div>
@@ -279,43 +301,49 @@ pm2 start xxx.json指定启动的配置文件，配置文件的格式
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <span itemprop="articleBody"><p>PM2 是一个 Node.js 进程守护工具，可以让我们很方便的对 Node.js 程序进行管理，类似的工具还有 <a href="https://github.com/foreverjs/forever" target="_blank" rel="external">forever</a>。</p>
-<h3 id="基本的用法">基本的用法</h3><h4 id="启动进程">启动进程</h4><p><code>pm2 start xx.js</code><br>指定启动的 js 文件</p>
+        <p>PM2 是一个 Node.js 进程守护工具，可以让我们很方便的对 Node.js 程序进行管理，类似的工具还有 <a href="https://github.com/foreverjs/forever" target="_blank" rel="external">forever</a>。</p>
+<h3 id="基本的用法"><a href="#基本的用法" class="headerlink" title="基本的用法"></a>基本的用法</h3><h4 id="启动进程"><a href="#启动进程" class="headerlink" title="启动进程"></a>启动进程</h4><p><code>pm2 start xx.js</code><br>指定启动的 js 文件</p>
 <p><code>pm2 start xxx.json</code><br>指定启动的配置文件，配置文件的格式</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">apps</span>" : <span class="value">[&#123;</span><br><span class="line">    "<span class="attribute">name</span>"        : <span class="value"><span class="string">"worker-app"</span></span>,</span><br><span class="line">    "<span class="attribute">script</span>"      : <span class="value"><span class="string">"worker.js"</span></span>,</span><br><span class="line">    "<span class="attribute">args</span>"        : <span class="value">[<span class="string">"--toto=heya coco"</span>, <span class="string">"-d"</span>, <span class="string">"1"</span>]</span>,</span><br><span class="line">    "<span class="attribute">watch</span>"       : <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">    "<span class="attribute">node_args</span>"   : <span class="value"><span class="string">"--harmony"</span></span>,</span><br><span class="line">    "<span class="attribute">merge_logs</span>"  : <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">    "<span class="attribute">cwd</span>"         : <span class="value"><span class="string">"/this/is/a/path/to/start/script"</span></span>,</span><br><span class="line">    "<span class="attribute">env</span>": <span class="value">&#123;</span><br><span class="line">        "<span class="attribute">NODE_ENV</span>": <span class="value"><span class="string">"production"</span></span>,</span><br><span class="line">        "<span class="attribute">AWESOME_SERVICE_API_TOKEN</span>": <span class="value"><span class="string">"xxx"</span></span><br><span class="line">    </span>&#125;</span><br><span class="line">  </span>&#125;,&#123;</span><br><span class="line">    "<span class="attribute">name</span>"       : <span class="value"><span class="string">"api-app"</span></span>,</span><br><span class="line">    "<span class="attribute">script</span>"     : <span class="value"><span class="string">"api.js"</span></span>,</span><br><span class="line">    "<span class="attribute">instances</span>"  : <span class="value"><span class="number">4</span></span>,</span><br><span class="line">    "<span class="attribute">exec_mode</span>"  : <span class="value"><span class="string">"cluster_mode"</span></span>,</span><br><span class="line">    "<span class="attribute">error_file</span>" : <span class="value"><span class="string">"./examples/child-err.log"</span></span>,</span><br><span class="line">    "<span class="attribute">out_file</span>"   : <span class="value"><span class="string">"./examples/child-out.log"</span></span>,</span><br><span class="line">    "<span class="attribute">pid_file</span>"   : <span class="value"><span class="string">"./examples/child.pid"</span></span><br><span class="line">  </span>&#125;]</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"apps"</span> : [&#123;</span><br><span class="line">    <span class="attr">"name"</span>        : <span class="string">"worker-app"</span>,</span><br><span class="line">    <span class="attr">"script"</span>      : <span class="string">"worker.js"</span>,</span><br><span class="line">    <span class="attr">"args"</span>        : [<span class="string">"--toto=heya coco"</span>, <span class="string">"-d"</span>, <span class="string">"1"</span>],</span><br><span class="line">    <span class="attr">"watch"</span>       : <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"node_args"</span>   : <span class="string">"--harmony"</span>,</span><br><span class="line">    <span class="attr">"merge_logs"</span>  : <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"cwd"</span>         : <span class="string">"/this/is/a/path/to/start/script"</span>,</span><br><span class="line">    <span class="attr">"env"</span>: &#123;</span><br><span class="line">        <span class="attr">"NODE_ENV"</span>: <span class="string">"production"</span>,</span><br><span class="line">        <span class="attr">"AWESOME_SERVICE_API_TOKEN"</span>: <span class="string">"xxx"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,&#123;</span><br><span class="line">    <span class="attr">"name"</span>       : <span class="string">"api-app"</span>,</span><br><span class="line">    <span class="attr">"script"</span>     : <span class="string">"api.js"</span>,</span><br><span class="line">    <span class="attr">"instances"</span>  : <span class="number">4</span>,</span><br><span class="line">    <span class="attr">"exec_mode"</span>  : <span class="string">"cluster_mode"</span>,</span><br><span class="line">    <span class="attr">"error_file"</span> : <span class="string">"./examples/child-err.log"</span>,</span><br><span class="line">    <span class="attr">"out_file"</span>   : <span class="string">"./examples/child-out.log"</span>,</span><br><span class="line">    <span class="attr">"pid_file"</span>   : <span class="string">"./examples/child.pid"</span></span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>详细的配置项看<a href="http://pm2.keymetrics.io/docs/usage/application-declaration/" target="_blank" rel="external">这里</a>。</p>
-<h4 id="重新加载">重新加载</h4><p><code>pm2 reload [name|id]</code></p>
+<h4 id="重新加载"><a href="#重新加载" class="headerlink" title="重新加载"></a>重新加载</h4><p><code>pm2 reload [name|id]</code></p>
 <p><code>pm2 restart [name|id]</code></p>
-<h4 id="停止">停止</h4><p><code>pm2 stop [name|id]</code><br>停止程序运行</p>
+<h4 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h4><p><code>pm2 stop [name|id]</code><br>停止程序运行</p>
 <p><code>pm2 delete [name|id]</code><br>停止程序并删除相关信息</p>
-<h4 id="查看运行状态及相关信息">查看运行状态及相关信息</h4><p><code>pm2 list</code><br><code>pm2 info [name|id]</code><br><code>pm2 desc [name|id]</code><br><code>pm2 monit [name|id]</code></p>
+<h4 id="查看运行状态及相关信息"><a href="#查看运行状态及相关信息" class="headerlink" title="查看运行状态及相关信息"></a>查看运行状态及相关信息</h4><p><code>pm2 list</code><br><code>pm2 info [name|id]</code><br><code>pm2 desc [name|id]</code><br><code>pm2 monit [name|id]</code></p>
 <p>上面的命令都会显示程序的运行状态或展示相关信息。</p>
-<h4 id="设置开机启动项">设置开机启动项</h4><ol>
+<h4 id="设置开机启动项"><a href="#设置开机启动项" class="headerlink" title="设置开机启动项"></a>设置开机启动项</h4><ol>
 <li><code>pm2 dump [name|id]</code><br>保存程序运行的相关信息</li>
 <li><p><code>pm2 startup [platform]</code><br>生成设置开机启动项命令，类型这样</p>
 <pre><code>$ pm2 startup
-[PM2] You have <span class="keyword">to</span> <span class="command">run</span> this command <span class="keyword">as</span> root. Execute <span class="keyword">the</span> following command:
-sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v2.5.0/bin pm2 startup darwin -u xxx"</span>
+[PM2] You have to run this command as root. Execute the following command:
+sudo su -c &quot;env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v2.5.0/bin pm2 startup darwin -u xxx&quot;
 </code></pre></li>
 </ol>
-<h3 id="扩展插件">扩展插件</h3><h4 id="pm2-logrotate">pm2-logrotate</h4><p>自动管理日志文件（<a href="https://github.com/pm2-hive/pm2-logrotate" target="_blank" rel="external">项目地址</a>）</p>
-<h5 id="安装">安装</h5><p><code>pm2 install pm2-logrotate</code></p>
+<h3 id="扩展插件"><a href="#扩展插件" class="headerlink" title="扩展插件"></a>扩展插件</h3><h4 id="pm2-logrotate"><a href="#pm2-logrotate" class="headerlink" title="pm2-logrotate"></a>pm2-logrotate</h4><p>自动管理日志文件（<a href="https://github.com/pm2-hive/pm2-logrotate" target="_blank" rel="external">项目地址</a>）</p>
+<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p><code>pm2 install pm2-logrotate</code></p>
 <p><strong>注意</strong> 如果 <code>npm</code> 的版本是 <code>v2.7.4</code> ，会安装失败（Github 上的 <a href="https://github.com/npm/npm/issues/7984" target="_blank" rel="external">issue</a>），需更新 <code>npm</code>。</p>
-<h5 id="配置">配置</h5><ul>
+<h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><ul>
 <li>max_size（默认 10MB）：当日志文件超过该值指定的大小时，就会切割日志文件。还可以设置为其他的单位，例如：1G、1M、1K。</li>
 <li>interval（默认 1）</li>
 <li>interval_unit（默认 ‘DD’）：interval 和 interval_unit 是一起配合使用的，例如 interval=3、interval_unit=’DD’，表示日志文件每三天切割一次。</li>
 <li>retain（默认 ‘all’）：保留的日志文件数</li>
 </ul>
-<h5 id="设置">设置</h5><p><code>pm2 set pm2-logrotate:&lt;param&gt; &lt;value&gt;</code><br>配置项的值都是通过这样的形式设置，例如：<br><code>pm2 set pm2-logrotate:max_size 1K</code><br>设置 max_size 为 1K</p>
+<h5 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h5><p><code>pm2 set pm2-logrotate:&lt;param&gt; &lt;value&gt;</code><br>配置项的值都是通过这样的形式设置，例如：<br><code>pm2 set pm2-logrotate:max_size 1K</code><br>设置 max_size 为 1K</p>
 <p><code>pm2 get</code><br>查看设置的配置项值</p>
-</span>
+
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -361,25 +389,26 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
   </div>
 
 
-        </div>
+          </div>
+          
 
-        
 
-
-        
+          
   <div class="comments" id="comments">
     
       <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
 
 
-      </div>
-
-      
+        </div>
         
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -407,31 +436,37 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="https://gravatar.com/avatar/124ea13daf1648975e002b3c5e89d7e2" alt="Liucw" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="https://gravatar.com/avatar/124ea13daf1648975e002b3c5e89d7e2"
+               alt="Liucw" />
           <p class="site-author-name" itemprop="name">Liucw</p>
+          <p class="site-description motion-element" itemprop="description">Coder, Dota2, ONE PIECE ...</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">Coder, Dota2, ONE PIECE ...</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">7</span>
-              <span class="site-state-item-name">分类</span>
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
               </a>
-          </div>
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">12</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
@@ -444,7 +479,8 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
         
         
 
-        <div class="links-of-author motion-element">
+        
+        <div class="links-of-blogroll motion-element">
           
         </div>
 
@@ -473,7 +509,8 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
   </aside>
 
 
-      
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
@@ -481,9 +518,9 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2015</span>
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Liucw</span>
 </div>
@@ -495,7 +532,7 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT
+    NexT.Muse
   </a>
 </div>
 
@@ -504,63 +541,54 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
 
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
-  
-  
-
-  
-    
-    
-
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'woaizm';
-      var disqus_identifier = '2015/nodejs-pm2/';
-      var disqus_title = 'PM2（Node.js 进程守护工具）';
-      var disqus_url = 'http://blog.woaizuomeng.com/2015/nodejs-pm2/';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-      
-        run_disqus_script('embed.js');
-      
-    </script>
-  
-
-
-  
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
-
-
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
   <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
-  
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
 
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
 
 <script type="text/javascript" id="sidebar.toc.highlight">
   $(document).ready(function () {
@@ -694,7 +722,7 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
 
     $('.post-toc a').on('click', function (e) {
       e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
       var offset = $(targetSelector).offset().top;
       hasVelocity ?
         html.velocity('stop').velocity('scroll', {
@@ -707,11 +735,12 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
     });
 
     // Expand sidebar on post detail page by default, when post has a toc.
-    motionMiddleWares.sidebar = function () {
+    NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
-      if (CONFIG.sidebar === 'post') {
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          displaySidebar();
+          NexT.utils.displaySidebar();
         }
       }
     };
@@ -720,12 +749,48 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
 
 
 
-  <script type="text/javascript" src="/js/bootstrap.js"></script>
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'woaizm';
+      var disqus_identifier = '2015/nodejs-pm2/';
+      var disqus_title = 'PM2（Node.js 进程守护工具）';
+      var disqus_url = 'http://blog.woaizuomeng.com/2015/nodejs-pm2/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
 
   
   
+  
 
   
+
   
 
 </body>

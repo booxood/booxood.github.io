@@ -1,5 +1,11 @@
 <!doctype html>
-<html class="theme-next   use-motion ">
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -32,19 +38,19 @@
 
 <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Coder, Node.js" />
-
-
-
+  <meta name="keywords" content="Coder, JavaScript, Node.js, Linux" />
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
 
 
 
@@ -64,10 +70,16 @@
 
 
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: '',
-    sidebar: 'post',
-    motion: true
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
   };
 </script>
 
@@ -76,15 +88,6 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
@@ -111,9 +114,18 @@
 
 
 
-  <div class="container one-column 
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
    page-home 
-">
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -142,7 +154,7 @@
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
@@ -186,7 +198,6 @@
       
 
       
-      
     </ul>
   
 
@@ -198,14 +209,174 @@
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content">
-          
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
 
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/2016-03-yeoman-react-new-component/" itemprop="url">
+                  Yeoman 创建一个 React Component 生成器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-28T16:47:22+08:00" content="2016-03-28">
+              2016-03-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Tools/" itemprop="url" rel="index">
+                    <span itemprop="name">Tools</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/2016-03-yeoman-react-new-component/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/2016-03-yeoman-react-new-component/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
     
-    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>在做 React 开发时，每次新建一个组件都要需要创建一个 Xxx 目录，然后在目录中创建两个文件 Xxx.jsx 和 Xxx.css，然后引入巴拉巴拉。。。然后。。。</p>
+</blockquote>
+<p>Yeoman 是一个脚手架工具，可以帮助我们创建目录，创建文件，执行 Grunt/Gulp，安装 Npm/Bower 依赖等等。我们用它来创建一个 generator-react-new-component。</p>
+<h3 id="准备工具"><a href="#准备工具" class="headerlink" title="准备工具"></a>准备工具</h3><p>在编写生成器之前，先安装 <code>yo</code> 和 <code>generator-generator</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yo generator-generator</span><br></pre></td></tr></table></figure></p>
+<h3 id="了解工具"><a href="#了解工具" class="headerlink" title="了解工具"></a>了解工具</h3><p>通常一个 <code>yo</code> 生成器的目录结果是<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">├───package<span class="selector-class">.json</span></span><br><span class="line">├───app/</span><br><span class="line">│   └───index<span class="selector-class">.js</span></span><br><span class="line">└───router/</span><br><span class="line">    └───index.js</span><br></pre></td></tr></table></figure></p>
+<p>或者希望保持生成器根目录的整洁，也可以这样<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">├───package<span class="selector-class">.json</span></span><br><span class="line">└───generators/</span><br><span class="line">    ├───app/</span><br><span class="line">    │   └───index<span class="selector-class">.js</span></span><br><span class="line">    └───router/</span><br><span class="line">        └───index.js</span><br></pre></td></tr></table></figure></p>
+<p>我们可以通过 <code>yo</code> 提供的脚手架来生成基本的目录结构，运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yo generator</span><br></pre></td></tr></table></figure></p>
+<p>按照交互提示输入，最终会得到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">? Your generator name generator-xxx</span><br><span class="line">? Description xxx</span><br><span class="line">? Project homepage url xxx</span><br><span class="line">? Author&apos;s Name xxx</span><br><span class="line">? Author&apos;s Email xxx@mail.com</span><br><span class="line">? Author&apos;s Homepage</span><br><span class="line">? Package keywords (comma to split) xxx,xx</span><br><span class="line">? Send coverage reports to coveralls Yes</span><br><span class="line">? GitHub username or organization xxx</span><br><span class="line">? Which license do you want to use? MIT</span><br><span class="line">   create package.json</span><br><span class="line">   create README.md</span><br><span class="line">   create .editorconfig</span><br><span class="line">   create .gitattributes</span><br><span class="line">   create .gitignore</span><br><span class="line">   create generators/app/index.js</span><br><span class="line">   create generators/app/templates/dummyfile.txt</span><br><span class="line">   create test/app.js</span><br><span class="line">   create .travis.yml</span><br><span class="line">   create gulpfile.js</span><br><span class="line">   create LICENSE</span><br></pre></td></tr></table></figure></p>
+<p>其中，我们主要关注 <code>generators/app/index.js</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="keyword">var</span> yeoman = <span class="built_in">require</span>(<span class="string">'yeoman-generator'</span>);</span><br><span class="line"><span class="keyword">var</span> chalk = <span class="built_in">require</span>(<span class="string">'chalk'</span>);</span><br><span class="line"><span class="keyword">var</span> yosay = <span class="built_in">require</span>(<span class="string">'yosay'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = yeoman.generators.Base.extend(&#123;</span><br><span class="line">  prompting: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> done = <span class="keyword">this</span>.async();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Have Yeoman greet the user.</span></span><br><span class="line">    <span class="keyword">this</span>.log(yosay(</span><br><span class="line">      <span class="string">'Welcome to the amazing '</span> + chalk.red(<span class="string">'generator-xxx'</span>) + <span class="string">' generator!'</span></span><br><span class="line">    ));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> prompts = [&#123;</span><br><span class="line">      type: <span class="string">'confirm'</span>,</span><br><span class="line">      name: <span class="string">'someOption'</span>,</span><br><span class="line">      message: <span class="string">'Would you like to enable this option?'</span>,</span><br><span class="line">      <span class="keyword">default</span>: <span class="literal">true</span></span><br><span class="line">    &#125;];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.prompt(prompts, <span class="function"><span class="keyword">function</span> (<span class="params">props</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.props = props;</span><br><span class="line">      <span class="comment">// To access props later use this.props.someOption;</span></span><br><span class="line"></span><br><span class="line">      done();</span><br><span class="line">    &#125;.bind(<span class="keyword">this</span>));</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  writing: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.fs.copy(</span><br><span class="line">      <span class="keyword">this</span>.templatePath(<span class="string">'dummyfile.txt'</span>),</span><br><span class="line">      <span class="keyword">this</span>.destinationPath(<span class="string">'dummyfile.txt'</span>)</span><br><span class="line">    );</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  install: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.installDependencies();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>每一个生成器都是 <code>yeoman.generators.Base.extend</code> 的扩展，你可以扩展一些处理函数。其中 <code>constructor</code> 是构造函数，只会执行一次，有些 <code>yeoman.generators</code> 提供的函数只能在这里执行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = generators.Base.extend(&#123;</span><br><span class="line">  <span class="comment">// The name `constructor` is important here</span></span><br><span class="line">  <span class="keyword">constructor</span>: function () &#123;</span><br><span class="line">    <span class="comment">// Calling the super constructor is important so our generator is correctly set up</span></span><br><span class="line">    generators.Base.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Next, add your custom code</span></span><br><span class="line">    <span class="keyword">this</span>.option(<span class="string">'coffee'</span>); <span class="comment">// This method adds support for a `--coffee` flag</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>还有一些 <code>yeoman.generators</code> 预定义的函数，它们会按照优先级的顺序执行这些函数</p>
+<blockquote>
+<p>initializing - Your initialization methods (checking current project state, getting configs, etc)</p>
+<p>prompting - Where you prompt users for options (where you’d call this.prompt())</p>
+<p>configuring - Saving configurations and configure the project (creating .editorconfig files and other metadata files)</p>
+<p>default - If the method name doesn’t match a priority, it will be pushed to this group.</p>
+<p>writing - Where you write the generator specific files (routes, controllers, etc)</p>
+<p>conflicts - Where conflicts are handled (used internally)</p>
+<p>install - Where installation are run (npm, bower)</p>
+<p>end - Called last, cleanup, say good bye, etc</p>
+</blockquote>
+<p>你也可以自定义一些其他名字的函数<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">module.exports = generators.<span class="type">Base</span>.extend(&#123;</span><br><span class="line">  <span class="keyword">method</span>: function () &#123;</span><br><span class="line">    console.log('<span class="keyword">method</span> <span class="number">1</span> just ran');</span><br><span class="line">  &#125;,</span><br><span class="line">  _privateMethod: function () &#123;</span><br><span class="line">    console.log('<span class="keyword">method</span> <span class="number">2</span> just ran');</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>如果函数是 <code>_</code> 开头，则为私有函数，不会自动执行，否则这些自定义的函数的优先级为 <code>default</code>，会自动执行。</p>
+<h3 id="开始编写"><a href="#开始编写" class="headerlink" title="开始编写"></a>开始编写</h3><p>在了解了 <code>yeoman.generators</code> 的基本功能之后，我们在回头看看我们的需求，其实可以把要做的工作分为几步</p>
+<ul>
+<li>获取用户输入的 componont name</li>
+<li>选择创建的 path</li>
+<li>创建相应的 dir/files</li>
+</ul>
+<p>开始编写处理函数</p>
+<ol>
+<li><p>前面两把都是通过跟用户交互获取输入，放在 <code>prompting</code> 这层做</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">prompting: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> done = <span class="keyword">this</span>.async();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">this</span>.log(yosay(</span><br><span class="line">    <span class="string">'Welcome to the gnarly '</span> + chalk.red(<span class="string">'generator-react-new-component'</span>) + <span class="string">' generator!'</span></span><br><span class="line">  ));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> prompts = [&#123;</span><br><span class="line">    type: <span class="string">'input'</span>,</span><br><span class="line">    name: <span class="string">'componentName'</span>,</span><br><span class="line">    message: <span class="string">'What\'s name new component?'</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    type: <span class="string">'list'</span>,</span><br><span class="line">    name: <span class="string">'componentPath'</span>,</span><br><span class="line">    message: <span class="string">'Choices component path:'</span>,</span><br><span class="line">    choices: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> dirs = [];</span><br><span class="line">      <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'^(client|app|src)/(component|container)(s)?/([a-z]*/)*$'</span>);</span><br><span class="line">      <span class="keyword">var</span> entries = walkSync.entries(<span class="string">'.'</span>, &#123;globs: [<span class="string">'client/**/*'</span>, <span class="string">'app/**/*'</span>, <span class="string">'src/**/*'</span>]&#125;)</span><br><span class="line">      entries.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">entry</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (entry.isDirectory() &amp;&amp; reg.test(entry.relativePath)) &#123;</span><br><span class="line">          dirs.push(entry.relativePath);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="keyword">return</span> dirs;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">default</span>: <span class="string">'client/components/'</span>,</span><br><span class="line">  &#125;];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">this</span>.prompt(prompts, <span class="function"><span class="keyword">function</span> (<span class="params">props</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.props = props;</span><br><span class="line">    done();</span><br><span class="line">  &#125;.bind(<span class="keyword">this</span>));</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>通过定义 <code>prompts</code>（基于 <a href="https://github.com/SBoudrias/Inquirer.js" target="_blank" rel="external">Inquirer.js</a>）来跟用户交互，获取用户的输入，然后保存到 <code>this.props</code> 上，给后续的处理函数使用。</p>
+</li>
+<li><p>创建目录文件，放在 <code>writing</code> 这层做</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">writing: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> jsPath = <span class="keyword">this</span>.props.componentPath + <span class="string">'/'</span> + <span class="keyword">this</span>.props.componentName;</span><br><span class="line">  <span class="keyword">this</span>.fs.copy(</span><br><span class="line">    <span class="keyword">this</span>.templatePath(<span class="string">'jsTemplateFile'</span>),</span><br><span class="line">    <span class="keyword">this</span>.destinationPath(jsPath),</span><br><span class="line">    &#123; componentName: <span class="keyword">this</span>.props.componentName &#125;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>根据用户输入的 <code>componentName</code> 和 <code>componentPath</code> 值，得到我们生成文件的<code>路径</code>。指定渲染的模板 <code>jsTemplateFile</code>，模板一般放在同级目录 <code>templates</code> 文件夹下，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> &lt;%</span>= componentName %&gt; extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span> <span class="tag">&lt;<span class="name">%=</span> <span class="attr">componentName</span> %&gt;</span> <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &lt;%= componentName %&gt;;</span><br></pre></td></tr></table></figure>
+<p>模板支持 <code>ejs</code> 的语法，可以传值渲染</p>
+</li>
+<li><p>在完成了基本开发之后，在发布我们的生成器之前，我们可以先本地调试下，确保没问题了再发布到 <code>Npm</code> 上。在 <code>generator-xxx</code> 目录下执行</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> link</span><br></pre></td></tr></table></figure>
+<p>完成之后，再执行</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">yo</span> xxx</span><br></pre></td></tr></table></figure>
+<p>就可以调用我们的生成器了。确保没问题之后再执行 <code>npm publish</code> 发布。</p>
+</li>
+</ol>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>完整的版本在这里 <a href="https://github.com/booxood/generator-react-new-component" target="_blank" rel="external">generator-react-new-component</a>。增加了几个 <code>prompt</code> 用于选择文件名后缀、样式文件后缀等。<br>之前看过一句话，大概意思是 <code>懒</code> 是程序员的第一生产力，貌似很有道理。<br>另外，上面只是介绍了 <code>yeoman.generators</code> 的基本功能，还有很多有意思、很人性化的功能都没提到，感兴趣可以继续深入。</p>
+<h3 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h3><p><a href="http://yeoman.io/authoring/index.html" target="_blank" rel="external">http://yeoman.io/authoring/index.html</a><br><a href="https://github.com/SBoudrias/Inquirer.js" target="_blank" rel="external">https://github.com/SBoudrias/Inquirer.js</a><br><a href="https://github.com/booxood/generator-react-new-component" target="_blank" rel="external">https://github.com/booxood/generator-react-new-component</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -239,7 +410,10 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2015-11-25T18:29:41+08:00" content="2015-11-25">
               2015-11-25
             </time>
@@ -247,7 +421,11 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/React/" itemprop="url" rel="index">
@@ -265,14 +443,17 @@
           
             
               <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/redux-intro/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/redux-intro/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+                &nbsp; | &nbsp;
+                <a href="/2015/redux-intro/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/redux-intro/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
+          
+
+          
           
 
         </div>
@@ -280,41 +461,40 @@
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>之前接触了一下 React，配合 Flux，单向数据流，让程序的结构看起来很清晰。但是 Flux 需要写很多”重复”的代码，看起来很麻烦很复杂。不过 Flux 的替换方案有很多，例如：<a href="https://github.com/goatslacker/alt" target="_blank" rel="external">alt</a>、<a href="https://github.com/reflux/refluxjs" target="_blank" rel="external">reflux</a>等，最热门应该是 <a href="https://github.com/rackt/redux/" target="_blank" rel="external">Redux</a> 了。</p>
+          
+            <p>之前接触了一下 React，配合 Flux，单向数据流，让程序的结构看起来很清晰。但是 Flux 需要写很多”重复”的代码，看起来很麻烦很复杂。不过 Flux 的替换方案有很多，例如：<a href="https://github.com/goatslacker/alt" target="_blank" rel="external">alt</a>、<a href="https://github.com/reflux/refluxjs" target="_blank" rel="external">reflux</a>等，最热门应该是 <a href="https://github.com/rackt/redux/" target="_blank" rel="external">Redux</a> 了。</p>
 <blockquote>
 <p>Redux is a predictable state container for JavaScript apps.</p>
 </blockquote>
 <p>官方介绍 Redux 是 JavaScript 状态容器，提供可预测化的状态管理。可以跟大部分的 View 层框架配合使用，不限于 React。</p>
 <p>Redux 只关心如何管理 state，它的顶层暴露的 API 只有 5 个，非常简单。</p>
-<h3 id="API">API</h3><p>为了更具体的说明，写了一个 <a href="https://github.com/booxood/redux-demo" target="_blank" rel="external">redux-demo</a>，</p>
-<pre><code>commit <span class="number">5</span>cf4f88adf1c57ca54ef7cd73a6278056db52ebe
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><p>为了更具体的说明，写了一个 <a href="https://github.com/booxood/redux-demo" target="_blank" rel="external">redux-demo</a>，</p>
+<pre><code>commit 5cf4f88adf1c57ca54ef7cd73a6278056db52ebe
 Author: Liucw
-Date:   Wed Nov <span class="number">25</span> <span class="number">18</span>:<span class="number">05</span>:<span class="number">26</span> <span class="number">2015</span> +<span class="number">0800</span>
+Date:   Wed Nov 25 18:05:26 2015 +0800
 
     applyMiddleware
 
-commit <span class="number">3</span>ecad1d75a4fca5a79a300641db972202c1a47e7
+commit 3ecad1d75a4fca5a79a300641db972202c1a47e7
 Author: Liucw
-Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<span class="number">16</span>:<span class="number">49</span> <span class="number">2015</span> +<span class="number">0800</span>
+Date:   Wed Nov 25 16:16:49 2015 +0800
 
     combineReducers
 
 commit df0de5b1a9730d286ebf880adc379d7a03638d87
 Author: Liucw
-Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<span class="number">00</span>:<span class="number">09</span> <span class="number">2015</span> +<span class="number">0800</span>
+Date:   Wed Nov 25 16:00:09 2015 +0800
 
     store
 </code></pre><p>一次提交试验一个 API，可以 checkout 到对应的 commit 上运行程序。</p>
-<h4 id="createStore">createStore</h4><p><code>createStore(reducer, [initialState])</code></p>
+<h4 id="createStore"><a href="#createStore" class="headerlink" title="createStore"></a>createStore</h4><p><code>createStore(reducer, [initialState])</code></p>
 <p>创建一个 Store，里面存放着 state。一般来说一个应用只有一个 Store。</p>
 <p>参数</p>
 <ul>
@@ -334,28 +514,31 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
 </ul>
 <p>可以切到 <code>df0de5b1a9730d286ebf880adc379d7a03638d87</code> 运行一下，看下结果</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout df0de5b1a9730d286ebf880adc379d7a03638d87</span><br><span class="line">$ node index.js</span><br><span class="line"><span class="string">s0:</span> []</span><br><span class="line">store.<span class="string">subscribe:</span> [ <span class="string">'add 1'</span> ]</span><br><span class="line"><span class="string">s1:</span> [ <span class="string">'add 1'</span> ]</span><br><span class="line">unsubscribe</span><br><span class="line"><span class="string">s2:</span> [ <span class="string">'add 1'</span>, <span class="string">'add 2'</span> ]</span><br></pre></td></tr></table></figure>
-<h4 id="combineReducers">combineReducers</h4><p><code>combineReducers(reducers)</code><br>combineReducers 可以把一个由多个 reducer 函数作为 value 的 object，合并成一个最终的 reducer 函数，然后对这个 reducer 调用 createStore 产生唯一的 Store。</p>
+<h4 id="combineReducers"><a href="#combineReducers" class="headerlink" title="combineReducers"></a>combineReducers</h4><p><code>combineReducers(reducers)</code><br>combineReducers 可以把一个由多个 reducer 函数作为 value 的 object，合并成一个最终的 reducer 函数，然后对这个 reducer 调用 createStore 产生唯一的 Store。</p>
 <figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; todos, counter, add &#125; from <span class="string">'./reducer'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> counters = combineReducers(&#123;</span><br><span class="line">  counter,</span><br><span class="line">  add</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> reducers = combineReducers(&#123;</span><br><span class="line">  todos,</span><br><span class="line">  counters</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> store = createStore(reducers)</span><br></pre></td></tr></table></figure>
 <p>定义了三个 Reducer，先将 counter 和 add 进行 combine 产生 counters，再将 counters 和 todos 进行 combine 得到最终的 reducers。执行一下，看下返回的结果</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout <span class="number">3</span>ecad1d75a4fca5a79a300641db972202c1a47e7</span><br><span class="line">$ node index.js</span><br><span class="line"><span class="string">s0:</span> &#123; <span class="string">todos:</span> [], <span class="string">counters:</span> &#123; <span class="string">counter:</span> <span class="number">0</span>, <span class="string">add:</span> <span class="number">0</span> &#125; &#125;</span><br><span class="line">store.<span class="string">subscribe:</span> &#123; <span class="string">todos:</span> [ <span class="string">'add 1'</span> ], <span class="string">counters:</span> &#123; <span class="string">counter:</span> <span class="number">0</span>, <span class="string">add:</span> <span class="number">0</span> &#125; &#125;</span><br><span class="line">store.<span class="string">subscribe:</span> &#123; <span class="string">todos:</span> [ <span class="string">'add 1'</span> ], <span class="string">counters:</span> &#123; <span class="string">counter:</span> <span class="number">1</span>, <span class="string">add:</span> <span class="number">0</span> &#125; &#125;</span><br><span class="line">store.<span class="string">subscribe:</span> &#123; <span class="string">todos:</span> [ <span class="string">'add 1'</span> ], <span class="string">counters:</span> &#123; <span class="string">counter:</span> <span class="number">1</span>, <span class="string">add:</span> <span class="number">1</span> &#125; &#125;</span><br><span class="line"><span class="string">s1:</span> &#123; <span class="string">todos:</span> [ <span class="string">'add 1'</span> ], <span class="string">counters:</span> &#123; <span class="string">counter:</span> <span class="number">1</span>, <span class="string">add:</span> <span class="number">1</span> &#125; &#125;</span><br><span class="line">unsubscribe</span><br><span class="line"><span class="string">s2:</span> &#123; <span class="string">todos:</span> [ <span class="string">'add 1'</span>, <span class="string">'add 2'</span> ],</span><br><span class="line"><span class="label">  counters:</span> &#123; <span class="string">counter:</span> <span class="number">1</span>, <span class="string">add:</span> <span class="number">1</span> &#125; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout <span class="number">3</span>ecad1d75a4fca5a79a300641db972202c1a47e7</span><br><span class="line">$ node index.js</span><br><span class="line"><span class="attribute">s0</span>: &#123; <span class="attribute">todos</span>: [], <span class="attribute">counters</span>: &#123; <span class="attribute">counter</span>: <span class="number">0</span>, <span class="attribute">add</span>: <span class="number">0</span> &#125; &#125;</span><br><span class="line"><span class="attribute">store.subscribe</span>: &#123; <span class="attribute">todos</span>: [ <span class="string">'add 1'</span> ], <span class="attribute">counters</span>: &#123; <span class="attribute">counter</span>: <span class="number">0</span>, <span class="attribute">add</span>: <span class="number">0</span> &#125; &#125;</span><br><span class="line"><span class="attribute">store.subscribe</span>: &#123; <span class="attribute">todos</span>: [ <span class="string">'add 1'</span> ], <span class="attribute">counters</span>: &#123; <span class="attribute">counter</span>: <span class="number">1</span>, <span class="attribute">add</span>: <span class="number">0</span> &#125; &#125;</span><br><span class="line"><span class="attribute">store.subscribe</span>: &#123; <span class="attribute">todos</span>: [ <span class="string">'add 1'</span> ], <span class="attribute">counters</span>: &#123; <span class="attribute">counter</span>: <span class="number">1</span>, <span class="attribute">add</span>: <span class="number">1</span> &#125; &#125;</span><br><span class="line"><span class="attribute">s1</span>: &#123; <span class="attribute">todos</span>: [ <span class="string">'add 1'</span> ], <span class="attribute">counters</span>: &#123; <span class="attribute">counter</span>: <span class="number">1</span>, <span class="attribute">add</span>: <span class="number">1</span> &#125; &#125;</span><br><span class="line">unsubscribe</span><br><span class="line"><span class="attribute">s2</span>: &#123; <span class="attribute">todos</span>: [ <span class="string">'add 1'</span>, <span class="string">'add 2'</span> ],</span><br><span class="line">  <span class="attribute">counters</span>: &#123; <span class="attribute">counter</span>: <span class="number">1</span>, <span class="attribute">add</span>: <span class="number">1</span> &#125; &#125;</span><br></pre></td></tr></table></figure>
 <p>最后得到的 state 的结构与 combine 时的结构相同。</p>
-<h4 id="applyMiddleware">applyMiddleware</h4><p>applyMiddleware 可以为 store 的 dispatch 包装一些 middleware。多个 middleware 可以被组合到一起使用，形成 middleware 链。其中，每个 middleware 都不需要关心链中它前后的 middleware 的任何信息。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ./action.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">thunkAction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">dispatch</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>((resolve, reject) =&gt; resolve(dispatch(&#123;type: <span class="string">'ADD'</span>&#125;)))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ./store.js</span></span><br><span class="line"><span class="keyword">import</span> thunk <span class="keyword">from</span> <span class="string">'redux-thunk'</span></span><br><span class="line"><span class="keyword">import</span> &#123; thunkAction &#125; <span class="keyword">from</span> <span class="string">'./action'</span></span><br><span class="line"></span><br><span class="line">let createStoreWithMiddleware = applyMiddleware(...[thunk, logger])(createStore);</span><br><span class="line"><span class="keyword">let</span> store = createStoreWithMiddleware(add)</span><br><span class="line"></span><br><span class="line">store.dispatch(thunkAction()).then(() =&gt; <span class="built_in">console</span>.log(<span class="string">'done:'</span>, store.getState()))</span><br></pre></td></tr></table></figure>
-<p>应用了 <code>redux-thunk</code> middleware 后，可以 dispatch thunkAction。<br>最后的运行结果<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">LOG</span>]s0: 0</span><br><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">INFO</span>]will dispatch: &#123; type: 'ADD' &#125;</span><br><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">LOG</span>]store.subscribe: 1</span><br><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">INFO</span>]state after dispatch: 1</span><br><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">LOG</span>]s1: 1</span><br><span class="line">[<span class="link_label">2015-11-26 11:02:33</span>][<span class="link_reference">LOG</span>]done: 1</span><br></pre></td></tr></table></figure></p>
-<h4 id="bindActionCreators">bindActionCreators</h4><p>将 action 与 Store.dispatch 绑定起来。</p>
+<h4 id="applyMiddleware"><a href="#applyMiddleware" class="headerlink" title="applyMiddleware"></a>applyMiddleware</h4><p>applyMiddleware 可以为 store 的 dispatch 包装一些 middleware。多个 middleware 可以被组合到一起使用，形成 middleware 链。其中，每个 middleware 都不需要关心链中它前后的 middleware 的任何信息。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ./action.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">thunkAction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">dispatch</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>((resolve, reject) =&gt; resolve(dispatch(&#123;type: <span class="string">'ADD'</span>&#125;)))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ./store.js</span></span><br><span class="line"><span class="keyword">import</span> thunk <span class="keyword">from</span> <span class="string">'redux-thunk'</span></span><br><span class="line"><span class="keyword">import</span> &#123; thunkAction &#125; <span class="keyword">from</span> <span class="string">'./action'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> createStoreWithMiddleware = applyMiddleware(...[thunk, logger])(createStore);</span><br><span class="line"><span class="keyword">let</span> store = createStoreWithMiddleware(add)</span><br><span class="line"></span><br><span class="line">store.dispatch(thunkAction()).then(() =&gt; <span class="built_in">console</span>.log(<span class="string">'done:'</span>, store.getState()))</span><br></pre></td></tr></table></figure>
+<p>应用了 <code>redux-thunk</code> middleware 后，可以 dispatch thunkAction。<br>最后的运行结果<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">2015-11-26 11:02:33</span>][<span class="symbol">LOG</span>]s0: 0</span><br><span class="line">[<span class="string">2015-11-26 11:02:33</span>][<span class="symbol">INFO</span>]will dispatch: &#123; type: 'ADD' &#125;</span><br><span class="line">[<span class="string">2015-11-26 11:02:33</span>][<span class="symbol">LOG</span>]store.subscribe: 1</span><br><span class="line">[<span class="string">2015-11-26 11:02:33</span>][<span class="symbol">INFO</span>]state after dispatch: 1</span><br><span class="line">[<span class="string">2015-11-26 11:02:33</span>][<span class="symbol">LOG</span>]s1: 1</span><br><span class="line">[<span class="string">2015-11-26 11:02:33</span>][<span class="symbol">LOG</span>]done: 1</span><br></pre></td></tr></table></figure></p>
+<h4 id="bindActionCreators"><a href="#bindActionCreators" class="headerlink" title="bindActionCreators"></a>bindActionCreators</h4><p>将 action 与 Store.dispatch 绑定起来。</p>
 <blockquote>
 <p>惟一使用 bindActionCreators 的场景是当你需要把 action creator 往下传到一个组件上，却不想让这个组件觉察到 Redux 的存在，而且不希望把 Redux store 或 dispatch 传给它。</p>
 </blockquote>
-<h4 id="compose">compose</h4><p>将多个函数从右到左组合在一起。</p>
+<h4 id="compose"><a href="#compose" class="headerlink" title="compose"></a>compose</h4><p>将多个函数从右到左组合在一起。</p>
 <blockquote>
 <p>compse 做的只是让你不使用深度右括号的情况下来写深度嵌套的函数。不要觉得它很复杂。</p>
 </blockquote>
-<h3 id="总结">总结</h3><p>其实 Redux 提供的功能很简单，就是创造一颗 state 树，定义修改这颗树的规则。</p>
-<h3 id="参考">参考</h3><p><a href="http://rackt.org/redux/" target="_blank" rel="external">http://rackt.org/redux/</a><br><a href="http://camsong.github.io/redux-in-chinese/index.html" target="_blank" rel="external">http://camsong.github.io/redux-in-chinese/index.html</a></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>其实 Redux 提供的功能很简单，就是创造一颗 state 树，定义修改这颗树的规则。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://rackt.org/redux/" target="_blank" rel="external">http://rackt.org/redux/</a><br><a href="http://camsong.github.io/redux-in-chinese/index.html" target="_blank" rel="external">http://camsong.github.io/redux-in-chinese/index.html</a></p>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -404,7 +587,10 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2015-10-28T15:57:00+08:00" content="2015-10-28">
               2015-10-28
             </time>
@@ -412,7 +598,11 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Tools/" itemprop="url" rel="index">
@@ -430,14 +620,17 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
           
             
               <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/git-svn/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/git-svn/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+                &nbsp; | &nbsp;
+                <a href="/2015/git-svn/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/git-svn/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
+          
+
+          
           
 
         </div>
@@ -445,19 +638,18 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>Git 提供了一个 <code>git svn</code> 命令，可以使用 Git 来操作 SVN 仓库，具体介绍可以<a href="https://git-scm.com/book/zh/v1/Git-%E4%B8%8E%E5%85%B6%E4%BB%96%E7%B3%BB%E7%BB%9F-Git-%E4%B8%8E-Subversion" target="_blank" rel="external">看这里</a>。</p>
-<h3 id="基本用法">基本用法</h3><ul>
+          
+            <p>Git 提供了一个 <code>git svn</code> 命令，可以使用 Git 来操作 SVN 仓库，具体介绍可以<a href="https://git-scm.com/book/zh/v1/Git-%E4%B8%8E%E5%85%B6%E4%BB%96%E7%B3%BB%E7%BB%9F-Git-%E4%B8%8E-Subversion" target="_blank" rel="external">看这里</a>。</p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><ul>
 <li><p>克隆仓库<br>  <code>git svn clone http://xxx -T trunk -b branches -t tags</code></p>
-<pre><code>-T trunk -<span class="keyword">b </span><span class="keyword">branches </span>-t tags 告诉 Git 该 <span class="keyword">Subversion </span>仓库遵循了基本的分支和标签命名法则。
+<pre><code>-T trunk -b branches -t tags 告诉 Git 该 Subversion 仓库遵循了基本的分支和标签命名法则。
 如果你的主干(译注：trunk，相当于非分布式版本控制里的master分支，代表开发的主线），分支或者标签
 以不同的方式命名，则应做出相应改变。由于该法则的常见性，可以使用 -s 来代替整条命令，它意味着标准
 布局（s 是 Standard layout 的首字母），也就是前面选项的内容。
@@ -466,24 +658,24 @@ Date:   Wed Nov <span class="number">25</span> <span class="number">16</span>:<s
 <ol>
 <li><code>git commit</code><br>直接使用 Git 命令将代码提交到 Git 本地仓库。</li>
 <li><p><code>git svn dcommit</code><br>将 Git 本地仓库的新增记录提交到 SVN 服务器上。提交之后，之前 Git 上的提交记录</p>
-<pre><code>commit <span class="number">8907f</span>fe03a2879091a35a869d9bc1ef480af967c
+<pre><code>commit 8907ffe03a2879091a35a869d9bc1ef480af967c
 Author: xxx &lt;xxx@gmail.com&gt;
-Date:   Wed Oct <span class="number">28</span> <span class="number">16</span>:<span class="number">26</span>:<span class="number">08</span> <span class="number">2015</span> +<span class="number">0800</span>
+Date:   Wed Oct 28 16:26:08 2015 +0800
 
 Add xxx from git
 </code></pre><p>会被改成</p>
-<pre><code>commit <span class="number">3</span>b707ba0daf0eee9791fc6694e6b4079960c5f3a
-Author: xxx &lt;xxx@<span class="number">9f</span>b60aa9-af34-<span class="number">4021</span>-<span class="number">9</span>c2d-<span class="number">4e8</span>c7c99b066&gt;
-Date:   Wed Oct <span class="number">28</span> <span class="number">08</span>:<span class="number">20</span>:<span class="number">37</span> <span class="number">2015</span> +<span class="number">0000</span>
+<pre><code>commit 3b707ba0daf0eee9791fc6694e6b4079960c5f3a
+Author: xxx &lt;xxx@9fb60aa9-af34-4021-9c2d-4e8c7c99b066&gt;
+Date:   Wed Oct 28 08:20:37 2015 +0000
 
     Add xxx from git
 
-    git-svn-id: http:<span class="comment">//<span class="label">xxx/trunk@12 9fb60aa9-af34-4021-9c2d-4e8c7c99b066</span></span>
+    git-svn-id: http://xxx/trunk@12 9fb60aa9-af34-4021-9c2d-4e8c7c99b066
 </code></pre><p>至于为什么会这样，引用官方的说明</p>
-<pre><code>所有在原 Subversion 数据基础上提交的 <span class="operator"><span class="keyword">commit</span> 会一一提交到 Subversion，然后你本地 Git
-的 <span class="keyword">commit</span> 将被重写，加入一个特别标识。这一步很重要，因为它意味着所有 <span class="keyword">commit</span> 的 <span class="keyword">SHA</span>-<span class="number">1</span>
+<pre><code>所有在原 Subversion 数据基础上提交的 commit 会一一提交到 Subversion，然后你本地 Git
+的 commit 将被重写，加入一个特别标识。这一步很重要，因为它意味着所有 commit 的 SHA-1
 指都会发生变化。这也是同时使用 Git 和 Subversion 两种服务作为远程服务不是个好主意的原因
-之一。检视以下最后一个 <span class="keyword">commit</span>，你会找到新添加的 git-svn-<span class="keyword">id</span></span>
+之一。检视以下最后一个 commit，你会找到新添加的 git-svn-id
 </code></pre><p>当你本地的代码比服务器上旧的话，如果可以 <code>Merge</code>，则直接 <code>Merge</code> 然后再提交，如果不能 <code>Merge</code>，有冲突，需要 <code>git rebase</code> 解决冲突后再 <code>git rebase --continue</code> 提交。</p>
 </li>
 </ol>
@@ -502,16 +694,19 @@ Date:   Wed Oct <span class="number">28</span> <span class="number">08</span>:<s
 </ul>
 </li>
 </ul>
-<h3 id="注意事项">注意事项</h3><ul>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
 <li><p>略 Subversion 之所略<br>  如果 SVN 项目包含 <code>svn:ignore</code> 属性，则需要创建 <code>.gitignore</code> 来保持一致，防止提交一些不应该提交的文件。<br>  使用 <code>git svn show-ignore</code> 可以看到 SVN 设置的忽略文件，把它们放到 <code>.gitignore</code> 或者 <code>.git/info/exclude</code>。</p>
 </li>
 <li><p>保持 Git 主干上的提交记录是线性的<br>  因为 SVN 只能保存一条线性的提交记录。</p>
 </li>
 </ul>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -560,7 +755,10 @@ Date:   Wed Oct <span class="number">28</span> <span class="number">08</span>:<s
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2015-10-26T11:17:08+08:00" content="2015-10-26">
               2015-10-26
             </time>
@@ -568,7 +766,11 @@ Date:   Wed Oct <span class="number">28</span> <span class="number">08</span>:<s
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Node-js/" itemprop="url" rel="index">
@@ -586,14 +788,17 @@ Date:   Wed Oct <span class="number">28</span> <span class="number">08</span>:<s
           
             
               <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/nodejs-pm2/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/nodejs-pm2/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+                &nbsp; | &nbsp;
+                <a href="/2015/nodejs-pm2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/nodejs-pm2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
+          
+
+          
           
 
         </div>
@@ -601,49 +806,51 @@ Date:   Wed Oct <span class="number">28</span> <span class="number">08</span>:<s
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>PM2 是一个 Node.js 进程守护工具，可以让我们很方便的对 Node.js 程序进行管理，类似的工具还有 <a href="https://github.com/foreverjs/forever" target="_blank" rel="external">forever</a>。</p>
-<h3 id="基本的用法">基本的用法</h3><h4 id="启动进程">启动进程</h4><p><code>pm2 start xx.js</code><br>指定启动的 js 文件</p>
+          
+            <p>PM2 是一个 Node.js 进程守护工具，可以让我们很方便的对 Node.js 程序进行管理，类似的工具还有 <a href="https://github.com/foreverjs/forever" target="_blank" rel="external">forever</a>。</p>
+<h3 id="基本的用法"><a href="#基本的用法" class="headerlink" title="基本的用法"></a>基本的用法</h3><h4 id="启动进程"><a href="#启动进程" class="headerlink" title="启动进程"></a>启动进程</h4><p><code>pm2 start xx.js</code><br>指定启动的 js 文件</p>
 <p><code>pm2 start xxx.json</code><br>指定启动的配置文件，配置文件的格式</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">apps</span>" : <span class="value">[&#123;</span><br><span class="line">    "<span class="attribute">name</span>"        : <span class="value"><span class="string">"worker-app"</span></span>,</span><br><span class="line">    "<span class="attribute">script</span>"      : <span class="value"><span class="string">"worker.js"</span></span>,</span><br><span class="line">    "<span class="attribute">args</span>"        : <span class="value">[<span class="string">"--toto=heya coco"</span>, <span class="string">"-d"</span>, <span class="string">"1"</span>]</span>,</span><br><span class="line">    "<span class="attribute">watch</span>"       : <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">    "<span class="attribute">node_args</span>"   : <span class="value"><span class="string">"--harmony"</span></span>,</span><br><span class="line">    "<span class="attribute">merge_logs</span>"  : <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">    "<span class="attribute">cwd</span>"         : <span class="value"><span class="string">"/this/is/a/path/to/start/script"</span></span>,</span><br><span class="line">    "<span class="attribute">env</span>": <span class="value">&#123;</span><br><span class="line">        "<span class="attribute">NODE_ENV</span>": <span class="value"><span class="string">"production"</span></span>,</span><br><span class="line">        "<span class="attribute">AWESOME_SERVICE_API_TOKEN</span>": <span class="value"><span class="string">"xxx"</span></span><br><span class="line">    </span>&#125;</span><br><span class="line">  </span>&#125;,&#123;</span><br><span class="line">    "<span class="attribute">name</span>"       : <span class="value"><span class="string">"api-app"</span></span>,</span><br><span class="line">    "<span class="attribute">script</span>"     : <span class="value"><span class="string">"api.js"</span></span>,</span><br><span class="line">    "<span class="attribute">instances</span>"  : <span class="value"><span class="number">4</span></span>,</span><br><span class="line">    "<span class="attribute">exec_mode</span>"  : <span class="value"><span class="string">"cluster_mode"</span></span>,</span><br><span class="line">    "<span class="attribute">error_file</span>" : <span class="value"><span class="string">"./examples/child-err.log"</span></span>,</span><br><span class="line">    "<span class="attribute">out_file</span>"   : <span class="value"><span class="string">"./examples/child-out.log"</span></span>,</span><br><span class="line">    "<span class="attribute">pid_file</span>"   : <span class="value"><span class="string">"./examples/child.pid"</span></span><br><span class="line">  </span>&#125;]</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"apps"</span> : [&#123;</span><br><span class="line">    <span class="attr">"name"</span>        : <span class="string">"worker-app"</span>,</span><br><span class="line">    <span class="attr">"script"</span>      : <span class="string">"worker.js"</span>,</span><br><span class="line">    <span class="attr">"args"</span>        : [<span class="string">"--toto=heya coco"</span>, <span class="string">"-d"</span>, <span class="string">"1"</span>],</span><br><span class="line">    <span class="attr">"watch"</span>       : <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"node_args"</span>   : <span class="string">"--harmony"</span>,</span><br><span class="line">    <span class="attr">"merge_logs"</span>  : <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"cwd"</span>         : <span class="string">"/this/is/a/path/to/start/script"</span>,</span><br><span class="line">    <span class="attr">"env"</span>: &#123;</span><br><span class="line">        <span class="attr">"NODE_ENV"</span>: <span class="string">"production"</span>,</span><br><span class="line">        <span class="attr">"AWESOME_SERVICE_API_TOKEN"</span>: <span class="string">"xxx"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,&#123;</span><br><span class="line">    <span class="attr">"name"</span>       : <span class="string">"api-app"</span>,</span><br><span class="line">    <span class="attr">"script"</span>     : <span class="string">"api.js"</span>,</span><br><span class="line">    <span class="attr">"instances"</span>  : <span class="number">4</span>,</span><br><span class="line">    <span class="attr">"exec_mode"</span>  : <span class="string">"cluster_mode"</span>,</span><br><span class="line">    <span class="attr">"error_file"</span> : <span class="string">"./examples/child-err.log"</span>,</span><br><span class="line">    <span class="attr">"out_file"</span>   : <span class="string">"./examples/child-out.log"</span>,</span><br><span class="line">    <span class="attr">"pid_file"</span>   : <span class="string">"./examples/child.pid"</span></span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>详细的配置项看<a href="http://pm2.keymetrics.io/docs/usage/application-declaration/" target="_blank" rel="external">这里</a>。</p>
-<h4 id="重新加载">重新加载</h4><p><code>pm2 reload [name|id]</code></p>
+<h4 id="重新加载"><a href="#重新加载" class="headerlink" title="重新加载"></a>重新加载</h4><p><code>pm2 reload [name|id]</code></p>
 <p><code>pm2 restart [name|id]</code></p>
-<h4 id="停止">停止</h4><p><code>pm2 stop [name|id]</code><br>停止程序运行</p>
+<h4 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h4><p><code>pm2 stop [name|id]</code><br>停止程序运行</p>
 <p><code>pm2 delete [name|id]</code><br>停止程序并删除相关信息</p>
-<h4 id="查看运行状态及相关信息">查看运行状态及相关信息</h4><p><code>pm2 list</code><br><code>pm2 info [name|id]</code><br><code>pm2 desc [name|id]</code><br><code>pm2 monit [name|id]</code></p>
+<h4 id="查看运行状态及相关信息"><a href="#查看运行状态及相关信息" class="headerlink" title="查看运行状态及相关信息"></a>查看运行状态及相关信息</h4><p><code>pm2 list</code><br><code>pm2 info [name|id]</code><br><code>pm2 desc [name|id]</code><br><code>pm2 monit [name|id]</code></p>
 <p>上面的命令都会显示程序的运行状态或展示相关信息。</p>
-<h4 id="设置开机启动项">设置开机启动项</h4><ol>
+<h4 id="设置开机启动项"><a href="#设置开机启动项" class="headerlink" title="设置开机启动项"></a>设置开机启动项</h4><ol>
 <li><code>pm2 dump [name|id]</code><br>保存程序运行的相关信息</li>
 <li><p><code>pm2 startup [platform]</code><br>生成设置开机启动项命令，类型这样</p>
 <pre><code>$ pm2 startup
-[PM2] You have <span class="keyword">to</span> <span class="command">run</span> this command <span class="keyword">as</span> root. Execute <span class="keyword">the</span> following command:
-sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v2.5.0/bin pm2 startup darwin -u xxx"</span>
+[PM2] You have to run this command as root. Execute the following command:
+sudo su -c &quot;env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v2.5.0/bin pm2 startup darwin -u xxx&quot;
 </code></pre></li>
 </ol>
-<h3 id="扩展插件">扩展插件</h3><h4 id="pm2-logrotate">pm2-logrotate</h4><p>自动管理日志文件（<a href="https://github.com/pm2-hive/pm2-logrotate" target="_blank" rel="external">项目地址</a>）</p>
-<h5 id="安装">安装</h5><p><code>pm2 install pm2-logrotate</code></p>
+<h3 id="扩展插件"><a href="#扩展插件" class="headerlink" title="扩展插件"></a>扩展插件</h3><h4 id="pm2-logrotate"><a href="#pm2-logrotate" class="headerlink" title="pm2-logrotate"></a>pm2-logrotate</h4><p>自动管理日志文件（<a href="https://github.com/pm2-hive/pm2-logrotate" target="_blank" rel="external">项目地址</a>）</p>
+<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p><code>pm2 install pm2-logrotate</code></p>
 <p><strong>注意</strong> 如果 <code>npm</code> 的版本是 <code>v2.7.4</code> ，会安装失败（Github 上的 <a href="https://github.com/npm/npm/issues/7984" target="_blank" rel="external">issue</a>），需更新 <code>npm</code>。</p>
-<h5 id="配置">配置</h5><ul>
+<h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><ul>
 <li>max_size（默认 10MB）：当日志文件超过该值指定的大小时，就会切割日志文件。还可以设置为其他的单位，例如：1G、1M、1K。</li>
 <li>interval（默认 1）</li>
 <li>interval_unit（默认 ‘DD’）：interval 和 interval_unit 是一起配合使用的，例如 interval=3、interval_unit=’DD’，表示日志文件每三天切割一次。</li>
 <li>retain（默认 ‘all’）：保留的日志文件数</li>
 </ul>
-<h5 id="设置">设置</h5><p><code>pm2 set pm2-logrotate:&lt;param&gt; &lt;value&gt;</code><br>配置项的值都是通过这样的形式设置，例如：<br><code>pm2 set pm2-logrotate:max_size 1K</code><br>设置 max_size 为 1K</p>
+<h5 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h5><p><code>pm2 set pm2-logrotate:&lt;param&gt; &lt;value&gt;</code><br>配置项的值都是通过这样的形式设置，例如：<br><code>pm2 set pm2-logrotate:max_size 1K</code><br>设置 max_size 为 1K</p>
 <p><code>pm2 get</code><br>查看设置的配置项值</p>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -692,7 +899,10 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2015-10-15T09:46:05+08:00" content="2015-10-15">
               2015-10-15
             </time>
@@ -700,7 +910,11 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Tools/" itemprop="url" rel="index">
@@ -718,14 +932,17 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
           
             
               <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/svn-guide/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/svn-guide/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+                &nbsp; | &nbsp;
+                <a href="/2015/svn-guide/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/svn-guide/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
+          
+
+          
           
 
         </div>
@@ -733,16 +950,15 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>很久没用 SVN 了，最基本的命令都忘了，重新熟悉下并记录下来。</p>
+          
+            <p>很久没用 SVN 了，最基本的命令都忘了，重新熟悉下并记录下来。</p>
 <ul>
 <li>克隆代码</li>
 </ul>
@@ -750,14 +966,14 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
 <pre><code>git-svn-practice
 ├── branches
 │   └── feature1
-│       ├── README<span class="class">.md</span>
-│       └── hello<span class="class">.js</span>
+│       ├── README.md
+│       └── hello.js
 ├── tags
-│   └── v1.<span class="number">0</span>
-│       ├── README<span class="class">.md</span>
-│       └── hello<span class="class">.js</span>
+│   └── v1.0
+│       ├── README.md
+│       └── hello.js
 └── trunk
-    ├── README<span class="class">.md</span>
+    ├── README.md
     └── hello.js
 </code></pre><ul>
 <li>添加</li>
@@ -779,22 +995,22 @@ sudo su -c <span class="string">"env PATH=$PATH:/Users/xxx/.nvm/versions/io.js/v
 <li>复制（创建分支）</li>
 </ul>
 <p><code>svn copy xxx xxx</code><br>所谓的分支就是通过 copy 创建的。</p>
-<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>svn copy trunk branches/feature-xxx</span><br><span class="line"><span class="variable">$ </span>cd branches/feature-xxx</span><br><span class="line"><span class="variable">$ </span>...</span><br><span class="line"><span class="variable">$ </span>svn commit</span><br></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>svn copy trunk branches/feature-xxx</span><br><span class="line"><span class="variable">$ </span>cd branches/feature-xxx</span><br><span class="line"><span class="variable">$ </span>...</span><br><span class="line"><span class="variable">$ </span>svn commit</span><br></pre></td></tr></table></figure>
 <ul>
 <li>合并</li>
 </ul>
 <p><code>svn merge xxx xxx</code><br>合并分支，合并后可以将更新提交。</p>
-<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>svn merge ../branches/feature-xxx</span><br><span class="line"><span class="variable">$ </span>svn commit</span><br></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>svn merge ../branches/feature-xxx</span><br><span class="line"><span class="variable">$ </span>svn commit</span><br></pre></td></tr></table></figure>
 <ul>
 <li>更新（同步）</li>
 </ul>
 <p><code>svn update</code><br>更新本地代码，会显示更新的结果，结果里第一个字母的含义是</p>
 <pre><code>A  Added
-<span class="keyword">D</span>  Deleted
-<span class="keyword">U</span>  Updated
+D  Deleted
+U  Updated
 C  Conflict
-<span class="keyword">G</span>  Merged
-<span class="keyword">E</span>  Existed
+G  Merged
+E  Existed
 R  Replaced
 </code></pre><ul>
 <li>比对</li>
@@ -810,9 +1026,12 @@ R  Replaced
 </li>
 </ol>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -861,7 +1080,10 @@ R  Replaced
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2015-09-28T11:24:15+08:00" content="2015-09-28">
               2015-09-28
             </time>
@@ -869,7 +1091,11 @@ R  Replaced
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Node-js/" itemprop="url" rel="index">
@@ -887,14 +1113,17 @@ R  Replaced
           
             
               <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/nodejs-this/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/nodejs-this/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+                &nbsp; | &nbsp;
+                <a href="/2015/nodejs-this/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/nodejs-this/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
+          
+
+          
           
 
         </div>
@@ -902,16 +1131,15 @@ R  Replaced
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>在 Node.js 环境中和浏览器环境中，<code>this</code> 绝大多时候的表现是一样的。唯一不同的就是在全局运行上下文中。<br>因为在全局运行上下文中，<code>this</code> 指向<strong>全局对象</strong>，无论是否在严格模式下。</p>
+          
+            <p>在 Node.js 环境中和浏览器环境中，<code>this</code> 绝大多时候的表现是一样的。唯一不同的就是在全局运行上下文中。<br>因为在全局运行上下文中，<code>this</code> 指向<strong>全局对象</strong>，无论是否在严格模式下。</p>
 <p>浏览器环境中，全局对象是<code>window</code>。而 Node.js 环境中，全局对象是 <code>global</code>。<br>所以，造成了两者之间的不同。</p>
 <p>另外，在 Node.js 环境中，也还有一点不同。</p>
 <p>当在 <code>RELP</code> 中时<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ node</span><br><span class="line">&gt; <span class="keyword">this</span> === <span class="built_in">global</span></span><br><span class="line"><span class="literal">true</span></span><br><span class="line">&gt; <span class="keyword">this</span> === <span class="built_in">module</span>.exports</span><br><span class="line"><span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
@@ -924,14 +1152,17 @@ R  Replaced
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> wrapper</span> = Module.wrap(content);</span><br><span class="line"></span><br><span class="line"><span class="variable"><span class="keyword">var</span> compiledWrapper</span> = runInThisContext(wrapper, &#123; filename: filename &#125;);</span><br></pre></td></tr></table></figure>
 <p>处理后，代码会变成</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">exports, require, module, __filename, __dirname</span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'Func out:'</span>, <span class="keyword">this</span> === <span class="built_in">module</span>.exports); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Func out:'</span>, <span class="keyword">this</span> === global); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Func in:'</span>, <span class="keyword">this</span> === <span class="built_in">module</span>.exports); <span class="comment">// false</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Func in:'</span>, <span class="keyword">this</span> === global); <span class="comment">// true</span></span><br><span class="line">&#125;</span><br><span class="line">func();</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>然后调用执行<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">compiledWrapper</span><span class="class">.apply</span>(<span class="tag">self</span><span class="class">.exports</span>, <span class="tag">args</span>);</span><br></pre></td></tr></table></figure></p>
+<p>然后调用执行<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">compiledWrapper</span><span class="selector-class">.apply</span>(<span class="selector-tag">self</span><span class="selector-class">.exports</span>, <span class="selector-tag">args</span>);</span><br></pre></td></tr></table></figure></p>
 <p>通过 <code>apply</code> 将上下文设置为 <code>self.exports</code>，而 <code>self</code> 指向 <code>Module.prototype</code>（也就是 <code>Module</code> 的实例对象 <code>module</code>），所以，<code>this === module.exports</code>。</p>
 <p><strong>参考链接</strong></p>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this</a><br><a href="http://www.infoq.com/cn/articles/nodejs-module-mechanism" target="_blank" rel="external">http://www.infoq.com/cn/articles/nodejs-module-mechanism</a><br><a href="https://github.com/nodejs/node/blob/master/lib/module.js" target="_blank" rel="external">https://github.com/nodejs/node/blob/master/lib/module.js</a></p>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -980,7 +1211,10 @@ R  Replaced
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2015-09-23T16:24:24+08:00" content="2015-09-23">
               2015-09-23
             </time>
@@ -988,7 +1222,11 @@ R  Replaced
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Elasticsearch/" itemprop="url" rel="index">
@@ -1006,14 +1244,17 @@ R  Replaced
           
             
               <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/elasticsearch-1/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/elasticsearch-1/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+                &nbsp; | &nbsp;
+                <a href="/2015/elasticsearch-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/elasticsearch-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
+          
+
+          
           
 
         </div>
@@ -1021,52 +1262,182 @@ R  Replaced
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>Elasticsearch 是一个开源的搜索引擎，基于 Lucene（被认为是迄今为止最先进、性能最好的、功能最全的搜索引擎库）。</p>
-<h4 id="安装">安装</h4><p>唯一依赖 Java，如果没有则先安装 Java。</p>
+          
+            <p>Elasticsearch 是一个开源的搜索引擎，基于 Lucene（被认为是迄今为止最先进、性能最好的、功能最全的搜索引擎库）。</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>唯一依赖 Java，如果没有则先安装 Java。</p>
 <p>Elasticsearch 安装包可以从<a href="http://www.elasticsearch.org/download/" target="_blank" rel="external">这里</a>下载。</p>
-<h4 id="运行">运行</h4><p>将压缩包解压后并可以直接运行<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./<span class="keyword">bin/elasticsearch </span>-d</span><br></pre></td></tr></table></figure></p>
+<h4 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h4><p>将压缩包解压后并可以直接运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/elasticsearch <span class="_">-d</span></span><br></pre></td></tr></table></figure></p>
 <p>加上参数 <code>-d</code> 以守护进程的方式运行。</p>
-<p>测试安装是否成功<br><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl <span class="string">'http</span>:<span class="comment">//localhost:9200/?pretty'</span></span><br></pre></td></tr></table></figure></p>
-<p>如果看到一下回复信息则表明安装成功。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">status</span>" : <span class="value"><span class="number">200</span></span>,</span><br><span class="line">  "<span class="attribute">name</span>" : <span class="value"><span class="string">"Paul Bailey"</span></span>,</span><br><span class="line">  "<span class="attribute">cluster_name</span>" : <span class="value"><span class="string">"elasticsearch"</span></span>,</span><br><span class="line">  "<span class="attribute">version</span>" : <span class="value">&#123;</span><br><span class="line">    "<span class="attribute">number</span>" : <span class="value"><span class="string">"1.7.2"</span></span>,</span><br><span class="line">    "<span class="attribute">build_hash</span>" : <span class="value"><span class="string">"e43676b1385b8125d647f593f7202acbd816e8ec"</span></span>,</span><br><span class="line">    "<span class="attribute">build_timestamp</span>" : <span class="value"><span class="string">"2015-09-14T09:49:53Z"</span></span>,</span><br><span class="line">    "<span class="attribute">build_snapshot</span>" : <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">    "<span class="attribute">lucene_version</span>" : <span class="value"><span class="string">"4.10.4"</span></span><br><span class="line">  </span>&#125;</span>,</span><br><span class="line">  "<span class="attribute">tagline</span>" : <span class="value"><span class="string">"You Know, for Search"</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="RESTful_API">RESTful API</h4><p>Elasticsearch 为 Java 用户提供了两种内置客户端：节点客户端(node client)和传输客户端(Transport client)。而其他语言则可以通过 RESTful API 进行交互。</p>
+<p>测试安装是否成功<br><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl <span class="symbol">'http</span>:<span class="comment">//localhost:9200/?pretty'</span></span><br></pre></td></tr></table></figure></p>
+<p>如果看到一下回复信息则表明安装成功。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"status"</span> : <span class="number">200</span>,</span><br><span class="line">  <span class="attr">"name"</span> : <span class="string">"Paul Bailey"</span>,</span><br><span class="line">  <span class="attr">"cluster_name"</span> : <span class="string">"elasticsearch"</span>,</span><br><span class="line">  <span class="attr">"version"</span> : &#123;</span><br><span class="line">    <span class="attr">"number"</span> : <span class="string">"1.7.2"</span>,</span><br><span class="line">    <span class="attr">"build_hash"</span> : <span class="string">"e43676b1385b8125d647f593f7202acbd816e8ec"</span>,</span><br><span class="line">    <span class="attr">"build_timestamp"</span> : <span class="string">"2015-09-14T09:49:53Z"</span>,</span><br><span class="line">    <span class="attr">"build_snapshot"</span> : <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"lucene_version"</span> : <span class="string">"4.10.4"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"tagline"</span> : <span class="string">"You Know, for Search"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="RESTful-API"><a href="#RESTful-API" class="headerlink" title="RESTful API"></a>RESTful API</h4><p>Elasticsearch 为 Java 用户提供了两种内置客户端：节点客户端(node client)和传输客户端(Transport client)。而其他语言则可以通过 RESTful API 进行交互。</p>
 <p>默认提供 RESTful API 的端口是 9200，以 JSON 数据进行交互。</p>
-<p>可以直接用<code>curl</code>发送请求，例如：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">curl -XPUT <span class="string">"http://120.25.84.82:9200/megacorp/employee/2"</span> -d'</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"first_name"</span> :  <span class="string">"Jane"</span>,</span><br><span class="line">    <span class="string">"last_name"</span> :   <span class="string">"Smith"</span>,</span><br><span class="line">    <span class="string">"age"</span> :         <span class="number">32</span>,</span><br><span class="line">    <span class="string">"about"</span> :       <span class="string">"I like to collect rock albums"</span>,</span><br><span class="line">    <span class="string">"interests"</span>:  [ <span class="string">"music"</span> ]</span><br><span class="line">&#125;'</span><br></pre></td></tr></table></figure></p>
+<p>可以直接用<code>curl</code>发送请求，例如：<br><figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">curl -XPUT <span class="string">"http://120.25.84.82:9200/megacorp/employee/2"</span> -<span class="keyword">d</span>'</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"first_name"</span> :  <span class="string">"Jane"</span>,</span><br><span class="line">    <span class="string">"last_name"</span> :   <span class="string">"Smith"</span>,</span><br><span class="line">    <span class="string">"age"</span> :         <span class="number">32</span>,</span><br><span class="line">    <span class="string">"about"</span> :       <span class="string">"I like to collect rock albums"</span>,</span><br><span class="line">    <span class="string">"interests"</span>:  [ <span class="string">"music"</span> ]</span><br><span class="line">&#125;'</span><br></pre></td></tr></table></figure></p>
 <p>或者使用<code>marvel</code>这个插件，下面的示例都使用的这个插件。</p>
 <blockquote>
 <p>安装插件 <code>./bin/plugin -i elasticsearch/marvel/latest</code><br>访问 <code>http://localhost:9200/_plugin/marvel/sense/index.html</code></p>
 </blockquote>
-<h5 id="创建">创建</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PUT /megacorp/employee/<span class="number">2</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"first_name"</span> :  <span class="string">"Jane"</span>,</span><br><span class="line">    <span class="string">"last_name"</span> :   <span class="string">"Smith"</span>,</span><br><span class="line">    <span class="string">"age"</span> :         <span class="number">32</span>,</span><br><span class="line">    <span class="string">"about"</span> :       <span class="string">"I like to collect rock albums"</span>,</span><br><span class="line">    <span class="string">"interests"</span>:  [ <span class="string">"music"</span> ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="查询单个">查询单个</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /megacorp/employee/<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h5 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h5><figure class="highlight smalltalk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">PUT</span> /megacorp/employee/<span class="number">2</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">"first_name"</span> :  <span class="comment">"Jane"</span>,</span><br><span class="line">    <span class="comment">"last_name"</span> :   <span class="comment">"Smith"</span>,</span><br><span class="line">    <span class="comment">"age"</span> :         <span class="number">32</span>,</span><br><span class="line">    <span class="comment">"about"</span> :       <span class="comment">"I like to collect rock albums"</span>,</span><br><span class="line">    <span class="comment">"interests"</span>:  [ <span class="comment">"music"</span> ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="查询单个"><a href="#查询单个" class="headerlink" title="查询单个"></a>查询单个</h5><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET <span class="meta-keyword">/megacorp/</span>employee/<span class="number">2</span></span><br></pre></td></tr></table></figure>
 <p>返回的结果中，原始 JSON 文档在 <code>_source</code> 字段中</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   "<span class="attribute">_index</span>": <span class="value"><span class="string">"megacorp"</span></span>,</span><br><span class="line">   "<span class="attribute">_type</span>": <span class="value"><span class="string">"employee"</span></span>,</span><br><span class="line">   "<span class="attribute">_id</span>": <span class="value"><span class="string">"2"</span></span>,</span><br><span class="line">   "<span class="attribute">_version</span>": <span class="value"><span class="number">1</span></span>,</span><br><span class="line">   "<span class="attribute">found</span>": <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">   "<span class="attribute">_source</span>": <span class="value">&#123;</span><br><span class="line">      "<span class="attribute">first_name</span>": <span class="value"><span class="string">"Jane"</span></span>,</span><br><span class="line">      "<span class="attribute">last_name</span>": <span class="value"><span class="string">"Smith"</span></span>,</span><br><span class="line">      "<span class="attribute">age</span>": <span class="value"><span class="number">32</span></span>,</span><br><span class="line">      "<span class="attribute">about</span>": <span class="value"><span class="string">"I like to collect rock albums"</span></span>,</span><br><span class="line">      "<span class="attribute">interests</span>": <span class="value">[</span><br><span class="line">         <span class="string">"music"</span></span><br><span class="line">      ]</span><br><span class="line">   </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="简单搜索">简单搜索</h5><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET <span class="regexp">/megacorp/</span>employee<span class="regexp">/_search</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"_index"</span>: <span class="string">"megacorp"</span>,</span><br><span class="line">   <span class="attr">"_type"</span>: <span class="string">"employee"</span>,</span><br><span class="line">   <span class="attr">"_id"</span>: <span class="string">"2"</span>,</span><br><span class="line">   <span class="attr">"_version"</span>: <span class="number">1</span>,</span><br><span class="line">   <span class="attr">"found"</span>: <span class="literal">true</span>,</span><br><span class="line">   <span class="attr">"_source"</span>: &#123;</span><br><span class="line">      <span class="attr">"first_name"</span>: <span class="string">"Jane"</span>,</span><br><span class="line">      <span class="attr">"last_name"</span>: <span class="string">"Smith"</span>,</span><br><span class="line">      <span class="attr">"age"</span>: <span class="number">32</span>,</span><br><span class="line">      <span class="attr">"about"</span>: <span class="string">"I like to collect rock albums"</span>,</span><br><span class="line">      <span class="attr">"interests"</span>: [</span><br><span class="line">         <span class="string">"music"</span></span><br><span class="line">      ]</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="简单搜索"><a href="#简单搜索" class="headerlink" title="简单搜索"></a>简单搜索</h5><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET <span class="meta-keyword">/megacorp/</span>employee/_search</span><br></pre></td></tr></table></figure>
 <p>返回结果，默认返回前10个结果。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   "<span class="attribute">took</span>": <span class="value"><span class="number">2</span></span>,</span><br><span class="line">   "<span class="attribute">timed_out</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">   "<span class="attribute">_shards</span>": <span class="value">&#123;</span><br><span class="line">      "<span class="attribute">total</span>": <span class="value"><span class="number">5</span></span>,</span><br><span class="line">      "<span class="attribute">successful</span>": <span class="value"><span class="number">5</span></span>,</span><br><span class="line">      "<span class="attribute">failed</span>": <span class="value"><span class="number">0</span></span><br><span class="line">   </span>&#125;</span>,</span><br><span class="line">   "<span class="attribute">hits</span>": <span class="value">&#123;</span><br><span class="line">      "<span class="attribute">total</span>": <span class="value"><span class="number">3</span></span>,</span><br><span class="line">      "<span class="attribute">max_score</span>": <span class="value"><span class="number">1</span></span>,</span><br><span class="line">      "<span class="attribute">hits</span>": <span class="value">[</span><br><span class="line">         &#123;</span><br><span class="line">            "<span class="attribute">_index</span>": <span class="value"><span class="string">"megacorp"</span></span>,</span><br><span class="line">            "<span class="attribute">_type</span>": <span class="value"><span class="string">"employee"</span></span>,</span><br><span class="line">            "<span class="attribute">_id</span>": <span class="value"><span class="string">"1"</span></span>,</span><br><span class="line">            "<span class="attribute">_score</span>": <span class="value"><span class="number">1</span></span>,</span><br><span class="line">            "<span class="attribute">_source</span>": <span class="value">&#123;</span><br><span class="line">               "<span class="attribute">first_name</span>": <span class="value"><span class="string">"John"</span></span>,</span><br><span class="line">               "<span class="attribute">last_name</span>": <span class="value"><span class="string">"Smith"</span></span>,</span><br><span class="line">               "<span class="attribute">age</span>": <span class="value"><span class="number">25</span></span>,</span><br><span class="line">               "<span class="attribute">about</span>": <span class="value"><span class="string">"I love to go rock climbing"</span></span>,</span><br><span class="line">               "<span class="attribute">interests</span>": <span class="value">[</span><br><span class="line">                  <span class="string">"sports"</span>,</span><br><span class="line">                  <span class="string">"music"</span></span><br><span class="line">               ]</span><br><span class="line">            </span>&#125;</span><br><span class="line">         </span>&#125;,</span><br><span class="line">         &#123;</span><br><span class="line">            "<span class="attribute">_index</span>": <span class="value"><span class="string">"megacorp"</span></span>,</span><br><span class="line">            "<span class="attribute">_type</span>": <span class="value"><span class="string">"employee"</span></span>,</span><br><span class="line">            "<span class="attribute">_id</span>": <span class="value"><span class="string">"2"</span></span>,</span><br><span class="line">            "<span class="attribute">_score</span>": <span class="value"><span class="number">1</span></span>,</span><br><span class="line">            "<span class="attribute">_source</span>": <span class="value">&#123;</span><br><span class="line">               "<span class="attribute">first_name</span>": <span class="value"><span class="string">"Jane"</span></span>,</span><br><span class="line">               "<span class="attribute">last_name</span>": <span class="value"><span class="string">"Smith"</span></span>,</span><br><span class="line">               "<span class="attribute">age</span>": <span class="value"><span class="number">32</span></span>,</span><br><span class="line">               "<span class="attribute">about</span>": <span class="value"><span class="string">"I like to collect rock albums"</span></span>,</span><br><span class="line">               "<span class="attribute">interests</span>": <span class="value">[</span><br><span class="line">                  <span class="string">"music"</span></span><br><span class="line">               ]</span><br><span class="line">            </span>&#125;</span><br><span class="line">         </span>&#125;,</span><br><span class="line"></span><br><span class="line">         ...</span><br><span class="line"></span><br><span class="line">      ]</span><br><span class="line">   </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="简单搜索带条件">简单搜索带条件</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET <span class="regexp">/megacorp/</span>employee/_search?q=first_name:John</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"took"</span>: <span class="number">2</span>,</span><br><span class="line">   <span class="attr">"timed_out"</span>: <span class="literal">false</span>,</span><br><span class="line">   <span class="attr">"_shards"</span>: &#123;</span><br><span class="line">      <span class="attr">"total"</span>: <span class="number">5</span>,</span><br><span class="line">      <span class="attr">"successful"</span>: <span class="number">5</span>,</span><br><span class="line">      <span class="attr">"failed"</span>: <span class="number">0</span></span><br><span class="line">   &#125;,</span><br><span class="line">   <span class="attr">"hits"</span>: &#123;</span><br><span class="line">      <span class="attr">"total"</span>: <span class="number">3</span>,</span><br><span class="line">      <span class="attr">"max_score"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">"hits"</span>: [</span><br><span class="line">         &#123;</span><br><span class="line">            <span class="attr">"_index"</span>: <span class="string">"megacorp"</span>,</span><br><span class="line">            <span class="attr">"_type"</span>: <span class="string">"employee"</span>,</span><br><span class="line">            <span class="attr">"_id"</span>: <span class="string">"1"</span>,</span><br><span class="line">            <span class="attr">"_score"</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="attr">"_source"</span>: &#123;</span><br><span class="line">               <span class="attr">"first_name"</span>: <span class="string">"John"</span>,</span><br><span class="line">               <span class="attr">"last_name"</span>: <span class="string">"Smith"</span>,</span><br><span class="line">               <span class="attr">"age"</span>: <span class="number">25</span>,</span><br><span class="line">               <span class="attr">"about"</span>: <span class="string">"I love to go rock climbing"</span>,</span><br><span class="line">               <span class="attr">"interests"</span>: [</span><br><span class="line">                  <span class="string">"sports"</span>,</span><br><span class="line">                  <span class="string">"music"</span></span><br><span class="line">               ]</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;,</span><br><span class="line">         &#123;</span><br><span class="line">            <span class="attr">"_index"</span>: <span class="string">"megacorp"</span>,</span><br><span class="line">            <span class="attr">"_type"</span>: <span class="string">"employee"</span>,</span><br><span class="line">            <span class="attr">"_id"</span>: <span class="string">"2"</span>,</span><br><span class="line">            <span class="attr">"_score"</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="attr">"_source"</span>: &#123;</span><br><span class="line">               <span class="attr">"first_name"</span>: <span class="string">"Jane"</span>,</span><br><span class="line">               <span class="attr">"last_name"</span>: <span class="string">"Smith"</span>,</span><br><span class="line">               <span class="attr">"age"</span>: <span class="number">32</span>,</span><br><span class="line">               <span class="attr">"about"</span>: <span class="string">"I like to collect rock albums"</span>,</span><br><span class="line">               <span class="attr">"interests"</span>: [</span><br><span class="line">                  <span class="string">"music"</span></span><br><span class="line">               ]</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;,</span><br><span class="line"></span><br><span class="line">         ...</span><br><span class="line"></span><br><span class="line">      ]</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="简单搜索带条件"><a href="#简单搜索带条件" class="headerlink" title="简单搜索带条件"></a>简单搜索带条件</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET <span class="regexp">/megacorp/</span>employee/_search?q=first_name:John</span><br></pre></td></tr></table></figure>
 <p><strong>DSL查询(Query DSL)</strong></p>
 <p>DSL(Domain Specific Language 特定领域语言)以 JSON 请求体的形式出现。</p>
 <figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /megacorp/employee/_search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"query"</span> : &#123;</span><br><span class="line">        <span class="string">"match"</span> : &#123;</span><br><span class="line">            <span class="string">"first_name"</span> : <span class="string">"John"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>还支持很多复杂的查询，以后在具体介绍。</p>
-<h5 id="全文搜索">全文搜索</h5><p>这个功能一般的数据库是没有提供的。例如：搜索所有喜欢“rock climbing”的员工。</p>
+<h5 id="全文搜索"><a href="#全文搜索" class="headerlink" title="全文搜索"></a>全文搜索</h5><p>这个功能一般的数据库是没有提供的。例如：搜索所有喜欢“rock climbing”的员工。</p>
 <figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /megacorp/employee/_search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"query"</span> : &#123;</span><br><span class="line">        <span class="string">"match"</span> : &#123;</span><br><span class="line">            <span class="string">"about"</span> : <span class="string">"rock climbing"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>返回的结果，默认是按<code>相似匹配度</code>来排序的，<code>_score</code>是这条记录的<code>相关性评分</code>。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   "<span class="attribute">took</span>": <span class="value"><span class="number">3</span></span>,</span><br><span class="line">   "<span class="attribute">timed_out</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">   "<span class="attribute">_shards</span>": <span class="value">&#123;</span><br><span class="line">      "<span class="attribute">total</span>": <span class="value"><span class="number">5</span></span>,</span><br><span class="line">      "<span class="attribute">successful</span>": <span class="value"><span class="number">5</span></span>,</span><br><span class="line">      "<span class="attribute">failed</span>": <span class="value"><span class="number">0</span></span><br><span class="line">   </span>&#125;</span>,</span><br><span class="line">   "<span class="attribute">hits</span>": <span class="value">&#123;</span><br><span class="line">      "<span class="attribute">total</span>": <span class="value"><span class="number">2</span></span>,</span><br><span class="line">      "<span class="attribute">max_score</span>": <span class="value"><span class="number">0.16273327</span></span>,</span><br><span class="line">      "<span class="attribute">hits</span>": <span class="value">[</span><br><span class="line">         &#123;</span><br><span class="line">            "<span class="attribute">_index</span>": <span class="value"><span class="string">"megacorp"</span></span>,</span><br><span class="line">            "<span class="attribute">_type</span>": <span class="value"><span class="string">"employee"</span></span>,</span><br><span class="line">            "<span class="attribute">_id</span>": <span class="value"><span class="string">"1"</span></span>,</span><br><span class="line">            "<span class="attribute">_score</span>": <span class="value"><span class="number">0.16273327</span></span>,</span><br><span class="line">            "<span class="attribute">_source</span>": <span class="value">&#123;</span><br><span class="line">               "<span class="attribute">first_name</span>": <span class="value"><span class="string">"John"</span></span>,</span><br><span class="line">               "<span class="attribute">last_name</span>": <span class="value"><span class="string">"Smith"</span></span>,</span><br><span class="line">               "<span class="attribute">age</span>": <span class="value"><span class="number">25</span></span>,</span><br><span class="line">               "<span class="attribute">about</span>": <span class="value"><span class="string">"I love to go rock climbing"</span></span>,</span><br><span class="line">               "<span class="attribute">interests</span>": <span class="value">[</span><br><span class="line">                  <span class="string">"sports"</span>,</span><br><span class="line">                  <span class="string">"music"</span></span><br><span class="line">               ]</span><br><span class="line">            </span>&#125;</span><br><span class="line">         </span>&#125;,</span><br><span class="line">         &#123;</span><br><span class="line">            "<span class="attribute">_index</span>": <span class="value"><span class="string">"megacorp"</span></span>,</span><br><span class="line">            "<span class="attribute">_type</span>": <span class="value"><span class="string">"employee"</span></span>,</span><br><span class="line">            "<span class="attribute">_id</span>": <span class="value"><span class="string">"2"</span></span>,</span><br><span class="line">            "<span class="attribute">_score</span>": <span class="value"><span class="number">0.016878016</span></span>,</span><br><span class="line">            "<span class="attribute">_source</span>": <span class="value">&#123;</span><br><span class="line">               "<span class="attribute">first_name</span>": <span class="value"><span class="string">"Jane"</span></span>,</span><br><span class="line">               "<span class="attribute">last_name</span>": <span class="value"><span class="string">"Smith"</span></span>,</span><br><span class="line">               "<span class="attribute">age</span>": <span class="value"><span class="number">32</span></span>,</span><br><span class="line">               "<span class="attribute">about</span>": <span class="value"><span class="string">"I like to collect rock albums"</span></span>,</span><br><span class="line">               "<span class="attribute">interests</span>": <span class="value">[</span><br><span class="line">                  <span class="string">"music"</span></span><br><span class="line">               ]</span><br><span class="line">            </span>&#125;</span><br><span class="line">         </span>&#125;</span><br><span class="line">      ]</span><br><span class="line">   </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="短语搜索">短语搜索</h5><p>匹配若干个关键字，使用<code>match_phrase</code>。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"took"</span>: <span class="number">3</span>,</span><br><span class="line">   <span class="attr">"timed_out"</span>: <span class="literal">false</span>,</span><br><span class="line">   <span class="attr">"_shards"</span>: &#123;</span><br><span class="line">      <span class="attr">"total"</span>: <span class="number">5</span>,</span><br><span class="line">      <span class="attr">"successful"</span>: <span class="number">5</span>,</span><br><span class="line">      <span class="attr">"failed"</span>: <span class="number">0</span></span><br><span class="line">   &#125;,</span><br><span class="line">   <span class="attr">"hits"</span>: &#123;</span><br><span class="line">      <span class="attr">"total"</span>: <span class="number">2</span>,</span><br><span class="line">      <span class="attr">"max_score"</span>: <span class="number">0.16273327</span>,</span><br><span class="line">      <span class="attr">"hits"</span>: [</span><br><span class="line">         &#123;</span><br><span class="line">            <span class="attr">"_index"</span>: <span class="string">"megacorp"</span>,</span><br><span class="line">            <span class="attr">"_type"</span>: <span class="string">"employee"</span>,</span><br><span class="line">            <span class="attr">"_id"</span>: <span class="string">"1"</span>,</span><br><span class="line">            <span class="attr">"_score"</span>: <span class="number">0.16273327</span>,</span><br><span class="line">            <span class="attr">"_source"</span>: &#123;</span><br><span class="line">               <span class="attr">"first_name"</span>: <span class="string">"John"</span>,</span><br><span class="line">               <span class="attr">"last_name"</span>: <span class="string">"Smith"</span>,</span><br><span class="line">               <span class="attr">"age"</span>: <span class="number">25</span>,</span><br><span class="line">               <span class="attr">"about"</span>: <span class="string">"I love to go rock climbing"</span>,</span><br><span class="line">               <span class="attr">"interests"</span>: [</span><br><span class="line">                  <span class="string">"sports"</span>,</span><br><span class="line">                  <span class="string">"music"</span></span><br><span class="line">               ]</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;,</span><br><span class="line">         &#123;</span><br><span class="line">            <span class="attr">"_index"</span>: <span class="string">"megacorp"</span>,</span><br><span class="line">            <span class="attr">"_type"</span>: <span class="string">"employee"</span>,</span><br><span class="line">            <span class="attr">"_id"</span>: <span class="string">"2"</span>,</span><br><span class="line">            <span class="attr">"_score"</span>: <span class="number">0.016878016</span>,</span><br><span class="line">            <span class="attr">"_source"</span>: &#123;</span><br><span class="line">               <span class="attr">"first_name"</span>: <span class="string">"Jane"</span>,</span><br><span class="line">               <span class="attr">"last_name"</span>: <span class="string">"Smith"</span>,</span><br><span class="line">               <span class="attr">"age"</span>: <span class="number">32</span>,</span><br><span class="line">               <span class="attr">"about"</span>: <span class="string">"I like to collect rock albums"</span>,</span><br><span class="line">               <span class="attr">"interests"</span>: [</span><br><span class="line">                  <span class="string">"music"</span></span><br><span class="line">               ]</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;</span><br><span class="line">      ]</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="短语搜索"><a href="#短语搜索" class="headerlink" title="短语搜索"></a>短语搜索</h5><p>匹配若干个关键字，使用<code>match_phrase</code>。</p>
 <figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /megacorp/employee/_search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"query"</span> : &#123;</span><br><span class="line">        <span class="string">"match_phrase"</span> : &#123;</span><br><span class="line">            <span class="string">"about"</span> : <span class="string">"rock climbing"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>RESTful API 提供了很多很强大的接口，可以方便的进行搜索、聚合等操作，这里只是简单介绍了下，具体详细的请看相关文档。</p>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/mongodb-data-model-design/" itemprop="url">
+                  Data Model 设计
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-08-12T14:29:50+08:00" content="2015-08-12">
+              2015-08-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Mongodb/" itemprop="url" rel="index">
+                    <span itemprop="name">Mongodb</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/mongodb-data-model-design/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/mongodb-data-model-design/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>传统的关系型数据库，设计 Data Model 时可以完全参照<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A7%84%E8%8C%83%E5%8C%96" target="_blank" rel="external">范式</a>来设计，虽然，你也可以把非关系型数据库的格式也按照范式来设计，但那样就跟用关系型数据库没什么差别了。</p>
+<p>关系型数据库里两个 Model 之间的关系都是 <code>use references</code>，而非关系型数据库除了可以是 <code>use references</code> 还可以是 <code>embed</code>。所以在为非关系型数据库设计 Data Model 时，关键要考虑的问题就是什么情况用 <code>use references</code> 什么情况用 <code>embed</code>。</p>
+<p><em>优先考虑使用 <code>embed</code></em></p>
+<ul>
+<li>一对一时，两个 Model 之间是<code>包含</code>或<code>属于</code>关系，例如：用户和地址</li>
+<li>一对多时，其他的 Model 都完全<code>属于</code>另外一个 Model，例如：用户拥有多个邮箱</li>
+</ul>
+<p>这种情况下，查询效率高，因为只需要查询一次就可以拿到所有的信息，写的效率可能相对来说就要低一点了，另外还需要数据还会在冗余。</p>
+<p><em>优先考虑使用 <code>use references</code></em></p>
+<ul>
+<li>多对多关系时</li>
+</ul>
+<p>这种情况下，Model 间的关联更灵活，结构清晰，数据冗余少。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://docs.mongodb.org/manual/core/data-model-design/" target="_blank" rel="external">https://docs.mongodb.org/manual/core/data-model-design/</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1115,7 +1486,10 @@ R  Replaced
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2015-06-17T12:13:00+08:00" content="2015-06-17">
               2015-06-17
             </time>
@@ -1123,7 +1497,11 @@ R  Replaced
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Tools/" itemprop="url" rel="index">
@@ -1141,14 +1519,17 @@ R  Replaced
           
             
               <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/sublime-text-shortcut-key/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/sublime-text-shortcut-key/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+                &nbsp; | &nbsp;
+                <a href="/2015/sublime-text-shortcut-key/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/sublime-text-shortcut-key/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
+          
+
+          
           
 
         </div>
@@ -1156,16 +1537,15 @@ R  Replaced
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>使用 Sublime Text 已经有一段时间了，整理一下相关快捷键。</p>
+          
+            <p>使用 Sublime Text 已经有一段时间了，整理一下相关快捷键。</p>
 <p>环境：Sublime Text 3 、Mac 。</p>
 <p><strong>快捷操作</strong></p>
 <ul>
@@ -1215,9 +1595,12 @@ R  Replaced
 <li>Command + k + l：将光标位子的单词变成小写</li>
 </ul>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1266,7 +1649,10 @@ R  Replaced
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2015-06-01T15:49:00+08:00" content="2015-06-01">
               2015-06-01
             </time>
@@ -1274,7 +1660,11 @@ R  Replaced
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Javascript/" itemprop="url" rel="index">
@@ -1292,14 +1682,17 @@ R  Replaced
           
             
               <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/javascript-float/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/javascript-float/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+                &nbsp; | &nbsp;
+                <a href="/2015/javascript-float/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/javascript-float/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
+          
+
+          
           
 
         </div>
@@ -1307,31 +1700,33 @@ R  Replaced
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>Javascript 采用的是 IEEE-754 浮点数表示法，这是一种二进制浮点数表示法，可以<strong>精确的</strong>（注意是精确，不是准确）表示分数，例如：1/2、1/4、1/8 、1/1024 等。但如果想表示 1/10、1/100 这样的十进制分数，就会有精度问题了。</p>
+          
+            <p>Javascript 采用的是 IEEE-754 浮点数表示法，这是一种二进制浮点数表示法，可以<strong>精确的</strong>（注意是精确，不是准确）表示分数，例如：1/2、1/4、1/8 、1/1024 等。但如果想表示 1/10、1/100 这样的十进制分数，就会有精度问题了。</p>
 <p>在 Node.js 的 REPL 中运行：</p>
-<pre><code>&gt; <span class="number">0.3</span>-<span class="number">0.2</span>
-<span class="number">0.09999999999999998</span>
-&gt; <span class="number">0.4</span>-<span class="number">0.3</span>
-<span class="number">0.10000000000000003</span>
-&gt; <span class="number">0.2</span>-<span class="number">0.1</span>
-<span class="number">0.1</span>
-&gt; <span class="number">0.3</span>-<span class="number">0.2</span> == <span class="number">0.2</span>-<span class="number">0.1</span>
-<span class="literal">false</span>
+<pre><code>&gt; 0.3-0.2
+0.09999999999999998
+&gt; 0.4-0.3
+0.10000000000000003
+&gt; 0.2-0.1
+0.1
+&gt; 0.3-0.2 == 0.2-0.1
+false
 &gt;
 </code></pre><p>所以，当我们需要很精确的结果的时候，最好是把浮点数运算转成大整数运算，例如：<code>0.3 - 0.2 转成 (3-2)/10</code>。</p>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1349,263 +1744,6 @@ R  Replaced
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/mac-windows-control/" itemprop="url">
-                  Mac程序窗口大小调整
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-05-12T12:05:00+08:00" content="2015-05-12">
-              2015-05-12
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Tools/" itemprop="url" rel="index">
-                    <span itemprop="name">Tools</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/mac-windows-control/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/mac-windows-control/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>在使用电脑的时候，不管是用Windows还是Mac OS系统，我们经常会需要调整程序窗口的大小。这里介绍两款Mac OS下的小工具来帮助你。具体怎么安装就不介绍，简单介绍下用法。</p>
-<h2 id="1-_Spectacle">  1. Spectacle</h2><p>所有的窗口缩放都是通过快捷键来操作，可以很方便快捷的把窗口进行缩放并调整位子。例如：</p>
-<ul>
-<li>Control+Command+Left：窗口位于左上，窗口占全屏的四分之一</li>
-<li>Control+Command+Right：窗口位于右上，窗口占全屏的四分之一</li>
-<li>Option+Command+Left：窗口位于左边，窗口占全屏的二分之一</li>
-<li>Option+Command+Right：窗口位于右边，窗口占全屏的二分之一</li>
-<li>Option+Command+z：回退</li>
-</ul>
-<p>更多的快捷键和介绍看<a href="https://github.com/eczarny/spectacle#keyboard-shortcuts" target="_blank" rel="external">这里</a></p>
-<h2 id="2-_Moom_(收费)">  2. Moom (收费)</h2><p>安装了这个应用之后，当你把鼠标移动到窗口左上角最大化按钮（绿色按钮）之上时，会在下面出现一个弹出框，你在上面直接选择你要缩放大小和位子后就直接改变了窗口。操作很直观。如果你还想像上面那款应用那么快捷，你也可以设置快捷键。</p>
-<ul>
-<li>选择 Keyboard</li>
-<li>Trigger keyboard control with hot key 这里设置触发的快捷键，我的设置：Option+Command+z。还可以把下面的Show cheat sheet 勾上，这样触发出快捷操作的时候会显示缩放快捷键。</li>
-<li>Auto-dismiss keyboard control after 这里设置自动隐藏的条件，我的设置：只勾选了 Move &amp; Zoom</li>
-</ul>
-<p>按上面这样设置好之后，有可以通过快捷键来操作了。先按下 Option+Command+z 触发快捷操作，然后进行窗口缩放。例如：</p>
-<ul>
-<li>Space：全屏</li>
-<li>Command+Left：窗口位于左边，窗口占全屏的二分之一</li>
-<li>Command+Right：窗口位于右边，窗口占全屏的二分之一</li>
-<li>Esc：取消</li>
-</ul>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2014/nodejs-handle-excel/" itemprop="url">
-                  Node.js Handle Excel
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2014-11-04T18:23:00+08:00" content="2014-11-04">
-              2014-11-04
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Node-js/" itemprop="url" rel="index">
-                    <span itemprop="name">Node.js</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2014/nodejs-handle-excel/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/nodejs-handle-excel/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>最近项目中需要用到xls文件的导入和导出，在github上找到几个的包：</p>
-<blockquote>
-<p><a href="https://github.com/SheetJS/js-xls" target="_blank" rel="external">js-xls</a>  解析xls</p>
-<p><a href="https://github.com/SheetJS/js-xlsx" target="_blank" rel="external">js-xlsx</a> 解析xlsx</p>
-<p><a href="https://github.com/gutkyu/xlgen" target="_blank" rel="external">xlgen</a> 生成xls</p>
-<p><a href="https://github.com/elwerene/Node-Excel-Export" target="_blank" rel="external">excel-export-fast</a> 生成xlsx</p>
-</blockquote>
-<p>但其中xlgen这个包在生成xls文件时，如果生成的数据很多时，会很慢。3000行、100列的数据量需要11分钟，内存占用一直在170M左右，生成的文件大概4M，怎么都觉得不应该这么慢。又没找到其他合适的包，只能翻这个包的源码吧。</p>
-<p>第一步想到的可能存在问题的地方可能是出在不停的打开文件写文件，不然不至于这么慢。通过看xlgen的代码，发现一次生成只会打开一次文件，就是第一次创建文件的时候。但写文件很频繁，先写头和一些xls文件结构相关的数据，再写cell，每一个cell拼装成一个buffer就写一次文件，问题就出在这里了。我把代码改成把所有的buffer组合在一起，最后再一次写入。buffer组合通过Buffer自带的.concat方法</p>
-<pre><code>allBuf = []
-allBuf.<span class="function"><span class="title">push</span><span class="params">(buffer)</span></span>
-allBuf = Buffer.<span class="function"><span class="title">concat</span><span class="params">(allBuf)</span></span>
-</code></pre><p>结果，需要17分钟，比之前还要慢。。。</p>
-<p>百思不得其解，最终看Buffer模块的源码发现，Buffer.concat(list, [totalLength]) ，原来可以参入一个参数 总长度，如果不传入的话，则每次调用都要额外计算</p>
-<pre><code>Buffer.concat = function(<span class="type">list</span>, <span class="property">length</span>) {
-    <span class="keyword">if</span> (!util.isArray(<span class="type">list</span>))
-        throw new TypeError('Usage: Buffer.concat(<span class="type">list</span>[, <span class="property">length</span>])');
-
-    <span class="keyword">if</span> (util.isUndefined(<span class="property">length</span>)) {
-        <span class="property">length</span> = <span class="number">0</span>;
-        <span class="keyword">for</span> (var i = <span class="number">0</span>; i &lt; <span class="type">list</span>.<span class="property">length</span>; i++)
-            <span class="property">length</span> += <span class="type">list</span>[i].<span class="property">length</span>;
-    } <span class="keyword">else</span> {
-        <span class="property">length</span> = <span class="property">length</span> &gt;&gt;&gt; <span class="number">0</span>;
-    }
-
-    ...
-</code></pre><p>果断传入总长度，还是3000行100列，7秒就完成了！</p>
-<p>总结：因为write buffer的event太多了，cpu处理不过来（单个CPU使用100%），事件都积压着（占用大量内存）。</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-
   </section>
 
   
@@ -1615,17 +1753,15 @@ allBuf = Buffer.<span class="function"><span class="title">concat</span><span cl
 
 
 
+          </div>
+          
+
+
+          
+
         </div>
-
         
-
-
-        
-
-      </div>
-
-      
-        
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -1644,31 +1780,37 @@ allBuf = Buffer.<span class="function"><span class="title">concat</span><span cl
 
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="https://gravatar.com/avatar/124ea13daf1648975e002b3c5e89d7e2" alt="Liucw" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="https://gravatar.com/avatar/124ea13daf1648975e002b3c5e89d7e2"
+               alt="Liucw" />
           <p class="site-author-name" itemprop="name">Liucw</p>
+          <p class="site-description motion-element" itemprop="description">Coder, Dota2, ONE PIECE ...</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">Coder, Dota2, ONE PIECE ...</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">7</span>
-              <span class="site-state-item-name">分类</span>
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
               </a>
-          </div>
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">12</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
@@ -1681,7 +1823,8 @@ allBuf = Buffer.<span class="function"><span class="title">concat</span><span cl
         
         
 
-        <div class="links-of-author motion-element">
+        
+        <div class="links-of-blogroll motion-element">
           
         </div>
 
@@ -1693,7 +1836,8 @@ allBuf = Buffer.<span class="function"><span class="title">concat</span><span cl
   </aside>
 
 
-      
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
@@ -1701,9 +1845,9 @@ allBuf = Buffer.<span class="function"><span class="title">concat</span><span cl
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2015</span>
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Liucw</span>
 </div>
@@ -1715,7 +1859,7 @@ allBuf = Buffer.<span class="function"><span class="title">concat</span><span cl
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT
+    NexT.Muse
   </a>
 </div>
 
@@ -1724,17 +1868,63 @@ allBuf = Buffer.<span class="function"><span class="title">concat</span><span cl
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
 
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
   
   
 
   
-    
-    
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
 
   
 
@@ -1758,31 +1948,13 @@ allBuf = Buffer.<span class="function"><span class="title">concat</span><span cl
   
 
 
-  
 
   
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
-
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-
-  <script type="text/javascript" src="/js/bootstrap.js"></script>
-
   
   
 
   
+
   
 
 </body>
